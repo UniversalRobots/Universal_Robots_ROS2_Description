@@ -54,7 +54,10 @@
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_common.xacro" />
 
   <xacro:macro name="ur_robot" params="
+    name
     prefix
+    parent
+    *origin
     joint_limits_parameters_file
     kinematics_parameters_file
     physical_parameters_file
@@ -87,7 +90,7 @@
     <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro" />
     <!-- ros2 control instance -->
     <xacro:ur_ros2_control
-      name="URPositionHardwareInterface" prefix="${prefix}"
+      name="${name}" prefix="${prefix}"
       use_fake_hardware="$(arg use_fake_hardware)"
       initial_positions="${initial_positions}"
       fake_sensor_commands="$(arg fake_sensor_commands)"
@@ -246,6 +249,13 @@
         <origin xyz="0.0 0.0 ${-0.5 * wrist_3_inertia_length}" rpy="0 0 0" />
       </xacro:cylinder_inertial>
     </link>
+
+    <!-- base_joint fixes base_link to the environment -->
+    <joint name="${prefix}base_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}base_link" />
+    </joint>
 
     <!-- joints - main serial chain -->
     <joint name="${prefix}base_link-base_link_inertia" type="fixed">
