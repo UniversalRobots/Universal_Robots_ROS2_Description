@@ -167,47 +167,33 @@
     <!-- Mesh files -->
     <xacro:property name="base_mesh" value="${sec_mesh_files['base']}"/>
     <xacro:property name="base_visual_mesh" value="file://$(find ${base_mesh['visual']['mesh']['package']})/${base_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="base_visual_material_name" value="${base_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="base_visual_material_color" value="${base_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="base_collision_mesh" value="file://$(find ${base_mesh['collision']['mesh']['package']})/${base_mesh['collision']['mesh']['path']}" scope="parent"/>
 
     <xacro:property name="shoulder_mesh" value="${sec_mesh_files['shoulder']}"/>
     <xacro:property name="shoulder_visual_mesh" value="file://$(find ${shoulder_mesh['visual']['mesh']['package']})/${shoulder_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="shoulder_visual_material_name" value="${shoulder_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="shoulder_visual_material_color" value="${shoulder_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="shoulder_collision_mesh" value="file://$(find ${shoulder_mesh['collision']['mesh']['package']})/${shoulder_mesh['collision']['mesh']['path']}" scope="parent"/>
 
     <xacro:property name="upper_arm_mesh" value="${sec_mesh_files['upper_arm']}"/>
     <xacro:property name="upper_arm_visual_mesh" value="file://$(find ${upper_arm_mesh['visual']['mesh']['package']})/${upper_arm_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="upper_arm_visual_material_name" value="${upper_arm_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="upper_arm_visual_material_color" value="${upper_arm_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="upper_arm_collision_mesh" value="${upper_arm_mesh['collision']['mesh']}" scope="parent"/>
     <xacro:property name="upper_arm_collision_mesh" value="file://$(find ${upper_arm_mesh['collision']['mesh']['package']})/${upper_arm_mesh['collision']['mesh']['path']}" scope="parent"/>
 
     <xacro:property name="forearm_mesh" value="${sec_mesh_files['forearm']}"/>
     <xacro:property name="forearm_visual_mesh" value="file://$(find ${forearm_mesh['visual']['mesh']['package']})/${forearm_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="forearm_visual_material_name" value="${forearm_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="forearm_visual_material_color" value="${forearm_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="forearm_collision_mesh" value="file://$(find ${forearm_mesh['collision']['mesh']['package']})/${forearm_mesh['collision']['mesh']['path']}" scope="parent"/>
 
     <xacro:property name="wrist_1_mesh" value="${sec_mesh_files['wrist_1']}"/>
     <xacro:property name="wrist_1_visual_mesh" value="file://$(find ${wrist_1_mesh['visual']['mesh']['package']})/${wrist_1_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="wrist_1_visual_material_name" value="${wrist_1_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="wrist_1_visual_material_color" value="${wrist_1_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="wrist_1_collision_mesh" value="file://$(find ${wrist_1_mesh['collision']['mesh']['package']})/${wrist_1_mesh['collision']['mesh']['path']}" scope="parent"/>
     <xacro:property name="wrist_1_visual_offset" value="${wrist_1_mesh['visual_offset']}" scope="parent"/>
 
     <xacro:property name="wrist_2_mesh" value="${sec_mesh_files['wrist_2']}"/>
     <xacro:property name="wrist_2_visual_mesh" value="file://$(find ${wrist_2_mesh['visual']['mesh']['package']})/${wrist_2_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="wrist_2_visual_material_name" value="${wrist_2_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="wrist_2_visual_material_color" value="${wrist_2_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="wrist_2_collision_mesh" value="file://$(find ${wrist_2_mesh['collision']['mesh']['package']})/${wrist_2_mesh['collision']['mesh']['path']}" scope="parent"/>
     <xacro:property name="wrist_2_visual_offset" value="${wrist_2_mesh['visual_offset']}" scope="parent"/>
 
     <xacro:property name="wrist_3_mesh" value="${sec_mesh_files['wrist_3']}"/>
     <xacro:property name="wrist_3_visual_mesh" value="file://$(find ${wrist_3_mesh['visual']['mesh']['package']})/${wrist_3_mesh['visual']['mesh']['path']}" scope="parent"/>
-    <xacro:property name="wrist_3_visual_material_name" value="${wrist_3_mesh['visual']['material']['name']}" scope="parent"/>
-    <xacro:property name="wrist_3_visual_material_color" value="${wrist_3_mesh['visual']['material']['color']}" scope="parent"/>
     <xacro:property name="wrist_3_collision_mesh" value="file://$(find ${wrist_3_mesh['collision']['mesh']['package']})/${wrist_3_mesh['collision']['mesh']['path']}" scope="parent"/>
     <xacro:property name="wrist_3_visual_offset" value="${wrist_3_mesh['visual_offset']}" scope="parent"/>
 
