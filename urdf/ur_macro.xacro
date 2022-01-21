@@ -91,17 +91,17 @@
     <!-- ros2 control instance -->
     <xacro:ur_ros2_control
       name="${name}" prefix="${prefix}"
-      use_fake_hardware="$(arg use_fake_hardware)"
+      use_fake_hardware="${use_fake_hardware}"
       initial_positions="${initial_positions}"
-      fake_sensor_commands="$(arg fake_sensor_commands)"
-      headless_mode="$(arg headless_mode)"
+      fake_sensor_commands="${fake_sensor_commands}"
+      headless_mode="${headless_mode}"
       script_filename="$(arg script_filename)"
       output_recipe_filename="$(arg output_recipe_filename)"
       input_recipe_filename="$(arg input_recipe_filename)"
       tf_prefix=""
       hash_kinematics="${kinematics_hash}"
       robot_ip="$(arg robot_ip)"
-      use_tool_communication="$(arg use_tool_communication)"/>
+      use_tool_communication="${use_tool_communication}"/>
 
     <!-- Add URDF transmission elements (for ros_control) -->
     <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
