@@ -68,8 +68,8 @@
     safety_k_position:=20
     use_fake_hardware:=false
     fake_sensor_commands:=false
-    gazebo_sim:=false
-    ignition_sim:=false
+    sim_gazebo:=false
+    sim_ignition:=false
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
     use_tool_communication:=false">
@@ -95,8 +95,8 @@
       name="${name}" prefix="${prefix}"
       use_fake_hardware="$(arg use_fake_hardware)"
       fake_sensor_commands="$(arg fake_sensor_commands)"
-      gazebo_sim="$(arg gazebo_sim)"
-      ignition_sim="$(arg ignition_sim)"
+      sim_gazebo="$(arg sim_gazebo)"
+      sim_ignition="$(arg sim_ignition)"
       headless_mode="$(arg headless_mode)"
       initial_positions="${initial_positions}"
       script_filename="$(arg script_filename)"
