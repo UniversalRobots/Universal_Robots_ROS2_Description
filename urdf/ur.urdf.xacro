@@ -16,10 +16,15 @@
    <xacro:arg name="safety_pos_margin" default="0.15"/>
    <xacro:arg name="safety_k_position" default="20"/>
    <!-- ros2_control related parameters -->
-   <xacro:arg name="use_fake_hardware" default="false" />
-   <xacro:arg name="fake_sensor_commands" default="false" />
    <xacro:arg name="headless_mode" default="false" />
    <xacro:arg name="use_tool_communication" default="false" />
+
+     <!-- Simulation parameters -->
+   <xacro:arg name="use_fake_hardware" default="false" />
+   <xacro:arg name="fake_sensor_commands" default="false" />
+   <xacro:arg name="sim_gazebo" default="false" />
+   <xacro:arg name="sim_ignition" default="false" />
+   <xacro:arg name="simulation_controllers" default="$(find ur_bringup)/config/ur_controllers.yaml" />
 
    <!-- initial position for fake hardware -->
    <xacro:arg name="initial_positions_file" default="$(find ur_description)/config/initial_positions.yaml"/>
@@ -45,10 +50,35 @@
      safety_k_position="$(arg safety_k_position)"
      use_fake_hardware="$(arg use_fake_hardware)"
      fake_sensor_commands="$(arg fake_sensor_commands)"
+     sim_gazebo="$(arg sim_gazebo)"
+     sim_ignition="$(arg sim_ignition)"
      headless_mode="$(arg headless_mode)"
      initial_positions="${load_yaml(initial_positions_file)}"
      use_tool_communication="$(arg use_tool_communication)" >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>
+
+   <xacro:if value="$(arg sim_gazebo)">
+    <!-- Gazebo plugins -->
+    <gazebo reference="world">
+    </gazebo>
+    <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(arg simulation_controllers)</parameters>
+      </plugin>
+    </gazebo>
+  </xacro:if>
+
+  <xacro:if value="$(arg sim_ignition)">
+    <!-- Gazebo plugins -->
+    <gazebo reference="world">
+    </gazebo>
+    <gazebo>
+      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+        <parameters>$(arg simulation_controllers)</parameters>
+        <controller_manager_node_name>$(arg prefix)controller_manager</controller_manager_node_name>
+      </plugin>
+    </gazebo>
+  </xacro:if>
 
 </robot>

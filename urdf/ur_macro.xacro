@@ -68,6 +68,8 @@
     safety_k_position:=20
     use_fake_hardware:=false
     fake_sensor_commands:=false
+    sim_gazebo:=false
+    sim_ignition:=false
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
     use_tool_communication:=false">
@@ -95,6 +97,8 @@
       initial_positions="${initial_positions}"
       fake_sensor_commands="${fake_sensor_commands}"
       headless_mode="${headless_mode}"
+      sim_gazebo="$(arg sim_gazebo)"
+      sim_ignition="$(arg sim_ignition)"
       script_filename="$(arg script_filename)"
       output_recipe_filename="$(arg output_recipe_filename)"
       input_recipe_filename="$(arg input_recipe_filename)"
@@ -320,6 +324,13 @@
       <dynamics damping="0" friction="0"/>
     </joint>
 
+    <link name="${prefix}ft_frame"/>
+    <joint name="${prefix}wrist_3_link-ft_frame" type="fixed">
+      <parent link="${prefix}wrist_3_link"/>
+      <child link="${prefix}ft_frame"/>
+      <origin xyz="0 0 0" rpy="${pi} 0 0"/>
+    </joint>
+
     <!-- ROS-Industrial 'base' frame - base_link to UR 'Base' Coordinates transform -->
     <link name="${prefix}base"/>
     <joint name="${prefix}base_link-base_fixed_joint" type="fixed">
@@ -349,5 +360,6 @@
       <parent link="${prefix}flange"/>
       <child link="${prefix}tool0"/>
     </joint>
+
   </xacro:macro>
 </robot>
