@@ -113,7 +113,15 @@
       tf_prefix=""
       hash_kinematics="${kinematics_hash}"
       robot_ip="$(arg robot_ip)"
-      use_tool_communication="${use_tool_communication}"/>
+      use_tool_communication="${use_tool_communication}"
+      tool_voltage="${tool_voltage}"
+      tool_parity="${tool_parity}"
+      tool_baud_rate="${tool_baud_rate}"
+      tool_stop_bits="${tool_stop_bits}"
+      tool_rx_idle_chars="${tool_rx_idle_chars}"
+      tool_tx_idle_chars="${tool_tx_idle_chars}"
+      tool_device_name="${tool_device_name}"
+      tool_tcp_port="${tool_tcp_port}"/>
 
     <!-- Add URDF transmission elements (for ros_control) -->
     <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
