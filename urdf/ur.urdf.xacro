@@ -17,7 +17,16 @@
    <xacro:arg name="safety_k_position" default="20"/>
    <!-- ros2_control related parameters -->
    <xacro:arg name="headless_mode" default="false" />
+<!--   tool communication related parameters-->
    <xacro:arg name="use_tool_communication" default="false" />
+   <xacro:arg name="tool_voltage" default="24" />
+   <xacro:arg name="tool_parity" default="0" />
+   <xacro:arg name="tool_baud_rate" default="115200" />
+   <xacro:arg name="tool_stop_bits" default="1" />
+   <xacro:arg name="tool_rx_idle_chars" default="1.5" />
+   <xacro:arg name="tool_tx_idle_chars" default="3.5" />
+   <xacro:arg name="tool_device_name" default="/tmp/ttyUR" />
+   <xacro:arg name="tool_tcp_port" default="54321" />
 
      <!-- Simulation parameters -->
    <xacro:arg name="use_fake_hardware" default="false" />
