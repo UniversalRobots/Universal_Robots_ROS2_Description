@@ -24,7 +24,7 @@
    <xacro:arg name="fake_sensor_commands" default="false" />
    <xacro:arg name="sim_gazebo" default="false" />
    <xacro:arg name="sim_ignition" default="false" />
-   <xacro:arg name="simulation_controllers" default="$(find ur_bringup)/config/ur_controllers.yaml" />
+   <xacro:arg name="simulation_controllers" default="" />
 
    <!-- initial position for fake hardware -->
    <xacro:arg name="initial_positions_file" default="$(find ur_description)/config/initial_positions.yaml"/>
