@@ -17,7 +17,16 @@
    <xacro:arg name="safety_k_position" default="20"/>
    <!-- ros2_control related parameters -->
    <xacro:arg name="headless_mode" default="false" />
+   <!--   tool communication related parameters-->
    <xacro:arg name="use_tool_communication" default="false" />
+   <xacro:arg name="tool_voltage" default="24" />
+   <xacro:arg name="tool_parity" default="0" />
+   <xacro:arg name="tool_baud_rate" default="115200" />
+   <xacro:arg name="tool_stop_bits" default="1" />
+   <xacro:arg name="tool_rx_idle_chars" default="1.5" />
+   <xacro:arg name="tool_tx_idle_chars" default="3.5" />
+   <xacro:arg name="tool_device_name" default="/tmp/ttyUR" />
+   <xacro:arg name="tool_tcp_port" default="54321" />
 
      <!-- Simulation parameters -->
    <xacro:arg name="use_fake_hardware" default="false" />
@@ -54,7 +63,15 @@
      sim_ignition="$(arg sim_ignition)"
      headless_mode="$(arg headless_mode)"
      initial_positions="${load_yaml(initial_positions_file)}"
-     use_tool_communication="$(arg use_tool_communication)" >
+     use_tool_communication="$(arg use_tool_communication)"
+     tool_voltage="$(arg tool_voltage)"
+     tool_parity="$(arg tool_parity)"
+     tool_baud_rate="$(arg tool_baud_rate)"
+     tool_stop_bits="$(arg tool_stop_bits)"
+     tool_rx_idle_chars="$(arg tool_rx_idle_chars)"
+     tool_tx_idle_chars="$(arg tool_tx_idle_chars)"
+     tool_device_name="$(arg tool_device_name)"
+     tool_tcp_port="$(arg tool_tcp_port)" >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>
 

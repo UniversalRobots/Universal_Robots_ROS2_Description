@@ -12,7 +12,9 @@
     use_tool_communication:=false
     script_filename output_recipe_filename
     input_recipe_filename tf_prefix
-    hash_kinematics robot_ip">
+    hash_kinematics robot_ip
+    tool_voltage:=24 tool_parity:=0 tool_baud_rate:=115200 tool_stop_bits:=1
+    tool_rx_idle_chars:=1.5 tool_tx_idle_chars:=3.5 tool_device_name:=/tmp/ttyUR tool_tcp_port:=54321">
 
     <ros2_control name="${name}" type="system">
       <hardware>
@@ -42,14 +44,14 @@
           <param name="servoj_lookahead_time">0.03</param>
           <param name="use_tool_communication">${use_tool_communication}</param>
           <param name="kinematics/hash">${hash_kinematics}</param>
-          <param name="tool_voltage">0</param>
-          <param name="tool_parity">0</param>
-          <param name="tool_baud_rate">115200</param>
-          <param name="tool_stop_bits">1</param>
-          <param name="tool_rx_idle_chars">1.5</param>
-          <param name="tool_tx_idle_chars">3.5</param>
-          <param name="tool_device_name">/tmp/ttyUR</param>
-          <param name="tool_tcp_port">54321</param>
+          <param name="tool_voltage">${tool_voltage}</param>
+          <param name="tool_parity">${tool_parity}</param>
+          <param name="tool_baud_rate">${tool_baud_rate}</param>
+          <param name="tool_stop_bits">${tool_stop_bits}</param>
+          <param name="tool_rx_idle_chars">${tool_rx_idle_chars}</param>
+          <param name="tool_tx_idle_chars">${tool_tx_idle_chars}</param>
+          <param name="tool_device_name">${tool_device_name}</param>
+          <param name="tool_tcp_port">${tool_tcp_port}</param>
         </xacro:unless>
       </hardware>
       <joint name="${prefix}shoulder_pan_joint">
