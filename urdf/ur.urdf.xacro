@@ -35,7 +35,7 @@
    <xacro:arg name="sim_ignition" default="false" />
    <xacro:arg name="simulation_controllers" default="" />
 
-   <!-- initial position for fake hardware -->
+   <!-- initial position for simulations (Fake Hardware, Gazebo, Ignition) -->
    <xacro:arg name="initial_positions_file" default="$(find ur_description)/config/initial_positions.yaml"/>
 
    <!-- convert to property to use substitution in function -->
