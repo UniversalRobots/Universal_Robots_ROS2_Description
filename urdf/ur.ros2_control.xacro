@@ -274,6 +274,14 @@
           <state_interface name="safety_status_bit_10"/>
         </joint>
 
+        <gpio name="payload">
+          <command_interface name="mass"/>
+          <command_interface name="cog.x"/>
+          <command_interface name="cog.y"/>
+          <command_interface name="cog.z"/>
+          <command_interface name="payload_async_success"/>
+        </gpio>
+
         <joint name="resend_robot_program">
           <command_interface name="resend_robot_program_cmd"/>
           <command_interface name="resend_robot_program_async_success"/>
