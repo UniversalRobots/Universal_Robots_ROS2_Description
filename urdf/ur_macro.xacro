@@ -53,6 +53,25 @@
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_transmissions.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_common.xacro" />
 
+  <!-- Simplification for link creation -->
+  <xacro:macro name="new_link" params="name *mesh_origin **cylinder">
+    <link name="${prefix}${name}_link">
+      <visual>
+        <xacro:insert_block name="mesh_origin"/>
+        <geometry>
+          <xacro:get_mesh name="${name}" type="visual"/>
+        </geometry>
+      </visual>
+      <collision>
+        <xacro:insert_block name="mesh_origin"/>
+        <geometry>
+          <xacro:get_mesh name="${name}" type="collision"/>
+        </geometry>
+      </collision>
+      <xacro:insert_block name="cylinder"/>
+    </link>
+  </xacro:macro>
+
   <xacro:macro name="ur_robot" params="
     name
     prefix
@@ -129,147 +148,82 @@
     <!-- Placeholder for ros2_control transmission which don't yet exist -->
 
     <!-- links -  main serial chain -->
-    <link name="${prefix}base_link"/>
-    <link name="${prefix}base_link_inertia">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-        <geometry>
-          <mesh filename="${base_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-        <geometry>
-          <mesh filename="${base_collision_mesh}"/>
-        </geometry>
-      </collision>
+    <link name="${prefix}base_link_fixed"/>
+    <xacro:new_link name="base">
+      <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
       <xacro:cylinder_inertial radius="${base_inertia_radius}" length="${base_inertia_length}" mass="${base_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}shoulder_link">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-        <geometry>
-          <mesh filename="${shoulder_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-        <geometry>
-          <mesh filename="${shoulder_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="shoulder">
+      <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
       <xacro:cylinder_inertial radius="${shoulder_inertia_radius}" length="${shoulder_inertia_length}" mass="${shoulder_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}upper_arm_link">
-      <visual>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
-        <geometry>
-          <mesh filename="${upper_arm_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
-        <geometry>
-          <mesh filename="${upper_arm_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="upper_arm">
+      <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
       <xacro:cylinder_inertial radius="${upperarm_inertia_radius}" length="${upperarm_inertia_length}" mass="${upper_arm_mass}">
         <origin xyz="${-0.5 * upperarm_inertia_length} 0.0 ${upper_arm_inertia_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}forearm_link">
-      <visual>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
-        <geometry>
-          <mesh filename="${forearm_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
-        <geometry>
-          <mesh filename="${forearm_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="forearm">
+      <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
       <xacro:cylinder_inertial radius="${forearm_inertia_radius}" length="${forearm_inertia_length}"  mass="${forearm_mass}">
         <origin xyz="${-0.5 * forearm_inertia_length} 0.0 ${elbow_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}wrist_1_link">
-      <visual>
-        <origin xyz="0 0 ${wrist_1_visual_offset}" rpy="${pi/2} 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_1_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${wrist_1_visual_offset}" rpy="${pi/2} 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_1_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="wrist_1">
+      <xacro:get_visual_params name="wrist_1" type="visual_offset"/>
+      <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
       <xacro:cylinder_inertial radius="${wrist_1_inertia_radius}" length="${wrist_1_inertia_length}"  mass="${wrist_1_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}wrist_2_link">
-      <visual>
-        <origin xyz="0 0 ${wrist_2_visual_offset}" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_2_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${wrist_2_visual_offset}" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_2_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="wrist_2">
+      <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
+      <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
       <xacro:cylinder_inertial radius="${wrist_2_inertia_radius}" length="${wrist_2_inertia_length}"  mass="${wrist_2_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </link>
-    <link name="${prefix}wrist_3_link">
-      <visual>
-        <origin xyz="0 0 ${wrist_3_visual_offset}" rpy="${pi/2} 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_3_visual_mesh}"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${wrist_3_visual_offset}" rpy="${pi/2} 0 0"/>
-        <geometry>
-          <mesh filename="${wrist_3_collision_mesh}"/>
-        </geometry>
-      </collision>
+    </xacro:new_link>
+
+    <xacro:new_link name="wrist_3">
+      <xacro:get_visual_params name="wrist_3" type="visual_offset"/>
+      <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
       <xacro:cylinder_inertial radius="${wrist_3_inertia_radius}" length="${wrist_3_inertia_length}"  mass="${wrist_3_mass}">
         <origin xyz="0.0 0.0 ${-0.5 * wrist_3_inertia_length}" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </link>
+    </xacro:new_link>
 
-    <!-- base_joint fixes base_link to the environment -->
+
+    <!-- base_joint fixes base_link_fixed to the environment -->
     <joint name="${prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
-      <child link="${prefix}base_link" />
+      <child link="${prefix}base_link_fixed" />
     </joint>
 
     <!-- joints - main serial chain -->
-    <joint name="${prefix}base_link-base_link_inertia" type="fixed">
-      <parent link="${prefix}base_link" />
-      <child link="${prefix}base_link_inertia" />
+    <joint name="${prefix}base_link_fixed-base_link" type="fixed">
+      <parent link="${prefix}base_link_fixed" />
+      <child link="${prefix}base_link" />
       <!-- 'base_link' is REP-103 aligned (so X+ forward), while the internal
            frames of the robot/controller have X+ pointing backwards.
-           Use the joint between 'base_link' and 'base_link_inertia' (a dummy
+           Use the joint between 'base_link_fixed' and 'base_link' (a dummy
            link/frame) to introduce the necessary rotation over Z (of pi rad).
       -->
       <origin xyz="0 0 0" rpy="0 0 ${pi}" />
     </joint>
+
+    <!-- TODO- Rename these conventions to add a xmacro for the creation of new_revolute_joints -->
     <joint name="${prefix}shoulder_pan_joint" type="revolute">
-      <parent link="${prefix}base_link_inertia" />
+      <parent link="${prefix}base_link" />
       <child link="${prefix}shoulder_link" />
       <origin xyz="${shoulder_x} ${shoulder_y} ${shoulder_z}" rpy="${shoulder_roll} ${shoulder_pitch} ${shoulder_yaw}" />
       <axis xyz="0 0 1" />
@@ -357,7 +311,7 @@
            the UR controller.
       -->
       <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-      <parent link="${prefix}base_link"/>
+      <parent link="${prefix}base_link_fixed"/>
       <child link="${prefix}base"/>
     </joint>
 

@@ -21,8 +21,29 @@
     </inertial>
   </xacro:macro>
 
+  <xacro:macro name="get_visual_params" params="name:=^ type:=^" >
+    <xacro:property name="visual_params" value="${sec_mesh_files[name][type]}" scope="parent"/>
+  </xacro:macro>
+
+  <!-- Simplification of getting meshes. Available types can be seen in the visual_parameters.yaml (At the time of writing: visual, collision) -->
+  <xacro:macro name="get_mesh_path" params="name:=^ type:=^" >
+    <xacro:get_visual_params />
+    <xacro:if value="${force_abs_paths}">
+      <xacro:property name="mesh" value="file://$(find ${visual_params['mesh']['package']})/${visual_params['mesh']['path']}" scope="parent"/>
+    </xacro:if>
+    <xacro:unless value="${force_abs_paths}">
+      <xacro:property name="mesh" value="package://${visual_params['mesh']['package']}/${visual_params['mesh']['path']}" scope="parent"/>
+    </xacro:unless>
+  </xacro:macro>
+
+  <xacro:macro name="get_mesh" params="name type" >
+    <xacro:get_mesh_path/>
+    <mesh filename="${mesh}"/>
+  </xacro:macro>
+
   <xacro:macro name="read_model_data" params="joint_limits_parameters_file kinematics_parameters_file physical_parameters_file visual_parameters_file force_abs_paths">
 
+    <xacro:property name="force_abs_paths" value="${force_abs_paths}" scope="parent"/>
     <!-- Read .yaml files from disk, load content into properties -->
     <xacro:property name="config_joint_limit_parameters" value="${load_yaml(joint_limits_parameters_file)}"/>
     <xacro:property name="config_kinematics_parameters" value="${load_yaml(kinematics_parameters_file)}"/>
@@ -34,7 +55,7 @@
     <xacro:property name="sec_dh_parameters" value="${config_physical_parameters['dh_parameters']}"/>
     <xacro:property name="sec_offsets" value="${config_physical_parameters['offsets']}"/>
     <xacro:property name="sec_inertia_parameters" value="${config_physical_parameters['inertia_parameters']}" />
-    <xacro:property name="sec_mesh_files" value="${config_visual_parameters['mesh_files']}" />
+    <xacro:property name="sec_mesh_files" value="${config_visual_parameters['mesh_files']}" scope="parent"/>
     <xacro:property name="sec_kinematics" value="${config_kinematics_parameters['kinematics']}" />
 
     <!-- JOINTS LIMIT PARAMETERS -->
@@ -165,79 +186,6 @@
     <xacro:property name="elbow_radius" value="${sec_inertia_parameters['elbow_radius']}" scope="parent"/>
     <xacro:property name="forearm_radius" value="${sec_inertia_parameters['forearm_radius']}" scope="parent"/>
     <xacro:property name="wrist_radius" value="${sec_inertia_parameters['wrist_radius']}" scope="parent"/>
-    <!-- Mesh files -->
-    <xacro:property name="base_mesh" value="${sec_mesh_files['base']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="base_visual_mesh" value="file://$(find ${base_mesh['visual']['mesh']['package']})/${base_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="base_collision_mesh" value="file://$(find ${base_mesh['collision']['mesh']['package']})/${base_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="base_visual_mesh" value="package://${base_mesh['visual']['mesh']['package']}/${base_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="base_collision_mesh" value="package://${base_mesh['collision']['mesh']['package']}/${base_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-
-    <xacro:property name="shoulder_mesh" value="${sec_mesh_files['shoulder']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="shoulder_visual_mesh" value="file://$(find ${shoulder_mesh['visual']['mesh']['package']})/${shoulder_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="shoulder_collision_mesh" value="file://$(find ${shoulder_mesh['collision']['mesh']['package']})/${shoulder_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="shoulder_visual_mesh" value="package://${shoulder_mesh['visual']['mesh']['package']}/${shoulder_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="shoulder_collision_mesh" value="package://${shoulder_mesh['collision']['mesh']['package']}/${shoulder_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-
-    <xacro:property name="upper_arm_mesh" value="${sec_mesh_files['upper_arm']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="upper_arm_visual_mesh" value="file://$(find ${upper_arm_mesh['visual']['mesh']['package']})/${upper_arm_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="upper_arm_collision_mesh" value="file://$(find ${upper_arm_mesh['collision']['mesh']['package']})/${upper_arm_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="upper_arm_visual_mesh" value="package://${upper_arm_mesh['visual']['mesh']['package']}/${upper_arm_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="upper_arm_collision_mesh" value="package://${upper_arm_mesh['collision']['mesh']['package']}/${upper_arm_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-
-    <xacro:property name="forearm_mesh" value="${sec_mesh_files['forearm']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="forearm_visual_mesh" value="file://$(find ${forearm_mesh['visual']['mesh']['package']})/${forearm_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="forearm_collision_mesh" value="file://$(find ${forearm_mesh['collision']['mesh']['package']})/${forearm_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="forearm_visual_mesh" value="package://${forearm_mesh['visual']['mesh']['package']}/${forearm_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="forearm_collision_mesh" value="package://${forearm_mesh['collision']['mesh']['package']}/${forearm_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-
-    <xacro:property name="wrist_1_mesh" value="${sec_mesh_files['wrist_1']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="wrist_1_visual_mesh" value="file://$(find ${wrist_1_mesh['visual']['mesh']['package']})/${wrist_1_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_1_collision_mesh" value="file://$(find ${wrist_1_mesh['collision']['mesh']['package']})/${wrist_1_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="wrist_1_visual_mesh" value="package://${wrist_1_mesh['visual']['mesh']['package']}/${wrist_1_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_1_collision_mesh" value="package://${wrist_1_mesh['collision']['mesh']['package']}/${wrist_1_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-    <xacro:property name="wrist_1_visual_offset" value="${wrist_1_mesh['visual_offset']}" scope="parent"/>
-
-    <xacro:property name="wrist_2_mesh" value="${sec_mesh_files['wrist_2']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="wrist_2_visual_mesh" value="file://$(find ${wrist_2_mesh['visual']['mesh']['package']})/${wrist_2_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_2_collision_mesh" value="file://$(find ${wrist_2_mesh['collision']['mesh']['package']})/${wrist_2_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="wrist_2_visual_mesh" value="package://${wrist_2_mesh['visual']['mesh']['package']}/${wrist_2_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_2_collision_mesh" value="package://${wrist_2_mesh['collision']['mesh']['package']}/${wrist_2_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-    <xacro:property name="wrist_2_visual_offset" value="${wrist_2_mesh['visual_offset']}" scope="parent"/>
-
-    <xacro:property name="wrist_3_mesh" value="${sec_mesh_files['wrist_3']}"/>
-    <xacro:if value="${force_abs_paths}">
-      <xacro:property name="wrist_3_visual_mesh" value="file://$(find ${wrist_3_mesh['visual']['mesh']['package']})/${wrist_3_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_3_collision_mesh" value="file://$(find ${wrist_3_mesh['collision']['mesh']['package']})/${wrist_3_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:if>
-    <xacro:unless value="${force_abs_paths}">
-      <xacro:property name="wrist_3_visual_mesh" value="package://${wrist_3_mesh['visual']['mesh']['package']}/${wrist_3_mesh['visual']['mesh']['path']}" scope="parent"/>
-      <xacro:property name="wrist_3_collision_mesh" value="package://${wrist_3_mesh['collision']['mesh']['package']}/${wrist_3_mesh['collision']['mesh']['path']}" scope="parent"/>
-    </xacro:unless>
-    <xacro:property name="wrist_3_visual_offset" value="${wrist_3_mesh['visual_offset']}" scope="parent"/>
 
     <!--KINEMATICS HASH-->
     <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
