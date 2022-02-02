@@ -148,13 +148,25 @@
     <!-- Placeholder for ros2_control transmission which don't yet exist -->
 
     <!-- links -  main serial chain -->
-    <link name="${prefix}base_link_fixed"/>
-    <xacro:new_link name="base">
-      <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+	<!-- Special exception in creation is the base_link_inertia, as naming convention is slightly different from other links which use xacro:new_link. -->
+    <link name="${prefix}base_link"/>
+    <link name="${prefix}base_link_inertia">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <geometry>
+          <xacro:get_mesh name="base" type="visual"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <geometry>
+          <xacro:get_mesh name="base" type="collision"/>
+        </geometry>
+      </collision>
       <xacro:cylinder_inertial radius="${base_inertia_radius}" length="${base_inertia_length}" mass="${base_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
-    </xacro:new_link>
+    </link>
 
     <xacro:new_link name="shoulder">
       <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
@@ -202,28 +214,26 @@
     </xacro:new_link>
 
 
-    <!-- base_joint fixes base_link_fixed to the environment -->
+    <!-- base_joint fixes base_link to the environment -->
     <joint name="${prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
-      <child link="${prefix}base_link_fixed" />
+      <child link="${prefix}base_link" />
     </joint>
 
     <!-- joints - main serial chain -->
-    <joint name="${prefix}base_link_fixed-base_link" type="fixed">
-      <parent link="${prefix}base_link_fixed" />
-      <child link="${prefix}base_link" />
+    <joint name="${prefix}base_link-base_link_inertia" type="fixed">
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}base_link_inertia" />
       <!-- 'base_link' is REP-103 aligned (so X+ forward), while the internal
            frames of the robot/controller have X+ pointing backwards.
-           Use the joint between 'base_link_fixed' and 'base_link' (a dummy
+           Use the joint between 'base_link' and 'base_link_inertia' (a dummy
            link/frame) to introduce the necessary rotation over Z (of pi rad).
       -->
       <origin xyz="0 0 0" rpy="0 0 ${pi}" />
     </joint>
-
-    <!-- TODO- Rename these conventions to add a xmacro for the creation of new_revolute_joints -->
     <joint name="${prefix}shoulder_pan_joint" type="revolute">
-      <parent link="${prefix}base_link" />
+      <parent link="${prefix}base_link_inertia" />
       <child link="${prefix}shoulder_link" />
       <origin xyz="${shoulder_x} ${shoulder_y} ${shoulder_z}" rpy="${shoulder_roll} ${shoulder_pitch} ${shoulder_yaw}" />
       <axis xyz="0 0 1" />
@@ -311,7 +321,7 @@
            the UR controller.
       -->
       <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-      <parent link="${prefix}base_link_fixed"/>
+      <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
     </joint>
 
