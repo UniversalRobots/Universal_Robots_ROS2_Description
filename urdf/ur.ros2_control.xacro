@@ -162,14 +162,14 @@
         </sensor>
 
         <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
-        <joint name="speed_scaling">
+        <gpio name="speed_scaling">
           <state_interface name="speed_scaling_factor"/>
           <param name="initial_speed_scaling_factor">1</param>
           <command_interface name="target_speed_fraction_cmd"/>
           <command_interface name="target_speed_fraction_async_success"/>
-        </joint>
+        </gpio>
 
-        <joint name="gpio">
+        <gpio name="gpio">
           <command_interface name="standard_digital_output_cmd_0"/>
           <command_interface name="standard_digital_output_cmd_1"/>
           <command_interface name="standard_digital_output_cmd_2"/>
@@ -272,16 +272,24 @@
           <state_interface name="safety_status_bit_8"/>
           <state_interface name="safety_status_bit_9"/>
           <state_interface name="safety_status_bit_10"/>
-        </joint>
+        </gpio>
 
-        <joint name="resend_robot_program">
+        <gpio name="payload">
+          <command_interface name="mass"/>
+          <command_interface name="cog.x"/>
+          <command_interface name="cog.y"/>
+          <command_interface name="cog.z"/>
+          <command_interface name="payload_async_success"/>
+        </gpio>
+
+        <gpio name="resend_robot_program">
           <command_interface name="resend_robot_program_cmd"/>
           <command_interface name="resend_robot_program_async_success"/>
-        </joint>
+        </gpio>
 
-        <joint name="system_interface">
+        <gpio name="system_interface">
           <state_interface name="initialized"/>
-        </joint>
+        </gpio>
 
       </xacro:unless>
 
