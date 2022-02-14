@@ -80,7 +80,8 @@
     tool_rx_idle_chars:=1.5
     tool_tx_idle_chars:=3.5
     tool_device_name:=/tmp/ttyUR
-    tool_tcp_port:=54321" >
+    tool_tcp_port:=54321
+    robot_ip:=0.0.0.0" >
 
     <!-- Load configuration data from the provided .yaml files -->
     <xacro:read_model_data
@@ -94,7 +95,6 @@
     <xacro:arg name="script_filename" default=""/>
     <xacro:arg name="output_recipe_filename" default=""/>
     <xacro:arg name="input_recipe_filename" default=""/>
-    <xacro:arg name="robot_ip" default="10.0.1.186"/>
 
 
     <!-- ros2 control include -->
@@ -113,7 +113,7 @@
       input_recipe_filename="$(arg input_recipe_filename)"
       tf_prefix=""
       hash_kinematics="${kinematics_hash}"
-      robot_ip="$(arg robot_ip)"
+      robot_ip="${robot_ip}"
       use_tool_communication="${use_tool_communication}"
       tool_voltage="${tool_voltage}"
       tool_parity="${tool_parity}"
