@@ -18,6 +18,9 @@
    <!-- ros2_control related parameters -->
    <xacro:arg name="headless_mode" default="false" />
    <xacro:arg name="robot_ip" default="0.0.0.0" />
+   <xacro:arg name="script_filename" default=""/>
+   <xacro:arg name="output_recipe_filename" default=""/>
+   <xacro:arg name="input_recipe_filename" default=""/>
    <!--   tool communication related parameters-->
    <xacro:arg name="use_tool_communication" default="false" />
    <xacro:arg name="tool_voltage" default="24" />
