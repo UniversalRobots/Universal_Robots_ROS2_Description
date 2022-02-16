@@ -5,12 +5,15 @@
    <!-- import main macro -->
    <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
 
+   <!-- possible 'ur_type' values: ur3, ur3e, ur5, ur5e, ur10, ur10e, ur16e -->
+   <xacro:arg name="ur_type"/>
+
    <!-- parameters -->
    <xacro:arg name="prefix" default="" />
-   <xacro:arg name="joint_limit_params" default=""/>
-   <xacro:arg name="kinematics_params" default=""/>
-   <xacro:arg name="physical_params" default=""/>
-   <xacro:arg name="visual_params" default=""/>
+   <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
+   <xacro:arg name="kinematics_params" default="$(find ur_description)/config/$(arg ur_type)/default_kinematics.yaml"/>
+   <xacro:arg name="physical_params" default="$(find ur_description)/config/$(arg ur_type)/physical_parameters.yaml"/>
+   <xacro:arg name="visual_params" default="$(find ur_description)/config/$(arg ur_type)/visual_parameters.yaml"/>
    <xacro:arg name="transmission_hw_interface" default=""/>
    <xacro:arg name="safety_limits" default="false"/>
    <xacro:arg name="safety_pos_margin" default="0.15"/>

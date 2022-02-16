@@ -104,36 +104,11 @@ def generate_launch_description():
     description_file = LaunchConfiguration("description_file")
     prefix = LaunchConfiguration("prefix")
 
-    joint_limit_params = PathJoinSubstitution(
-        [FindPackageShare(description_package), "config", ur_type, "joint_limits.yaml"]
-    )
-    kinematics_params = PathJoinSubstitution(
-        [FindPackageShare(description_package), "config", ur_type, "default_kinematics.yaml"]
-    )
-    physical_params = PathJoinSubstitution(
-        [FindPackageShare(description_package), "config", ur_type, "physical_parameters.yaml"]
-    )
-    visual_params = PathJoinSubstitution(
-        [FindPackageShare(description_package), "config", ur_type, "visual_parameters.yaml"]
-    )
-
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution([FindPackageShare(description_package), "urdf", description_file]),
-            " ",
-            "joint_limit_params:=",
-            joint_limit_params,
-            " ",
-            "kinematics_params:=",
-            kinematics_params,
-            " ",
-            "physical_params:=",
-            physical_params,
-            " ",
-            "visual_params:=",
-            visual_params,
             " ",
             "safety_limits:=",
             safety_limits,
@@ -145,6 +120,9 @@ def generate_launch_description():
             safety_k_position,
             " ",
             "name:=",
+            "ur",
+            " ",
+            "ur_type:=",
             ur_type,
             " ",
             "prefix:=",
