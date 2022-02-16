@@ -11,8 +11,8 @@ on:
     - cron: '53 5 * * *'
 
 jobs:
-  binary:
-    name: binary build
+  rolling_binary:
+    name: rolling binary build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

@@ -11,8 +11,8 @@ on:
     - cron: '53 5 * * *'
 
 jobs:
-  binary:
-    name: binary build
+  galactic_binary:
+    name: galactic binary build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
