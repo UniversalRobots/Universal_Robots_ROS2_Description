@@ -1,4 +1,4 @@
-name: Binary Build
+name: Rolling Binary Build
 on:
   pull_request:
     branches:
@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [galactic, rolling]
+        ROS_DISTRO: [rolling]
         ROS_REPO: [main, testing]
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
