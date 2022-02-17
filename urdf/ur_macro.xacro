@@ -84,7 +84,9 @@
     robot_ip:=0.0.0.0
     script_filename:=to_be_filled_by_ur_robot_driver
     output_recipe_filename:=to_be_filled_by_ur_robot_driver
-    input_recipe_filename:=to_be_filled_by_ur_robot_driver" >
+    input_recipe_filename:=to_be_filled_by_ur_robot_driver
+    reverse_port:=50001
+    script_sender_port:=50002">
 
     <!-- Load configuration data from the provided .yaml files -->
     <xacro:read_model_data
@@ -120,7 +122,10 @@
       tool_rx_idle_chars="${tool_rx_idle_chars}"
       tool_tx_idle_chars="${tool_tx_idle_chars}"
       tool_device_name="${tool_device_name}"
-      tool_tcp_port="${tool_tcp_port}"/>
+      tool_tcp_port="${tool_tcp_port}"
+      reverse_port="${reverse_port}"
+      script_sender_port="${script_sender_port}"
+      />
 
     <!-- Add URDF transmission elements (for ros_control) -->
     <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
