@@ -21,6 +21,10 @@
    <xacro:arg name="safety_k_position" default="20"/>
    <!-- ros2_control related parameters -->
    <xacro:arg name="headless_mode" default="false" />
+   <xacro:arg name="robot_ip" default="0.0.0.0" />
+   <xacro:arg name="script_filename" default=""/>
+   <xacro:arg name="output_recipe_filename" default=""/>
+   <xacro:arg name="input_recipe_filename" default=""/>
    <!--   tool communication related parameters-->
    <xacro:arg name="use_tool_communication" default="false" />
    <xacro:arg name="tool_voltage" default="24" />
@@ -75,7 +79,8 @@
      tool_rx_idle_chars="$(arg tool_rx_idle_chars)"
      tool_tx_idle_chars="$(arg tool_tx_idle_chars)"
      tool_device_name="$(arg tool_device_name)"
-     tool_tcp_port="$(arg tool_tcp_port)" >
+     tool_tcp_port="$(arg tool_tcp_port)"
+     robot_ip="$(arg robot_ip)" >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>
 
