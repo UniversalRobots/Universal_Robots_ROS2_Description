@@ -274,6 +274,8 @@
           <state_interface name="safety_status_bit_8"/>
           <state_interface name="safety_status_bit_9"/>
           <state_interface name="safety_status_bit_10"/>
+
+          <state_interface name="program_running"/>
         </gpio>
 
         <gpio name="payload">
