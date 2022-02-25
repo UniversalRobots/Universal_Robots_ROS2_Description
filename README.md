@@ -10,6 +10,10 @@ ROS2 Distro | Branch | Build status | Released packages
 **Rolling** | [`ros2`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2) | [![Rolling Binary Build](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-rolling.yml/badge.svg?branch=ros2)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-rolling.yml?branch=ros2) <br /> | [ur_description](https://index.ros.org/p/ur_description/#rolling)
 
 
+Note that for ROS2 **Foxy** the description is in the [driver's
+repository](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/foxy). Please do
+not clone this repository into a Foxy workspace.
+
 ## Structure of the repository
 
 The most relevant files are:
