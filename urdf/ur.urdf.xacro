@@ -80,7 +80,11 @@
      tool_tx_idle_chars="$(arg tool_tx_idle_chars)"
      tool_device_name="$(arg tool_device_name)"
      tool_tcp_port="$(arg tool_tcp_port)"
-     robot_ip="$(arg robot_ip)" >
+     robot_ip="$(arg robot_ip)"
+     script_filename="$(arg script_filename)"
+     output_recipe_filename="$(arg output_recipe_filename)"
+     input_recipe_filename="$(arg input_recipe_filename)"
+     >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>
 
