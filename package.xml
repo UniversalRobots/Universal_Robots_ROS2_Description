@@ -16,11 +16,13 @@
   <author>Felix Messmer</author>
   <author>Miguel Prada Sarasola</author>
   <author>Denis Stogl</author>
+  <author>Andy Zelenak</author>
+  <author>Marvin Grosse Besselmann</author>
 
-  <maintainer email="grosse@fzi.de">Marvin Große Besselmann</maintainer>
+  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
+  <maintainer email="schnell@fzi.de">Tristan Schnell</maintainer>
   <maintainer email="lovro.ivanov@gmail.com">Lovro Ivanov</maintainer>
-  <maintainer email="denis.stogl@picknik.ai">Denis Stogl</maintainer>
-  <maintainer email="zelenak@picknik.ai">Andy Zelenak</maintainer>
+  <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
 
   <license>BSD-3-Clause</license>
 
