@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.0 (2022-03-17)
+------------------
+* Migrated the description to ROS2
+* Added support for Gazebo and Ignition
+* Added ROS2_control definitions
+* Contributors: AndyZe, Denis Stogl, Denis Štogl, Felix Exner, John Morris, Jorge Nicho, Lovro, Lukas Sackewitz, Marvin Große Besselmann, Robert Wilbrandt, Tirine, Vatan Aksoy Tezer, livanov93, urmahp
+
 1.2.7 (2019-11-23)
 ------------------
 
