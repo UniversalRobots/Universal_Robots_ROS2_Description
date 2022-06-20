@@ -67,6 +67,7 @@
     safety_pos_margin:=0.15
     safety_k_position:=20
     use_fake_hardware:=false
+    use_custom_simulator:=false
     fake_sensor_commands:=false
     sim_gazebo:=false
     sim_ignition:=false
@@ -97,35 +98,40 @@
       force_abs_paths="${sim_gazebo or sim_ignition}"/>
 
 
-    <!-- ros2 control include -->
-    <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro" />
-    <!-- ros2 control instance -->
-    <xacro:ur_ros2_control
-      name="${name}" prefix="${prefix}"
-      use_fake_hardware="${use_fake_hardware}"
-      initial_positions="${initial_positions}"
-      fake_sensor_commands="${fake_sensor_commands}"
-      headless_mode="${headless_mode}"
-      sim_gazebo="${sim_gazebo}"
-      sim_ignition="${sim_ignition}"
-      script_filename="${script_filename}"
-      output_recipe_filename="${output_recipe_filename}"
-      input_recipe_filename="${input_recipe_filename}"
-      tf_prefix=""
-      hash_kinematics="${kinematics_hash}"
-      robot_ip="${robot_ip}"
-      use_tool_communication="${use_tool_communication}"
-      tool_voltage="${tool_voltage}"
-      tool_parity="${tool_parity}"
-      tool_baud_rate="${tool_baud_rate}"
-      tool_stop_bits="${tool_stop_bits}"
-      tool_rx_idle_chars="${tool_rx_idle_chars}"
-      tool_tx_idle_chars="${tool_tx_idle_chars}"
-      tool_device_name="${tool_device_name}"
-      tool_tcp_port="${tool_tcp_port}"
-      reverse_port="${reverse_port}"
-      script_sender_port="${script_sender_port}"
-      />
+    <!-- Support custom simulators.
+    Users can specify their ros2_control and hardware tags inside their own robot description.
+    This allows them to implement their own system_interface. -->
+    <xacro:unless value="${use_custom_simulator}">
+      <!-- ros2 control include -->
+      <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro" />
+      <!-- ros2 control instance -->
+      <xacro:ur_ros2_control
+        name="${name}" prefix="${prefix}"
+        use_fake_hardware="${use_fake_hardware}"
+        initial_positions="${initial_positions}"
+        fake_sensor_commands="${fake_sensor_commands}"
+        headless_mode="${headless_mode}"
+        sim_gazebo="${sim_gazebo}"
+        sim_ignition="${sim_ignition}"
+        script_filename="${script_filename}"
+        output_recipe_filename="${output_recipe_filename}"
+        input_recipe_filename="${input_recipe_filename}"
+        tf_prefix=""
+        hash_kinematics="${kinematics_hash}"
+        robot_ip="${robot_ip}"
+        use_tool_communication="${use_tool_communication}"
+        tool_voltage="${tool_voltage}"
+        tool_parity="${tool_parity}"
+        tool_baud_rate="${tool_baud_rate}"
+        tool_stop_bits="${tool_stop_bits}"
+        tool_rx_idle_chars="${tool_rx_idle_chars}"
+        tool_tx_idle_chars="${tool_tx_idle_chars}"
+        tool_device_name="${tool_device_name}"
+        tool_tcp_port="${tool_tcp_port}"
+        reverse_port="${reverse_port}"
+        script_sender_port="${script_sender_port}"
+        />
+    </xacro:unless>
 
     <!-- Add URDF transmission elements (for ros_control) -->
     <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
