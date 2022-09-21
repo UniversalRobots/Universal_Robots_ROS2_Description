@@ -1,23 +1,23 @@
-name: Galactic Binary Build
+name: Humble Binary Build
 on:
   pull_request:
     branches:
-      - galactic
+      - ros2
   push:
     branches:
-      - galactic
+      - ros2
   schedule:
     # Run every morning to detect flakiness and broken dependencies
     - cron: '53 5 * * *'
 
 jobs:
-  galactic_binary:
-    name: galactic binary build
+  humble_binary:
+    name: humble binary build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [galactic]
+        ROS_DISTRO: [humble]
         ROS_REPO: [main, testing]
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
@@ -25,8 +25,6 @@ jobs:
       CACHE_PREFIX: ${{ matrix.ROS_DISTRO }}-${{ matrix.ROS_REPO }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: galactic
       # The target directory cache doesn't include the source directory because
       # that comes from the checkout.  See "prepare target_ws for cache" task below
       - name: cache target_ws
