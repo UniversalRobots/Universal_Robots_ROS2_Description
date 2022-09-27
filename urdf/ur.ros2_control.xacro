@@ -69,8 +69,12 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['shoulder_pan_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${prefix}shoulder_lift_joint">
         <command_interface name="position">
@@ -85,8 +89,12 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['shoulder_lift_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${prefix}elbow_joint">
         <command_interface name="position">
@@ -101,8 +109,12 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['elbow_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${prefix}wrist_1_joint">
         <command_interface name="position">
@@ -117,8 +129,12 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['wrist_1_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${prefix}wrist_2_joint">
         <command_interface name="position">
@@ -133,8 +149,12 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['wrist_2_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${prefix}wrist_3_joint">
         <command_interface name="position">
@@ -149,24 +169,41 @@
           <!-- initial position for the FakeSystem and simulation -->
           <param name="initial_value">${initial_positions['wrist_3_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
 
       <xacro:unless value="${sim_gazebo or sim_ignition}">
         <sensor name="tcp_fts_sensor">
-          <state_interface name="force.x"/>
-          <state_interface name="force.y"/>
-          <state_interface name="force.z"/>
-          <state_interface name="torque.x"/>
-          <state_interface name="torque.y"/>
-          <state_interface name="torque.z"/>
+          <state_interface name="force.x">
+            <param name="initial_value">0.0</param>
+          </state_interface>
+          <state_interface name="force.y">
+            <param name="initial_value">0.0</param>
+          </state_interface>
+          <state_interface name="force.z">
+            <param name="initial_value">0.0</param>
+          </state_interface>
+          <state_interface name="torque.x">
+            <param name="initial_value">0.0</param>
+          </state_interface>
+          <state_interface name="torque.y">
+            <param name="initial_value">0.0</param>
+          </state_interface>
+          <state_interface name="torque.z">
+            <param name="initial_value">0.0</param>
+          </state_interface>
         </sensor>
 
         <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
         <gpio name="speed_scaling">
-          <state_interface name="speed_scaling_factor"/>
-          <param name="initial_speed_scaling_factor">1</param>
+          <state_interface name="speed_scaling_factor">
+            <param name="initial_value">1</param>
+          </state_interface>
           <command_interface name="target_speed_fraction_cmd"/>
           <command_interface name="target_speed_fraction_async_success"/>
         </gpio>
