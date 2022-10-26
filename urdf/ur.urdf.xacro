@@ -29,7 +29,7 @@
    <xacro:arg name="script_command_port" default="50004"/>
    <!--   tool communication related parameters-->
    <xacro:arg name="use_tool_communication" default="false" />
-   <xacro:arg name="tool_voltage" default="24" />
+   <xacro:arg name="tool_voltage" default="0" />
    <xacro:arg name="tool_parity" default="0" />
    <xacro:arg name="tool_baud_rate" default="115200" />
    <xacro:arg name="tool_stop_bits" default="1" />
