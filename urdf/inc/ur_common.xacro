@@ -45,10 +45,10 @@
 
     <xacro:property name="force_abs_paths" value="${force_abs_paths}" scope="parent"/>
     <!-- Read .yaml files from disk, load content into properties -->
-    <xacro:property name="config_joint_limit_parameters" value="${load_yaml(joint_limits_parameters_file)}"/>
-    <xacro:property name="config_kinematics_parameters" value="${load_yaml(kinematics_parameters_file)}"/>
-    <xacro:property name="config_physical_parameters" value="${load_yaml(physical_parameters_file)}"/>
-    <xacro:property name="config_visual_parameters" value="${load_yaml(visual_parameters_file)}"/>
+    <xacro:property name="config_joint_limit_parameters" value="${xacro.load_yaml(joint_limits_parameters_file)}"/>
+    <xacro:property name="config_kinematics_parameters" value="${xacro.load_yaml(kinematics_parameters_file)}"/>
+    <xacro:property name="config_physical_parameters" value="${xacro.load_yaml(physical_parameters_file)}"/>
+    <xacro:property name="config_visual_parameters" value="${xacro.load_yaml(visual_parameters_file)}"/>
 
     <!-- Extract subsections from yaml dictionaries -->
     <xacro:property name="sec_limits" value="${config_joint_limit_parameters['joint_limits']}"/>
