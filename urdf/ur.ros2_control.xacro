@@ -16,7 +16,9 @@
     tool_voltage:=24 tool_parity:=0 tool_baud_rate:=115200 tool_stop_bits:=1
     tool_rx_idle_chars:=1.5 tool_tx_idle_chars:=3.5 tool_device_name:=/tmp/ttyUR tool_tcp_port:=54321
     reverse_port:=50001
-    script_sender_port:=50002">
+    script_sender_port:=50002
+    reverse_ip:=0.0.0.0
+    script_command_port:=50004">
 
     <ros2_control name="${name}" type="system">
       <hardware>
@@ -40,6 +42,8 @@
           <param name="headless_mode">${headless_mode}</param>
           <param name="reverse_port">${reverse_port}</param>
           <param name="script_sender_port">${script_sender_port}</param>
+          <param name="reverse_ip">${reverse_ip}</param>
+          <param name="script_command_port">${script_command_port}</param>
           <param name="tf_prefix">"${tf_prefix}"</param>
           <param name="non_blocking_read">0</param>
           <param name="servoj_gain">2000</param>
@@ -194,6 +198,8 @@
           <command_interface name="standard_analog_output_cmd_0"/>
           <command_interface name="standard_analog_output_cmd_1"/>
 
+          <command_interface name="tool_voltage_cmd"/>
+
           <command_interface name="io_async_success"/>
 
           <state_interface name="digital_output_0"/>
@@ -289,6 +295,11 @@
         <gpio name="resend_robot_program">
           <command_interface name="resend_robot_program_cmd"/>
           <command_interface name="resend_robot_program_async_success"/>
+        </gpio>
+
+        <gpio name="zero_ftsensor">
+          <command_interface name="zero_ftsensor_cmd"/>
+          <command_interface name="zero_ftsensor_async_success"/>
         </gpio>
 
         <gpio name="system_interface">
