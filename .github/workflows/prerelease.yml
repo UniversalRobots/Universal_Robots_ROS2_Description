@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [galactic]
+        ROS_DISTRO: [humble, rolling]
         ROS_REPO: [main]
         PRERELEASE: [true]
     env:
