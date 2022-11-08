@@ -73,7 +73,7 @@
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
     use_tool_communication:=false
-    tool_voltage:=24
+    tool_voltage:=0
     tool_parity:=0
     tool_baud_rate:=115200
     tool_stop_bits:=1
