@@ -2,6 +2,19 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add tool voltage and zero ft sensor to command interface (`#38 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/38>`_)
+  Added reverse ip and script command interface port as parameters
+* use xacro.load_yaml in favor of deprecated version (`#43 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/43>`_)
+  Co-authored-by: aditya <aditya@nimble.ai>
+* Use mock_components instead of fake_components (`#37 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/37>`_)
+  This has been renamed in ros2_control hardware_interface.
+* Prepare for branching out galactic (`#39 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/39>`_)
+  * Add Humble to README and workflows
+  * Use galactic branch for galactic stuff
+* Contributors: Abishalini Sivaraman, Aditya Agarwal, Felix Exner, Mads Holm Peters
+
 2.0.0 (2022-03-17)
 ------------------
 * Migrated the description to ROS2
