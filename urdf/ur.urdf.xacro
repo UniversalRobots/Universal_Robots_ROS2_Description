@@ -21,6 +21,7 @@
    <xacro:arg name="safety_k_position" default="20"/>
    <!-- ros2_control related parameters -->
    <xacro:arg name="headless_mode" default="false" />
+   <xacro:arg name="simulated_robot" default="false" />
    <xacro:arg name="robot_ip" default="0.0.0.0" />
    <xacro:arg name="script_filename" default=""/>
    <xacro:arg name="output_recipe_filename" default=""/>
@@ -72,6 +73,7 @@
      sim_gazebo="$(arg sim_gazebo)"
      sim_ignition="$(arg sim_ignition)"
      headless_mode="$(arg headless_mode)"
+     simulated_robot="$(arg simulated_robot)"
      initial_positions="${xacro.load_yaml(initial_positions_file)}"
      use_tool_communication="$(arg use_tool_communication)"
      tool_voltage="$(arg tool_voltage)"
