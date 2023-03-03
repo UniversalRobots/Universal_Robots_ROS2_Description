@@ -77,14 +77,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">10000.0</param>
-          <param name="i">0.0</param>
-          <param name="d">5.0</param>
-          <param name="iMax">75</param>
-          <param name="iMin">-75</param>
-          <param name="cmdMax">150</param>
-          <param name="cmdMin">-150</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.01</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">50.0</param>
+          <param name="i_vel">100.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">75.0</param>
+          <param name="iMin_vel">-75.0</param>
+          <param name="cmdMax_vel">150.0</param>
+          <param name="cmdMin_vel">-150.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
       <joint name="${prefix}shoulder_lift_joint">
@@ -104,14 +112,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">10000.0</param>
-          <param name="i">0.0</param>
-          <param name="d">5.0</param>
-          <param name="iMax">75</param>
-          <param name="iMin">-75</param>
-          <param name="cmdMax">150</param>
-          <param name="cmdMin">-150</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.01</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">300.0</param>
+          <param name="i_vel">90.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">75.0</param>
+          <param name="iMin_vel">-75.0</param>
+          <param name="cmdMax_vel">150.0</param>
+          <param name="cmdMin_vel">-150.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
       <joint name="${prefix}elbow_joint">
@@ -131,14 +147,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">10000.0</param>
-          <param name="i">0.0</param>
-          <param name="d">5.0</param>
-          <param name="iMax">75</param>
-          <param name="iMin">-75</param>
-          <param name="cmdMax">150</param>
-          <param name="cmdMin">-150</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.01</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">50.0</param>
+          <param name="i_vel">100.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">75.0</param>
+          <param name="iMin_vel">-75.0</param>
+          <param name="cmdMax_vel">150.0</param>
+          <param name="cmdMin_vel">-150.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
       <joint name="${prefix}wrist_1_joint">
@@ -158,14 +182,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">500.0</param>
-          <param name="i">0.0</param>
-          <param name="d">5.0</param>
-          <param name="iMax">14</param>
-          <param name="iMin">-14</param>
-          <param name="cmdMax">28</param>
-          <param name="cmdMin">-28</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.001</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">10.0</param>
+          <param name="i_vel">10.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">14.0</param>
+          <param name="iMin_vel">-14.0</param>
+          <param name="cmdMax_vel">28.0</param>
+          <param name="cmdMin_vel">-28.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
       <joint name="${prefix}wrist_2_joint">
@@ -185,14 +217,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">500.0</param>
-          <param name="i">0.0</param>
-          <param name="d">5.0</param>
-          <param name="iMax">14</param>
-          <param name="iMin">-14</param>
-          <param name="cmdMax">28</param>
-          <param name="cmdMin">-28</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.001</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">5.0</param>
+          <param name="i_vel">10.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">14.0</param>
+          <param name="iMin_vel">-14.0</param>
+          <param name="cmdMax_vel">28.0</param>
+          <param name="cmdMin_vel">-28.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
       <joint name="${prefix}wrist_3_joint">
@@ -212,14 +252,22 @@
         <state_interface name="effort"/>
         <xacro:if value="${sim_ignition}">
           <!-- initial PID values for the IgnitionSystem and simulation -->
-          <param name="p">300.0</param>
-          <param name="i">0.0</param>
-          <param name="d">0.0</param>
-          <param name="iMax">14</param>
-          <param name="iMin">-14</param>
-          <param name="cmdMax">28</param>
-          <param name="cmdMin">-28</param>
-          <param name="cmdOffset">0.0</param>
+          <param name="p_pos">10.0</param>
+          <param name="i_pos">0.0</param>
+          <param name="d_pos">0.0001</param>
+          <param name="iMax_pos">1.57</param>
+          <param name="iMin_pos">-1.57</param>
+          <param name="cmdMax_pos">3.14</param>
+          <param name="cmdMin_pos">-3.14</param>
+          <param name="cmdOffset_pos">0.0</param>
+          <param name="p_vel">5.0</param>
+          <param name="i_vel">10.0</param>
+          <param name="d_vel">0.0</param>
+          <param name="iMax_vel">14.0</param>
+          <param name="iMin_vel">-14.0</param>
+          <param name="cmdMax_vel">28.0</param>
+          <param name="cmdMin_vel">-28.0</param>
+          <param name="cmdOffset_vel">0.0</param>
         </xacro:if>
       </joint>
 
