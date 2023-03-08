@@ -85,8 +85,8 @@
           <param name="cmdMax_pos">3.14</param>
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
-          <param name="p_vel">50.0</param>
-          <param name="i_vel">100.0</param>
+          <param name="p_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">75.0</param>
           <param name="iMin_vel">-75.0</param>
@@ -120,8 +120,8 @@
           <param name="cmdMax_pos">3.14</param>
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
-          <param name="p_vel">300.0</param>
-          <param name="i_vel">90.0</param>
+          <param name="p_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">75.0</param>
           <param name="iMin_vel">-75.0</param>
@@ -155,8 +155,8 @@
           <param name="cmdMax_pos">3.14</param>
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
-          <param name="p_vel">50.0</param>
-          <param name="i_vel">100.0</param>
+          <param name="p_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">75.0</param>
           <param name="iMin_vel">-75.0</param>
@@ -191,7 +191,7 @@
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
           <param name="p_vel">10.0</param>
-          <param name="i_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">14.0</param>
           <param name="iMin_vel">-14.0</param>
@@ -226,7 +226,7 @@
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
           <param name="p_vel">5.0</param>
-          <param name="i_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">14.0</param>
           <param name="iMin_vel">-14.0</param>
@@ -261,7 +261,7 @@
           <param name="cmdMin_pos">-3.14</param>
           <param name="cmdOffset_pos">0.0</param>
           <param name="p_vel">5.0</param>
-          <param name="i_vel">10.0</param>
+          <param name="i_vel">1000.0</param>
           <param name="d_vel">0.0</param>
           <param name="iMax_vel">14.0</param>
           <param name="iMin_vel">-14.0</param>
