@@ -42,7 +42,7 @@
    <xacro:arg name="use_fake_hardware" default="false" />
    <xacro:arg name="fake_sensor_commands" default="false" />
    <xacro:arg name="sim_gazebo" default="false" />
-   <xacro:arg name="sim_ignition" default="false" />
+   <xacro:arg name="sim_gz" default="false" />
    <xacro:arg name="simulation_controllers" default="" />
 
    <!-- initial position for simulations (Fake Hardware, Gazebo, Ignition) -->
@@ -70,7 +70,7 @@
      use_fake_hardware="$(arg use_fake_hardware)"
      fake_sensor_commands="$(arg fake_sensor_commands)"
      sim_gazebo="$(arg sim_gazebo)"
-     sim_ignition="$(arg sim_ignition)"
+     sim_gz="$(arg sim_gz)"
      headless_mode="$(arg headless_mode)"
      initial_positions="${xacro.load_yaml(initial_positions_file)}"
      use_tool_communication="$(arg use_tool_communication)"
@@ -103,12 +103,12 @@
     </gazebo>
   </xacro:if>
 
-  <xacro:if value="$(arg sim_ignition)">
+  <xacro:if value="$(arg sim_gz)">
     <!-- Gazebo plugins -->
     <gazebo reference="world">
     </gazebo>
     <gazebo>
-      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
         <parameters>$(arg simulation_controllers)</parameters>
         <controller_manager_node_name>$(arg prefix)controller_manager</controller_manager_node_name>
       </plugin>
