@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur_transmissions.xacro" />
   <xacro:macro name="ur_ros2_control" params="
     name
     prefix
@@ -18,7 +18,12 @@
     reverse_port:=50001
     script_sender_port:=50002
     reverse_ip:=0.0.0.0
-    script_command_port:=50004">
+    script_command_port:=50004
+    transmission_hw_interface:=hardware_interface/PositionJointInterface
+    ">
+
+    <!-- Add URDF transmission elements (for ros_control) -->
+    <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
 
     <ros2_control name="${name}" type="system">
       <hardware>
