@@ -53,6 +53,8 @@
 
    <!-- create link fixed to the "world" -->
    <link name="world" />
+   <xacro:property name="joint_dynamics_file" value="$(find ur_description)/config/test_joint_dyn.yaml"/>
+   <xacro:property name="joint_dynamics_dict" value="${xacro.load_yaml(joint_dynamics_file)}"/>
 
    <!-- arm -->
    <xacro:ur_robot
@@ -63,6 +65,7 @@
      kinematics_parameters_file="$(arg kinematics_params)"
      physical_parameters_file="$(arg physical_params)"
      visual_parameters_file="$(arg visual_params)"
+     joint_dynamics="${joint_dynamics_dict}"
      transmission_hw_interface="$(arg transmission_hw_interface)"
      safety_limits="$(arg safety_limits)"
      safety_pos_margin="$(arg safety_pos_margin)"
@@ -91,6 +94,7 @@
      >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>
+
 
    <xacro:if value="$(arg sim_gazebo)">
     <!-- Gazebo plugins -->
