@@ -62,7 +62,6 @@
     kinematics_parameters_file
     physical_parameters_file
     visual_parameters_file
-    joint_dynamics:=${dict()}
     transmission_hw_interface:=hardware_interface/PositionJointInterface
     safety_limits:=false
     safety_pos_margin:=0.15
@@ -73,6 +72,7 @@
     sim_ignition:=false
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
+    joint_dynamics:=${dict(shoulder_pan_joint=dict(damping=0.0, friction=0.0), shoulder_lift_joint=dict(damping=0.0, friction=0.0), elbow_joint=dict(damping=0.0, friction=0.0), wrist_1_joint=dict(damping=0.0, friction=0.0), wrist_2_joint=dict(damping=0.0, friction=0.0), wrist_3_joint=dict(damping=0.0, friction=0.0))}
     use_tool_communication:=false
     tool_voltage:=0
     tool_parity:=0
