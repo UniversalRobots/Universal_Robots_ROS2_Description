@@ -89,7 +89,12 @@
     reverse_port:=50001
     script_sender_port:=50002
     reverse_ip:=0.0.0.0
-    script_command_port:=50004">
+    script_command_port:=50004
+    trajectory_port:=50003
+    non_blocking_read:=false
+    keep_alive_count:=2"
+    
+    >
 
     <!-- Load configuration data from the provided .yaml files -->
     <xacro:read_model_data
@@ -131,6 +136,9 @@
       script_sender_port="${script_sender_port}"
       reverse_ip="${reverse_ip}"
       script_command_port="${script_command_port}"
+      trajectory_port="${trajectory_port}"
+      non_blocking_read="${non_blocking_read}"
+      keep_alive_count="${keep_alive_count}"
       />
 
     <!-- Add URDF transmission elements (for ros_control) -->

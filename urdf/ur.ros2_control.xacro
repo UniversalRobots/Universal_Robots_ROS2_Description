@@ -18,7 +18,11 @@
     reverse_port:=50001
     script_sender_port:=50002
     reverse_ip:=0.0.0.0
-    script_command_port:=50004">
+    script_command_port:=50004
+    trajectory_port:=50003
+    non_blocking_read:=false
+    keep_alive_count:=2
+    ">
 
     <ros2_control name="${name}" type="system">
       <hardware>
@@ -35,6 +39,7 @@
         </xacro:if>
         <xacro:unless value="${use_fake_hardware or sim_gazebo or sim_ignition}">
           <plugin>ur_robot_driver/URPositionHardwareInterface</plugin>
+          <param name="prefix">${prefix}</param>
           <param name="robot_ip">${robot_ip}</param>
           <param name="script_filename">${script_filename}</param>
           <param name="output_recipe_filename">${output_recipe_filename}</param>
@@ -44,8 +49,9 @@
           <param name="script_sender_port">${script_sender_port}</param>
           <param name="reverse_ip">${reverse_ip}</param>
           <param name="script_command_port">${script_command_port}</param>
+          <param name="trajectory_port">${trajectory_port}</param>
           <param name="tf_prefix">"${tf_prefix}"</param>
-          <param name="non_blocking_read">0</param>
+          <param name="non_blocking_read">${non_blocking_read}</param>
           <param name="servoj_gain">2000</param>
           <param name="servoj_lookahead_time">0.03</param>
           <param name="use_tool_communication">${use_tool_communication}</param>
@@ -58,6 +64,7 @@
           <param name="tool_tx_idle_chars">${tool_tx_idle_chars}</param>
           <param name="tool_device_name">${tool_device_name}</param>
           <param name="tool_tcp_port">${tool_tcp_port}</param>
+          <param name="keep_alive_count">${keep_alive_count}</param>
         </xacro:unless>
       </hardware>
       <joint name="${prefix}shoulder_pan_joint">
@@ -158,7 +165,7 @@
       </joint>
 
       <xacro:unless value="${sim_gazebo or sim_ignition}">
-        <sensor name="tcp_fts_sensor">
+        <sensor name="${prefix}tcp_fts_sensor">
           <state_interface name="force.x"/>
           <state_interface name="force.y"/>
           <state_interface name="force.z"/>
@@ -168,14 +175,14 @@
         </sensor>
 
         <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
-        <gpio name="speed_scaling">
+        <gpio name="${prefix}speed_scaling">
           <state_interface name="speed_scaling_factor"/>
           <param name="initial_speed_scaling_factor">1</param>
           <command_interface name="target_speed_fraction_cmd"/>
           <command_interface name="target_speed_fraction_async_success"/>
         </gpio>
 
-        <gpio name="gpio">
+        <gpio name="${prefix}gpio">
           <command_interface name="standard_digital_output_cmd_0"/>
           <command_interface name="standard_digital_output_cmd_1"/>
           <command_interface name="standard_digital_output_cmd_2"/>
@@ -284,7 +291,7 @@
           <state_interface name="program_running"/>
         </gpio>
 
-        <gpio name="payload">
+        <gpio name="${prefix}payload">
           <command_interface name="mass"/>
           <command_interface name="cog.x"/>
           <command_interface name="cog.y"/>
@@ -292,17 +299,17 @@
           <command_interface name="payload_async_success"/>
         </gpio>
 
-        <gpio name="resend_robot_program">
+        <gpio name="${prefix}resend_robot_program">
           <command_interface name="resend_robot_program_cmd"/>
           <command_interface name="resend_robot_program_async_success"/>
         </gpio>
 
-        <gpio name="zero_ftsensor">
+        <gpio name="${prefix}zero_ftsensor">
           <command_interface name="zero_ftsensor_cmd"/>
           <command_interface name="zero_ftsensor_async_success"/>
         </gpio>
 
-        <gpio name="system_interface">
+        <gpio name="${prefix}system_interface">
           <state_interface name="initialized"/>
         </gpio>
 
