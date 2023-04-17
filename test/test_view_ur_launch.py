@@ -41,7 +41,6 @@ from launch_testing.actions import ReadyToTest
 # Executes the given launch file and checks if all nodes can be started
 @pytest.mark.rostest
 def generate_test_description():
-
     launch_include = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory("ur_description"), "launch/view_ur.launch.py")
