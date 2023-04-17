@@ -37,7 +37,6 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def test_ur_urdf_xacro():
-
     # Initialize Arguments
     ur_type = "ur3"
     safety_limits = "true"

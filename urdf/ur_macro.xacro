@@ -92,7 +92,7 @@
     trajectory_port:=50003
     non_blocking_read:=false
     keep_alive_count:=2"
-    
+
     >
 
     <!-- Load configuration data from the provided .yaml files -->
