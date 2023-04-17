@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  <!--
+    Base UR robot series xacro macro.
+
+    NOTE this is NOT a URDF. It cannot directly be loaded by consumers
+    expecting a flattened '.urdf' file. See the top-level '.xacro' for that
+    (but note that .xacro must still be processed by the xacro command).
+
+    This file models the base kinematic chain of a UR robot, which then gets
+    parameterised by various configuration files to convert it into a UR3(e),
+    UR5(e), UR10(e) or UR16e.
+
+    NOTE the default kinematic parameters (i.e., link lengths, frame locations,
+    offsets, etc) do not correspond to any particular robot. They are defaults
+    only. There WILL be non-zero offsets between the Forward Kinematics results
+    in TF (i.e., robot_state_publisher) and the values reported by the Teach
+    Pendant.
+
+    For accurate (and robot-specific) transforms, the 'kinematics_parameters_file'
+    parameter MUST point to a .yaml file containing the appropriate values for
+    the targeted robot.
+
+    If using the UniversalRobots/Universal_Robots_ROS_Driver, follow the steps
+    described in the readme of that repository to extract the kinematic
+    calibration from the controller and generate the required .yaml file.
+
+    Main author of the migration to yaml configs Ludovic Delval.
+
+    Contributors to previous versions (in no particular order)
+
+     - Denis Stogl
+     - Lovro Ivanov
+     - Felix Messmer
+     - Kelsey Hawkins
+     - Wim Meeussen
+     - Shaun Edwards
+     - Nadia Hammoudeh Garcia
+     - Dave Hershberger
+     - G. vd. Hoorn
+     - Philip Long
+     - Dave Coleman
+     - Miguel Prada
+     - Mathias Luedtke
+     - Marcel Schnirring
+     - Felix von Drigalski
+     - Felix Exner
+     - Jimmy Da Silva
+     - Ajit Krisshna N L
+     - Muhammad Asif Rana
+  -->
+
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro" />
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur_common.xacro" />
+
+  <xacro:macro name="ur_robot_ros2_controlled" params="
+    name
+    tf_prefix
+    parent
+    *origin
+    joint_limits_parameters_file
+    kinematics_parameters_file
+    physical_parameters_file
+    visual_parameters_file
+    transmission_hw_interface:=hardware_interface/PositionJointInterface
+    safety_limits:=false
+    safety_pos_margin:=0.15
+    safety_k_position:=20
+    use_fake_hardware:=false
+    fake_sensor_commands:=false
+    sim_gazebo:=false
+    sim_ignition:=false
+    headless_mode:=false
+    initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
+    use_tool_communication:=false
+    tool_voltage:=0
+    tool_parity:=0
+    tool_baud_rate:=115200
+    tool_stop_bits:=1
+    tool_rx_idle_chars:=1.5
+    tool_tx_idle_chars:=3.5
+    tool_device_name:=/tmp/ttyUR
+    tool_tcp_port:=54321
+    robot_ip:=0.0.0.0
+    script_filename:=to_be_filled_by_ur_robot_driver
+    output_recipe_filename:=to_be_filled_by_ur_robot_driver
+    input_recipe_filename:=to_be_filled_by_ur_robot_driver
+    reverse_port:=50001
+    script_sender_port:=50002
+    reverse_ip:=0.0.0.0
+    script_command_port:=50004
+    trajectory_port:=50003
+    non_blocking_read:=false
+    keep_alive_count:=2"
+
+    >
+
+    <xacro:ur_robot
+      name="$(arg name)"
+      tf_prefix="$(arg tf_prefix)"
+      parent="world"
+      joint_limits_parameters_file="$(arg joint_limit_params)"
+      kinematics_parameters_file="$(arg kinematics_params)"
+      physical_parameters_file="$(arg physical_params)"
+      visual_parameters_file="$(arg visual_params)"
+      safety_limits="$(arg safety_limits)"
+      safety_pos_margin="$(arg safety_pos_margin)"
+      safety_k_position="$(arg safety_k_position)"
+      >
+      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
+    </xacro:ur_robot>
+
+    <xacro:get_kinematics_hash kinematics_parameters_file="$(arg kinematics_params)">
+    </xacro:get_kinematics_hash>
+
+    <!-- ros2 control include -->
+    <xacro:include filename="$(find ur_ros2_control_support)/urdf/ur.ros2_control.xacro" />
+    <!-- ros2 control instance -->
+    <xacro:ur_ros2_control
+      name="${name}"
+      use_fake_hardware="${use_fake_hardware}"
+      initial_positions="${initial_positions}"
+      fake_sensor_commands="${fake_sensor_commands}"
+      headless_mode="${headless_mode}"
+      sim_gazebo="${sim_gazebo}"
+      sim_ignition="${sim_ignition}"
+      script_filename="${script_filename}"
+      output_recipe_filename="${output_recipe_filename}"
+      input_recipe_filename="${input_recipe_filename}"
+      tf_prefix="${tf_prefix}"
+      hash_kinematics="${kinematics_hash}"
+      robot_ip="${robot_ip}"
+      use_tool_communication="${use_tool_communication}"
+      tool_voltage="${tool_voltage}"
+      tool_parity="${tool_parity}"
+      tool_baud_rate="${tool_baud_rate}"
+      tool_stop_bits="${tool_stop_bits}"
+      tool_rx_idle_chars="${tool_rx_idle_chars}"
+      tool_tx_idle_chars="${tool_tx_idle_chars}"
+      tool_device_name="${tool_device_name}"
+      tool_tcp_port="${tool_tcp_port}"
+      reverse_port="${reverse_port}"
+      script_sender_port="${script_sender_port}"
+      reverse_ip="${reverse_ip}"
+      script_command_port="${script_command_port}"
+      trajectory_port="${trajectory_port}"
+      non_blocking_read="${non_blocking_read}"
+      keep_alive_count="${keep_alive_count}"
+      />
+
+    <!-- Add URDF transmission elements (for ros_control) -->
+    <!--<xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />-->
+    <!-- Placeholder for ros2_control transmission which don't yet exist -->
+
+  </xacro:macro>
+</robot>

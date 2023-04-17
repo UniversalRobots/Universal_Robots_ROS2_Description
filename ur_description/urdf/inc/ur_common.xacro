@@ -41,6 +41,12 @@
     <mesh filename="${mesh}"/>
   </xacro:macro>
 
+  <xacro:macro name="get_kinematics_hash" params="kinematics_parameters_file">
+    <xacro:property name="config_kinematics_parameters" value="${xacro.load_yaml(kinematics_parameters_file)}"/>
+    <xacro:property name="sec_kinematics" value="${config_kinematics_parameters['kinematics']}" />
+    <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
+  </xacro:macro>
+
   <xacro:macro name="read_model_data" params="joint_limits_parameters_file kinematics_parameters_file physical_parameters_file visual_parameters_file force_abs_paths">
 
     <xacro:property name="force_abs_paths" value="${force_abs_paths}" scope="parent"/>
@@ -187,7 +193,5 @@
     <xacro:property name="forearm_radius" value="${sec_inertia_parameters['forearm_radius']}" scope="parent"/>
     <xacro:property name="wrist_radius" value="${sec_inertia_parameters['wrist_radius']}" scope="parent"/>
 
-    <!--KINEMATICS HASH-->
-    <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
   </xacro:macro>
 </robot>
