@@ -48,7 +48,7 @@
           <param name="reverse_ip">${reverse_ip}</param>
           <param name="script_command_port">${script_command_port}</param>
           <param name="trajectory_port">${trajectory_port}</param>
-          <param name="tf_prefix">${tf_prefix}</param>
+          <param name="tf_prefix">_${tf_prefix}</param>
           <param name="non_blocking_read">${non_blocking_read}</param>
           <param name="servoj_gain">2000</param>
           <param name="servoj_lookahead_time">0.03</param>
