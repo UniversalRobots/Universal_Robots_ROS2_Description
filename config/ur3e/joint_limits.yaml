@@ -14,9 +14,8 @@ joint_limits:
     max_position: !degrees  360.0
     has_velocity_limits: true
     max_velocity: !degrees  180.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 56.0
@@ -26,9 +25,8 @@ joint_limits:
     max_position: !degrees  360.0
     has_velocity_limits: true
     max_velocity: !degrees  180.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 56.0
@@ -48,9 +46,8 @@ joint_limits:
     max_position: !degrees  180.0
     has_velocity_limits: true
     max_velocity: !degrees  180.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 28.0
@@ -60,9 +57,8 @@ joint_limits:
     max_position: !degrees  360.0
     has_velocity_limits: true
     max_velocity: !degrees  360.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 12.0
@@ -72,9 +68,8 @@ joint_limits:
     max_position: !degrees  360.0
     has_velocity_limits: true
     max_velocity: !degrees  360.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 12.0
@@ -84,9 +79,8 @@ joint_limits:
     max_position: !degrees  360.0
     has_velocity_limits: true
     max_velocity: !degrees  360.0
-    # Acceleration limits are not publicly available, but needed
-    # for Time Optimal Trajectory Generation (TOTG) in MoveIt.
-    has_acceleration_limits: true
+    # acceleration limits are not publicly available
+    has_acceleration_limits: false
     max_acceleration: 5.0
     has_effort_limits: true
     max_effort: 12.0
