@@ -3,7 +3,6 @@
 
   <xacro:macro name="ur_ros2_control" params="
     name
-    prefix
     use_fake_hardware:=false fake_sensor_commands:=false
     sim_gazebo:=false
     sim_ignition:=false
@@ -39,7 +38,6 @@
         </xacro:if>
         <xacro:unless value="${use_fake_hardware or sim_gazebo or sim_ignition}">
           <plugin>ur_robot_driver/URPositionHardwareInterface</plugin>
-          <param name="prefix">${prefix}</param>
           <param name="robot_ip">${robot_ip}</param>
           <param name="script_filename">${script_filename}</param>
           <param name="output_recipe_filename">${output_recipe_filename}</param>
@@ -50,7 +48,7 @@
           <param name="reverse_ip">${reverse_ip}</param>
           <param name="script_command_port">${script_command_port}</param>
           <param name="trajectory_port">${trajectory_port}</param>
-          <param name="tf_prefix">"${tf_prefix}"</param>
+          <param name="tf_prefix">_${tf_prefix}</param>
           <param name="non_blocking_read">${non_blocking_read}</param>
           <param name="servoj_gain">2000</param>
           <param name="servoj_lookahead_time">0.03</param>
@@ -67,7 +65,7 @@
           <param name="keep_alive_count">${keep_alive_count}</param>
         </xacro:unless>
       </hardware>
-      <joint name="${prefix}shoulder_pan_joint">
+      <joint name="${tf_prefix}shoulder_pan_joint">
         <command_interface name="position">
           <param name="min">{-2*pi}</param>
           <param name="max">{2*pi}</param>
@@ -83,7 +81,7 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      <joint name="${prefix}shoulder_lift_joint">
+      <joint name="${tf_prefix}shoulder_lift_joint">
         <command_interface name="position">
           <param name="min">{-2*pi}</param>
           <param name="max">{2*pi}</param>
@@ -99,7 +97,7 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      <joint name="${prefix}elbow_joint">
+      <joint name="${tf_prefix}elbow_joint">
         <command_interface name="position">
           <param name="min">{-pi}</param>
           <param name="max">{pi}</param>
@@ -115,7 +113,7 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      <joint name="${prefix}wrist_1_joint">
+      <joint name="${tf_prefix}wrist_1_joint">
         <command_interface name="position">
           <param name="min">{-2*pi}</param>
           <param name="max">{2*pi}</param>
@@ -131,7 +129,7 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      <joint name="${prefix}wrist_2_joint">
+      <joint name="${tf_prefix}wrist_2_joint">
         <command_interface name="position">
           <param name="min">{-2*pi}</param>
           <param name="max">{2*pi}</param>
@@ -147,7 +145,7 @@
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
-      <joint name="${prefix}wrist_3_joint">
+      <joint name="${tf_prefix}wrist_3_joint">
         <command_interface name="position">
           <param name="min">{-2*pi}</param>
           <param name="max">{2*pi}</param>
@@ -165,7 +163,7 @@
       </joint>
 
       <xacro:unless value="${sim_gazebo or sim_ignition}">
-        <sensor name="${prefix}tcp_fts_sensor">
+        <sensor name="${tf_prefix}tcp_fts_sensor">
           <state_interface name="force.x"/>
           <state_interface name="force.y"/>
           <state_interface name="force.z"/>
@@ -175,14 +173,14 @@
         </sensor>
 
         <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
-        <gpio name="${prefix}speed_scaling">
+        <gpio name="${tf_prefix}speed_scaling">
           <state_interface name="speed_scaling_factor"/>
           <param name="initial_speed_scaling_factor">1</param>
           <command_interface name="target_speed_fraction_cmd"/>
           <command_interface name="target_speed_fraction_async_success"/>
         </gpio>
 
-        <gpio name="${prefix}gpio">
+        <gpio name="${tf_prefix}gpio">
           <command_interface name="standard_digital_output_cmd_0"/>
           <command_interface name="standard_digital_output_cmd_1"/>
           <command_interface name="standard_digital_output_cmd_2"/>
@@ -291,7 +289,7 @@
           <state_interface name="program_running"/>
         </gpio>
 
-        <gpio name="${prefix}payload">
+        <gpio name="${tf_prefix}payload">
           <command_interface name="mass"/>
           <command_interface name="cog.x"/>
           <command_interface name="cog.y"/>
@@ -299,17 +297,17 @@
           <command_interface name="payload_async_success"/>
         </gpio>
 
-        <gpio name="${prefix}resend_robot_program">
+        <gpio name="${tf_prefix}resend_robot_program">
           <command_interface name="resend_robot_program_cmd"/>
           <command_interface name="resend_robot_program_async_success"/>
         </gpio>
 
-        <gpio name="${prefix}zero_ftsensor">
+        <gpio name="${tf_prefix}zero_ftsensor">
           <command_interface name="zero_ftsensor_cmd"/>
           <command_interface name="zero_ftsensor_async_success"/>
         </gpio>
 
-        <gpio name="${prefix}system_interface">
+        <gpio name="${tf_prefix}system_interface">
           <state_interface name="initialized"/>
         </gpio>
 
