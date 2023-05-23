@@ -302,6 +302,11 @@
           <command_interface name="resend_robot_program_async_success"/>
         </gpio>
 
+        <gpio name="${tf_prefix}hand_back_control">
+          <command_interface name="hand_back_control_cmd"/>
+          <command_interface name="hand_back_control_async_success"/>
+        </gpio>
+
         <gpio name="${tf_prefix}zero_ftsensor">
           <command_interface name="zero_ftsensor_cmd"/>
           <command_interface name="zero_ftsensor_async_success"/>
