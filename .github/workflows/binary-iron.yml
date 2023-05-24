@@ -47,7 +47,7 @@ jobs:
           restore-keys: |
             ccache-${{ env.CACHE_PREFIX }}-${{ github.sha }}
             ccache-${{ env.CACHE_PREFIX }}
-      - uses: 'fmauch/industrial_ci@iron_support'
+      - uses: 'ros_industrial/industrial_ci@master'
         env:
           ROS_DISTRO: ${{ matrix.ROS_DISTRO }}
           ROS_REPO: ${{ matrix.ROS_REPO }}
