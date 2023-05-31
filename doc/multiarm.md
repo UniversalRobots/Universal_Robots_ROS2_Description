@@ -160,6 +160,9 @@ Please note that we explicitly leave out the arguments part from the `ur.urdf.xa
 
 # Some tips and tricks
 
+
+## Configuration and xarco setup
+
 From my experience you often want to have different end effectors and tools for both (or even more arms). Therefore it makes sense to put each robot arm (+ everything that is connected to it) into its own `xacro macro` and initiate that macro in your main file. For configurating the arm (something you will play around a lot at the beginning) I decided to create a yaml file which contains the configuration for both arms, load that configuration in the main xacro file and pass the subsection of each arm to the corresponding xacro file. 
 
 The yaml file looks in my case like this:
@@ -250,3 +253,17 @@ In the main xacro I then do:
   </xacro:ur_top>
 
 ```
+
+
+## Futher tips
+
+1. Start with one arm after the other. (At least have the second arm set to `use_fake_hardware=true`)
+2. As said above: Choose the `tf_prefix` wisely. 
+3. I had to use `headless_mode=true` otherwise I had issues starting the program on both arms
+4. Consider setting the `reverse_ip` I had issues with the automatic detection of the right interface. 
+5. Remember that you can run `xacro` from the command line. This can help debugging issues quite a lot. Just run:
+    > xacro my_main.urdf.xacro > test.xml
+    
+   And open it in an editor of your choice
+
+6. When using with moveit you need to adapt / create the `joint_limits.yaml` by hand. Otherwise you won't get the right limits. 
