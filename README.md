@@ -21,6 +21,7 @@ The most relevant files are:
   - `urdf/ur_macro.xacro` - macro file with UR-manipulator description. This file is usually included into external projects to visualize and configure UR manipulators properly. An example how to use this macro is in `urdf/ur.urdf.xacro` file.
   - `urdf/ur.ros2_control.xacro` - definition of manipulator's joints and interfaces for `ros2_control` framework.
 
+
 ## Testing description of a manipulator
 
 To visualize the robot install this repository to you workspace and execute the following:
@@ -62,6 +63,7 @@ Arguments that have to be passed to the main `ur.urdf.xacro` file are:
 The launchfile `launch/view_ur.launch.py` abstracts these four parameters to one `ur_type` argument
 which will basically replace the `urXX` part of the paths as shown in the picture above.
 
+How to use multiple UR - robots with this package is documented in a [separate document](doc/multiarm.md)
 ## Creating your own description including this description
 In real-world applications you will most probably have a more complex description consisting of more
 objects than just the robot. It is recommended to create a separate ROS package containing this
