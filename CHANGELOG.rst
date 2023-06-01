@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.0 (2023-06-01)
+------------------
 * added missing handback interface - ros2control mock interface won't work otherwise (`#68 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/68>`_)
   Co-authored-by: Lennart Nachtigall <lennart.nachtigall@sci-mo.de>
 * remove ticks from tf_prefix (`#60 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/60>`_)
