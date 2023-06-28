@@ -338,6 +338,7 @@
           <command_interface name="limits_ry"/>
           <command_interface name="limits_rz"/>
           <command_interface name="type"/>
+          <command_interface name="disable_cmd"/>
           <command_interface name="force_mode_async_success"/>
         </gpio>
 
