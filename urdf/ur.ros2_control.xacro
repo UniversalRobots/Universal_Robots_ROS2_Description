@@ -340,6 +340,8 @@
           <command_interface name="type"/>
           <command_interface name="disable_cmd"/>
           <command_interface name="force_mode_async_success"/>
+          <command_interface name="damping"/>
+          <command_interface name="gain_scaling"/>
         </gpio>
 
         <gpio name="${tf_prefix}system_interface">
