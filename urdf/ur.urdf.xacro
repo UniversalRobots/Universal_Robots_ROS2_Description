@@ -39,13 +39,13 @@
    <xacro:arg name="tool_tcp_port" default="54321" />
 
      <!-- Simulation parameters -->
-   <xacro:arg name="use_fake_hardware" default="false" />
-   <xacro:arg name="fake_sensor_commands" default="false" />
+   <xacro:arg name="use_mock_hardware" default="false" />
+   <xacro:arg name="mock_sensor_commands" default="false" />
    <xacro:arg name="sim_gazebo" default="false" />
    <xacro:arg name="sim_ignition" default="false" />
    <xacro:arg name="simulation_controllers" default="" />
 
-   <!-- initial position for simulations (Fake Hardware, Gazebo, Ignition) -->
+   <!-- initial position for simulations (Mock Hardware, Gazebo, Ignition) -->
    <xacro:arg name="initial_positions_file" default="$(find ur_description)/config/initial_positions.yaml"/>
 
    <!-- convert to property to use substitution in function -->
@@ -67,8 +67,8 @@
      safety_limits="$(arg safety_limits)"
      safety_pos_margin="$(arg safety_pos_margin)"
      safety_k_position="$(arg safety_k_position)"
-     use_fake_hardware="$(arg use_fake_hardware)"
-     fake_sensor_commands="$(arg fake_sensor_commands)"
+     use_mock_hardware="$(arg use_mock_hardware)"
+     mock_sensor_commands="$(arg mock_sensor_commands)"
      sim_gazebo="$(arg sim_gazebo)"
      sim_ignition="$(arg sim_ignition)"
      headless_mode="$(arg headless_mode)"
