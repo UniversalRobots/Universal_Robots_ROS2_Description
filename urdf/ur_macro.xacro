@@ -66,8 +66,8 @@
     safety_limits:=false
     safety_pos_margin:=0.15
     safety_k_position:=20
-    use_mock_hardware:=false
-    mock_sensor_commands:=false
+    use_fake_hardware:=false
+    fake_sensor_commands:=false
     sim_gazebo:=false
     sim_ignition:=false
     headless_mode:=false
@@ -109,9 +109,9 @@
     <!-- ros2 control instance -->
     <xacro:ur_ros2_control
       name="${name}"
-      use_mock_hardware="${use_mock_hardware}"
+      use_fake_hardware="${use_fake_hardware}"
       initial_positions="${initial_positions}"
-      mock_sensor_commands="${mock_sensor_commands}"
+      fake_sensor_commands="${fake_sensor_commands}"
       headless_mode="${headless_mode}"
       sim_gazebo="${sim_gazebo}"
       sim_ignition="${sim_ignition}"
