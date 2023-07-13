@@ -14,7 +14,7 @@ upstream changes some pipelines might turn red temporarily which can be expected
     <th>Branch</th>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">iron</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/main">main</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/rolling">rolling</a></td>
   </tr>
   <tr>
     <th>Repo builds</th>
@@ -39,12 +39,12 @@ upstream changes some pipelines might turn red temporarily which can be expected
       </a> <br />
     </td>
     <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml/badge.svg?event=schedule"
               alt="Rolling Binary Main"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-testing.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-testing.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-testing.yml/badge.svg?event=schedule"
               alt="Rolling Binary Testing"/>
       </a> <br />
     </td>
