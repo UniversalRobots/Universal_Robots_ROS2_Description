@@ -1,0 +1,21 @@
+name: Iron Binary Build Testing
+on:
+  workflow_dispatch:
+    branches:
+      - iron
+  pull_request:
+    branches:
+      - iron
+  push:
+    branches:
+      - iron
+  schedule:
+    - cron: '53 5 * * *'
+
+jobs:
+  binary:
+    uses: ./.github/workflows/reusable_ici.yml
+    with:
+      ros_distro: iron
+      ros_repo: testing
+      ref_for_scheduled_build: iron

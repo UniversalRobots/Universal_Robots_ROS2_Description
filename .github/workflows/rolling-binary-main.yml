@@ -1,0 +1,22 @@
+name: Rolling Binary Build Main
+on:
+  workflow_dispatch:
+    branches:
+      - rolling
+  pull_request:
+    branches:
+      - rolling
+      - ros2
+  push:
+    branches:
+      - rolling
+  schedule:
+    - cron: '53 5 * * *'
+
+jobs:
+  binary:
+    uses: ./.github/workflows/reusable_ici.yml
+    with:
+      ros_distro: rolling
+      ros_repo: main
+      ref_for_scheduled_build: rolling
