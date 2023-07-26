@@ -10,9 +10,9 @@ on:
   push:
     branches:
       - iron
-  schedule:
-    # Run every morning to detect flakiness and broken dependencies
-    - cron: '53 5 * * *'
+  # schedule:
+  #   # Run every morning to detect flakiness and broken dependencies
+  #   - cron: '53 5 * * *'
 
 jobs:
   iron_binary:
