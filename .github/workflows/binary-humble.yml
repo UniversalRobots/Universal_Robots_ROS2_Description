@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - ros2
-  schedule:
-    # Run every morning to detect flakiness and broken dependencies
-    - cron: '53 5 * * *'
+  # schedule:
+  #   # Run every morning to detect flakiness and broken dependencies
+  #   - cron: '53 5 * * *'
 
 jobs:
   humble_binary:
