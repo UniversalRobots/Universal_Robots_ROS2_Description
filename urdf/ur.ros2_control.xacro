@@ -3,7 +3,7 @@
 
   <xacro:macro name="ur_ros2_control" params="
     name
-    use_fake_hardware:=false fake_sensor_commands:=false
+    use_mock_hardware:=false mock_sensor_commands:=false
     sim_gazebo:=false
     sim_ignition:=false
     headless_mode:=false
@@ -31,12 +31,12 @@
         <xacro:if value="${sim_ignition}">
           <plugin>ign_ros2_control/IgnitionSystem</plugin>
         </xacro:if>
-        <xacro:if value="${use_fake_hardware}">
+        <xacro:if value="${use_mock_hardware}">
           <plugin>mock_components/GenericSystem</plugin>
-          <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+          <param name="mock_sensor_commands">${mock_sensor_commands}</param>
           <param name="state_following_offset">0.0</param>
         </xacro:if>
-        <xacro:unless value="${use_fake_hardware or sim_gazebo or sim_ignition}">
+        <xacro:unless value="${use_mock_hardware or sim_gazebo or sim_ignition}">
           <plugin>ur_robot_driver/URPositionHardwareInterface</plugin>
           <param name="robot_ip">${robot_ip}</param>
           <param name="script_filename">${script_filename}</param>
@@ -75,11 +75,15 @@
           <param name="max">3.15</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['shoulder_pan_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${tf_prefix}shoulder_lift_joint">
         <command_interface name="position">
@@ -91,11 +95,15 @@
           <param name="max">3.15</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['shoulder_lift_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${tf_prefix}elbow_joint">
         <command_interface name="position">
@@ -107,11 +115,15 @@
           <param name="max">3.15</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['elbow_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${tf_prefix}wrist_1_joint">
         <command_interface name="position">
@@ -123,11 +135,15 @@
           <param name="max">3.2</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['wrist_1_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${tf_prefix}wrist_2_joint">
         <command_interface name="position">
@@ -139,11 +155,15 @@
           <param name="max">3.2</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['wrist_2_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
       <joint name="${tf_prefix}wrist_3_joint">
         <command_interface name="position">
@@ -155,11 +175,15 @@
           <param name="max">3.2</param>
         </command_interface>
         <state_interface name="position">
-          <!-- initial position for the FakeSystem and simulation -->
+          <!-- initial position for the mock system and simulation -->
           <param name="initial_value">${initial_positions['wrist_3_joint']}</param>
         </state_interface>
-        <state_interface name="velocity"/>
-        <state_interface name="effort"/>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="effort">
+          <param name="initial_value">0.0</param>
+        </state_interface>
       </joint>
 
       <xacro:unless value="${sim_gazebo or sim_ignition}">
@@ -172,7 +196,7 @@
           <state_interface name="torque.z"/>
         </sensor>
 
-        <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
+        <!-- NOTE The following are joints used only for testing with mock hardware and will change in the future -->
         <gpio name="${tf_prefix}speed_scaling">
           <state_interface name="speed_scaling_factor"/>
           <param name="initial_speed_scaling_factor">1</param>
