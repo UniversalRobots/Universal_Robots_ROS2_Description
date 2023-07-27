@@ -6,10 +6,13 @@ This repository contains description files and meshes for *Universal Robots* man
 
 ROS2 Distro | Branch | Build status | Released packages
 :---------: | :----: | :----------: | :---------------:
-**Galactic** | [`galactic`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/galactic) | [![Galactic Binary Build](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-galactic.yml/badge.svg?branch=galactic)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-galactic.yml?branch=galactic) <br /> | [ur_description](https://index.ros.org/p/ur_description/#galactic)
-**Humble** | [`ros2`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2) | [![Humble Binary Build](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-humble.yml/badge.svg?branch=ros2)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-humble.yml?branch=ros2) <br /> | [ur_description](https://index.ros.org/p/ur_description/#humble)
-**Iron** | [`ros2`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2) | [![Iron Binary Build](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-iron.yml/badge.svg?branch=ros2)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-iron.yml?branch=ros2) <br /> | [ur_description](https://index.ros.org/p/ur_description/#iron)
-**Rolling** | [`ros2`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2) | [![Rolling Binary Build](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-rolling.yml/badge.svg?branch=ros2)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/binary-rolling.yml?branch=ros2) <br /> | [ur_description](https://index.ros.org/p/ur_description/#rolling)
+**Humble** | [`humble`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble) | [![Build Status](https://build.ros2.org/job/Hbin_uJ64__ur_description__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Hbin_uJ64__ur_description__ubuntu_jammy_amd64__binary/) | [ur_description](https://index.ros.org/p/ur_description/#humble)
+**Iron** | [`iron`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron) | [![Build Status](https://build.ros2.org/job/Ibin_uJ64__ur_description__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Ibin_uJ64__ur_description__ubuntu_jammy_amd64__binary/) | [ur_description](https://index.ros.org/p/ur_description/#iron)
+**Rolling** | [`rolling`](https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/rolling) | [![Build Status](https://build.ros2.org/job/Rbin_uJ64__ur_description__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Rbin_uJ64__ur_description__ubuntu_jammy_amd64__binary/)| [ur_description](https://index.ros.org/p/ur_description/#rolling)
+
+A more [detailed build status](ci_status.md) shows the state of all CI workflows inside this repo.
+Please note that the detailed view is intended for developers, while the one here should give end
+users an overview of the current released state.
 
 
 Note that for ROS2 **Foxy** the description is in the [driver's
