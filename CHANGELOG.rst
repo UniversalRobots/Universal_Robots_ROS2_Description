@@ -2,6 +2,20 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Auto-update pre-commit hooks
+* Do not require upstream ws in ici
+* Auto-update pre-commit hooks (`#88 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/88>`_)
+* Bump ros-tooling/setup-ros from 0.2 to 0.7 (`#83 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/83>`_)
+* Bump pat-s/always-upload-cache from 2.1.5 to 3.0.11 (`#84 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/84>`_)
+* Bump actions/checkout from 1 to 3 (`#85 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/85>`_)
+* Update README regarding distribution branches (`#80 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/80>`_)
+* Add mergify, dependabot and pre-commit update
+* Switch fake to mock for ros2_control updates (`#77 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/77>`_)
+* Add iron workflow (`#64 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/64>`_)
+* Contributors: Felix Exner, Sebastian Castro, dependabot[bot], github-actions[bot]
+
 2.1.0 (2023-06-01)
 ------------------
 * added missing handback interface - ros2control mock interface won't work otherwise (`#68 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/68>`_)
