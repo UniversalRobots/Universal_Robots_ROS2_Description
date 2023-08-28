@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.0 (2023-08-28)
+------------------
 * Auto-update pre-commit hooks
 * Do not require upstream ws in ici
 * Auto-update pre-commit hooks (`#88 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/88>`_)
