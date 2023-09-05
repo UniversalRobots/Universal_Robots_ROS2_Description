@@ -19,6 +19,12 @@ Note that for ROS2 **Foxy** the description is in the [driver's
 repository](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/foxy). Please do
 not clone this repository into a Foxy workspace.
 
+## License
+The majority of this repository is licensed under the BSD-3-Clause license. However, the **UR20
+meshes** are licensed under Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation. See the separate
+[LICENSE.txt](/meshes/ur20/LICENSE.txt) file for details. If you have any questions regarding the
+license or the license doesn't fit you use-case, please contact [legal@universal-robots.com](mailto:legal@universal-robots.com).
+
 ## Structure of the repository
 
 The most relevant files are:
