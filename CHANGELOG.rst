@@ -2,6 +2,18 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update the joint limits for UR20 (`#99 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/99>`_)
+* UR20 description and meshes (`#94 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/94>`_)
+  The UR20 meshes are added under Universal Robots A/S’
+  Terms and Conditions for Use of Graphical Documentation
+  Co-authored-by: Rune Søe-Knudsen <41109954+urrsk@users.noreply.github.com>
+* Revert "Switch fake to mock for ros2_control updates (`#77 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/77>`_)"
+* Switch fake to mock for ros2_control updates (`#77 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/77>`_)
+* CI: Add iron workflow (`#64 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/64>`_)
+* Contributors: Felix Exner, Sebastian Castro, Rune Søe-Knudsen
+
 2.1.0 (2023-06-01)
 ------------------
 * added missing handback interface - ros2control mock interface won't work otherwise (`#68 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/68>`_)
