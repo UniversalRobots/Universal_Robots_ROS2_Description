@@ -24,7 +24,9 @@
   <maintainer email="lovro.ivanov@gmail.com">Lovro Ivanov</maintainer>
   <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
 
-  <license>BSD-3-Clause</license>
+  <license file="LICENSE">BSD-3-Clause</license>
+  <license file="meshes/ur20/LICENSE.txt">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>
+  <!--<license file="meshes/ur20/LICENSE.txt" source-files="meshes/ur20/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
 
   <url type="bugtracker">https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues</url>
   <url type="repository">https://github.com/UniversalRobots/Universal_Robots_ROS2_Description</url>
