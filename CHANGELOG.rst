@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.1 (2023-09-08)
+------------------
 * Update the joint limits for UR20 (`#99 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/99>`_)
 * UR20 description and meshes (`#94 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/94>`_)
   The UR20 meshes are added under Universal Robots A/S’
