@@ -28,11 +28,16 @@
 #
 # Author: Denis Stogl
 
+import os
+
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
+from ament_index_python.packages import get_package_share_directory
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+
+import yaml
 
 
 def generate_launch_description():
@@ -129,6 +134,16 @@ def generate_launch_description():
     )
     robot_description = {"robot_description": robot_description_content}
 
+    initial_positions_file = os.path.join(
+        get_package_share_directory("ur_description"), "config", "initial_positions.yaml"
+    )
+    print(initial_positions_file)
+    with open(initial_positions_file, "r") as stream:
+        try:
+            initial_positions = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
     rviz_config_file = PathJoinSubstitution(
         [FindPackageShare(description_package), "rviz", "view_robot.rviz"]
     )
@@ -136,6 +151,7 @@ def generate_launch_description():
     joint_state_publisher_node = Node(
         package="joint_state_publisher_gui",
         executable="joint_state_publisher_gui",
+        parameters=[{"zeros": initial_positions}],
     )
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -151,10 +167,6 @@ def generate_launch_description():
         arguments=["-d", rviz_config_file],
     )
 
-    nodes_to_start = [
-        joint_state_publisher_node,
-        robot_state_publisher_node,
-        rviz_node,
-    ]
+    nodes_to_start = [joint_state_publisher_node, robot_state_publisher_node, rviz_node]
 
     return LaunchDescription(declared_arguments + nodes_to_start)
