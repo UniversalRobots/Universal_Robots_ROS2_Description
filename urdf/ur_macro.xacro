@@ -68,8 +68,8 @@
     safety_k_position:=20
     use_mock_hardware:=false
     mock_sensor_commands:=false
+    sim_gazebo_classic:=false
     sim_gazebo:=false
-    sim_ignition:=false
     headless_mode:=false
     initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
     use_tool_communication:=false
@@ -101,7 +101,7 @@
       kinematics_parameters_file="${kinematics_parameters_file}"
       physical_parameters_file="${physical_parameters_file}"
       visual_parameters_file="${visual_parameters_file}"
-      force_abs_paths="${sim_gazebo or sim_ignition}"/>
+      force_abs_paths="${sim_gazebo_classic or sim_gazebo}"/>
 
 
     <!-- ros2 control include -->
@@ -113,8 +113,8 @@
       initial_positions="${initial_positions}"
       mock_sensor_commands="${mock_sensor_commands}"
       headless_mode="${headless_mode}"
+      sim_gazebo_classic="${sim_gazebo_classic}"
       sim_gazebo="${sim_gazebo}"
-      sim_ignition="${sim_ignition}"
       script_filename="${script_filename}"
       output_recipe_filename="${output_recipe_filename}"
       input_recipe_filename="${input_recipe_filename}"
