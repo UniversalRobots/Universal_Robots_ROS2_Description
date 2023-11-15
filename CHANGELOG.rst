@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Default to non_blocking_read=true (`#111 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/111>`_)
+* Add license comment to package.xml (`#107 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/107>`_)
+* License update for README (`#108 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/108>`_)
+* added possibility to change reverse_port, script_sender_port and trajectory_port (`#105 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/105>`_)
+* Contributors: Felix Durchdewald, Felix Exner, Rune Søe-Knudsen, dependabot[bot], github-actions[bot]
+
 2.2.1 (2023-09-08)
 ------------------
 * Update the joint limits for UR20 (`#98 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/98>`_)
