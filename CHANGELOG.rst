@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.2 (2023-11-15)
+------------------
 * Default to non_blocking_read=true (`#111 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/111>`_)
 * Add license comment to package.xml (`#107 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/107>`_)
 * License update for README (`#108 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/108>`_)
