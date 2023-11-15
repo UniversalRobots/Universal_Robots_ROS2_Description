@@ -81,3 +81,11 @@ parameters file.
 As mentioned above, see the `urdf/ur.urdf.xacro` file as an example to integrate a UR robot into
 your scene description. Basically, you could create a copy of that file and extend it with the
 modifications from your specific scene.
+
+### Using description with ros2_control
+The description itself does not contain a `ros2_control` tag. However, the package provides a couple
+of helper files to create your own `ros2_control` tag describing the robot's joint control
+mechanisms. See the [`urdf/ur_mocked.urdf.xacro`](urdf/ur_mocked.urdf.xacro)
+file as an example using [mock
+hardware](https://control.ros.org/master/doc/ros2_control/hardware_interface/doc/mock_components_userdoc.html)
+to control the robot.
