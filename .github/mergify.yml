@@ -7,3 +7,12 @@ pull_request_rules:
       backport:
         branches:
           - humble
+
+  - name: Backport to iron branch
+    conditions:
+      - base=rolling
+      - label=backport-iron
+    actions:
+      backport:
+        branches:
+          - iron
