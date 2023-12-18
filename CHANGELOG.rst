@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.3 (2023-12-18)
+------------------
 * Make ros2_control tag generation optional in macro (`#121 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/121>`_)
 * Contributors: Felix Exner (fexner)
 
