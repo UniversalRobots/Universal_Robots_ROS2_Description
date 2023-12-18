@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Auto-update pre-commit hooks (`#123 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/123>`_)
+* Bump actions/setup-python from 4 to 5 (`#122 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/122>`_)
+* Remove ros2_control tag from package (`#114 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/114>`_)
+* Contributors: Felix Exner
+
 2.2.2 (2023-11-15)
 ------------------
 * Default to non_blocking_read=true (`#111 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/111>`_)
