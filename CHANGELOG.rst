@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.3 (2023-12-18)
+------------------
 * Auto-update pre-commit hooks (`#123 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/123>`_)
 * Bump actions/setup-python from 4 to 5 (`#122 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/122>`_)
 * Remove ros2_control tag from package (`#114 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/114>`_)
