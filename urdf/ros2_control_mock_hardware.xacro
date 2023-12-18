@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur_joint_control.xacro" />
+  <xacro:include filename="$(find ur_description)/urdf/inc/ur_sensors.xacro" />
+
+  <xacro:macro name="ur_ros2_control" params="
+    name
+    tf_prefix
+    mock_sensor_commands:=false
+    initial_positions:=${dict(shoulder_pan_joint=0.0,shoulder_lift_joint=-1.57,elbow_joint=0.0,wrist_1_joint=-1.57,wrist_2_joint=0.0,wrist_3_joint=0.0)}
+    ">
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>mock_components/GenericSystem</plugin>
+        <param name="mock_sensor_commands">${mock_sensor_commands}</param>
+        <param name="state_following_offset">0.0</param>
+      </hardware>
+      <xacro:ur_joint_control_description
+        tf_prefix="${tf_prefix}"
+        initial_positions="${initial_positions}"
+      />
+
+      <xacro:ur_sensors
+        tf_prefix="${tf_prefix}"
+      />
+    </ros2_control>
+  </xacro:macro>
+</robot>
