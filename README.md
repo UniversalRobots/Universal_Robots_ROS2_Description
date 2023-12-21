@@ -20,7 +20,7 @@ repository](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree
 not clone this repository into a Foxy workspace.
 
 ## License
-The [UR20 meshes](ur_description/meshes/ur20) constitutes “Graphical Documentation” the use of which is subject to and governed by our “[Terms and Conditions for use of Graphical Documentation](https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt)”.\
+The [UR20 meshes](ur_description/meshes/ur20) and [UR30 meshes](ur_description/meshes/ur30) constitutes “Graphical Documentation” the use of which is subject to and governed by our “[Terms and Conditions for use of Graphical Documentation](https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt)”.\
 If you have any questions regarding the license or the license doesn't fit you use-case, please contact [legal@universal-robots.com](mailto:legal@universal-robots.com).
 
 All other content is licensed under the BSD-3-Clause license
