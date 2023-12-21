@@ -15,6 +15,7 @@
 
 # This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
 exclude: 'meshes/ur20/LICENSE.txt'
+exclude: 'meshes/ur30/LICENSE.txt'
 
 repos:
   # Standard hooks
