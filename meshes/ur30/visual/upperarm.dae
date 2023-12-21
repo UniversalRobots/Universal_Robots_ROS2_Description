@@ -2,8 +2,9 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <asset>
     <contributor>
-      <author>Blender User</author>
-      <authoring_tool>Blender 4.0.2 commit date:2023-12-05, commit time:07:41, hash:9be62e85b727</authoring_tool>
+      <author>Universal Robots A/S</author>
+      <copyright>2023 Universal Robots A/S</copyright>
+      <comments>Use hereof is subject to Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</comments>
     </contributor>
     <created>2023-12-21T13:16:01</created>
     <modified>2023-12-21T13:16:01</modified>
