@@ -14,7 +14,7 @@
 # See https://github.com/pre-commit/pre-commit
 
 # This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
-exclude: 'meshes/UR_GRAPHICAL_DOCUMENTATION_LICENSE.txt'
+exclude: 'meshes/ur20/LICENSE.txt'
 
 repos:
   # Standard hooks
