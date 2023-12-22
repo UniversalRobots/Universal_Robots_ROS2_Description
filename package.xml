@@ -25,9 +25,10 @@
   <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
 
   <license file="LICENSE">BSD-3-Clause</license>
-  <!-- The UR20 meshes constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
+  <!-- The UR20 and UR30 meshes constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
   <license file="meshes/ur20/LICENSE.txt">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>
   <!--<license file="meshes/ur20/LICENSE.txt" source-files="meshes/ur20/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
+  <!--<license file="meshes/ur30/LICENSE.txt" source-files="meshes/ur30/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
 
   <url type="bugtracker">https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues</url>
   <url type="repository">https://github.com/UniversalRobots/Universal_Robots_ROS2_Description</url>
