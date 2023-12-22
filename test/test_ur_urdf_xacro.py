@@ -36,7 +36,16 @@ import tempfile
 from ament_index_python.packages import get_package_share_directory
 
 
+<<<<<<< HEAD
 def test_ur_urdf_xacro():
+=======
+@pytest.mark.parametrize(
+    "ur_type", ["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"]
+)
+@pytest.mark.parametrize("description_file", ["ur.urdf.xacro", "ur_mocked.urdf.xacro"])
+@pytest.mark.parametrize("prefix", ["", "my_ur_"])
+def test_ur_urdf_xacro(ur_type, description_file, prefix):
+>>>>>>> 324b54c (Add UR30 model (#126))
     # Initialize Arguments
     ur_type = "ur3"
     safety_limits = "true"
