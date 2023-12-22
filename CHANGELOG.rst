@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add UR30 model (`#126 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/126>`_)
+* Contributors: Felix Exner (fexner)
+
 2.2.3 (2023-12-18)
 ------------------
 * Auto-update pre-commit hooks (`#123 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/123>`_)
