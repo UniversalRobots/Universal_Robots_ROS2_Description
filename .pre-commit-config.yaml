@@ -13,8 +13,6 @@
 #
 # See https://github.com/pre-commit/pre-commit
 
-# This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
-exclude: 'meshes/ur20/LICENSE.txt'
 
 repos:
   # Standard hooks
@@ -33,8 +31,14 @@ repos:
       - id: debug-statements
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      - id: trailing-whitespace
       - id: check-byte-order-marker  # Forbid UTF-8 byte-order markers
+      - id: trailing-whitespace
+        # This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
+        exclude: |
+          (?x)^(
+            meshes/ur20/LICENSE.txt|
+            meshes/ur30/LICENSE.txt
+          )$
 
   # Python hooks
   - repo: https://github.com/asottile/pyupgrade
