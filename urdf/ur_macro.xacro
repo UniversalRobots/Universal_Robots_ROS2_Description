@@ -69,6 +69,7 @@
     safety_k_position:=20
     use_fake_hardware:=false
     fake_sensor_commands:=false
+    calculate_dynamics:=false
     sim_gazebo:=false
     sim_ignition:=false
     headless_mode:=false
@@ -114,6 +115,7 @@
         use_fake_hardware="${use_fake_hardware}"
         initial_positions="${initial_positions}"
         fake_sensor_commands="${fake_sensor_commands}"
+        calculate_dynamics="${calculate_dynamics}"
         headless_mode="${headless_mode}"
         sim_gazebo="${sim_gazebo}"
         sim_ignition="${sim_ignition}"

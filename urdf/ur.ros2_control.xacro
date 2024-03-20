@@ -3,7 +3,7 @@
 
   <xacro:macro name="ur_ros2_control" params="
     name
-    use_fake_hardware:=false fake_sensor_commands:=false
+    use_fake_hardware:=false fake_sensor_commands:=false calculate_dynamics:=false
     sim_gazebo:=false
     sim_ignition:=false
     headless_mode:=false
@@ -34,6 +34,7 @@
         <xacro:if value="${use_fake_hardware}">
           <plugin>mock_components/GenericSystem</plugin>
           <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+          <param name="calculate_dynamics">${calculate_dynamics}</param>
           <param name="state_following_offset">0.0</param>
         </xacro:if>
         <xacro:unless value="${use_fake_hardware or sim_gazebo or sim_ignition}">
