@@ -2,6 +2,15 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Auto-update pre-commit hooks (`#130 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/130>`_)
+* Bump pre-commit/action from 3.0.0 to 3.0.1 (`#134 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/134>`_)
+* Bump peter-evans/create-pull-request from 5 to 6 (`#133 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/133>`_)
+* Update Graphical Documentation license to version 1.01
+* Make sure the UR5 models are actually standing on the ground
+* Contributors: Felix Exner, dependabot[bot], github-actions[bot]
+
 2.2.4 (2023-12-22)
 ------------------
 * Add UR30 model (`#126 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/126>`_)
