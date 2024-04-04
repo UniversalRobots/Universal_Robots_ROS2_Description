@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.5 (2024-04-04)
+------------------
 * Auto-update pre-commit hooks (`#130 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/130>`_)
 * Bump pre-commit/action from 3.0.0 to 3.0.1 (`#134 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/134>`_)
 * Bump peter-evans/create-pull-request from 5 to 6 (`#133 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/133>`_)
