@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.4 (2024-04-04)
+------------------
 * Update Graphical Documentation license to version 1.01 (`#143 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/143>`_)
 * Add UR30 model (`#142 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/142>`_)
 * Make sure the UR5 models are actually standing on the ground (`#136 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/136>`_)
