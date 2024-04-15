@@ -71,8 +71,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "description_package",
             default_value="ur_description",
-            description="Description package with robot URDF/XACRO files. Usually the argument \
-        is not set, it enables use of a custom description.",
+            description="Description package with robot URDF/XACRO files. Usually the argument "
+            "is not set, it enables use of a custom description.",
         )
     )
     declared_arguments.append(
@@ -86,9 +86,9 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "tf_prefix",
             default_value='""',
-            description="Prefix of the joint names, useful for \
-        multi-robot setup. If changed than also joint names in the controllers' configuration \
-        have to be updated.",
+            description="Prefix of the joint names, useful for "
+            "multi-robot setup. If changed than also joint names in the controllers' configuration "
+            "have to be updated.",
         )
     )
 
