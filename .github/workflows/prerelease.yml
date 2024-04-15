@@ -2,7 +2,7 @@ name: Prerelease
 on:
   push:
     branches:
-      - ros2
+      - iron
     tags:
       - '**'
 jobs:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [humble]
+        ROS_DISTRO: [iron]
         ROS_REPO: [main]
         PRERELEASE: [true]
     env:
