@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix multi-line strings in DeclareLaunchArgument (`#140 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/140>`_)
+* Add mergify rule for iron branch (`#120 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/120>`_)
+* Fix default calibration file for UR30
+* Contributors: Felix Exner, Matthijs van der Burgh, RobertWilbrandt
+
 2.2.5 (2024-04-04)
 ------------------
 * Auto-update pre-commit hooks (`#130 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/130>`_)
