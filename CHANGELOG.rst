@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.4.0 (2024-04-25)
+------------------
 * Fix multi-line strings in DeclareLaunchArgument (`#140 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/140>`_)
 * Add mergify rule for iron branch (`#120 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/120>`_)
 * Fix default calibration file for UR30
