@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.0 (2024-04-25)
+------------------
 * Update CI for iron
 * Fix multi-line strings in DeclareLaunchArgument (backport of `#140 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/140>`_) (`#154 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/154>`_)
   Co-authored-by: Matthijs van der Burgh <matthijs.vander.burgh@live.nl>
