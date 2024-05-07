@@ -19,4 +19,4 @@ jobs:
     with:
       ros_distro: rolling
       ros_repo: testing
-      ref_for_scheduled_build: jazzy
+      ref_for_scheduled_build: rolling
