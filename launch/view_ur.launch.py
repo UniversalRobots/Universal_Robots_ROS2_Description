@@ -66,20 +66,22 @@ def generate_launch_description():
             description="k-position factor in the safety controller.",
         )
     )
-    # General arguments
     declared_arguments.append(
         DeclareLaunchArgument(
-            "description_package",
-            default_value="ur_description",
-            description="Description package with robot URDF/XACRO files. Usually the argument "
-            "is not set, it enables use of a custom description.",
+            "description_file",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_description"), "urdf", "ur.urdf.xacro"]
+            ),
+            description="URDF/XACRO description file (absolute path) with the robot.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "description_file",
-            default_value="ur.urdf.xacro",
-            description="URDF/XACRO description file with the robot.",
+            "rviz_config_file",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_description"), "rviz", "view_robot.rviz"]
+            ),
+            description="RViz config file (absolute path) to use when launching rviz.",
         )
     )
     declared_arguments.append(
@@ -97,16 +99,15 @@ def generate_launch_description():
     safety_limits = LaunchConfiguration("safety_limits")
     safety_pos_margin = LaunchConfiguration("safety_pos_margin")
     safety_k_position = LaunchConfiguration("safety_k_position")
-    # General arguments
-    description_package = LaunchConfiguration("description_package")
     description_file = LaunchConfiguration("description_file")
     tf_prefix = LaunchConfiguration("tf_prefix")
+    rviz_config_file = LaunchConfiguration("rviz_config_file")
 
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution([FindPackageShare(description_package), "urdf", description_file]),
+            description_file,
             " ",
             "safety_limits:=",
             safety_limits,
@@ -128,10 +129,6 @@ def generate_launch_description():
         ]
     )
     robot_description = {"robot_description": robot_description_content}
-
-    rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare(description_package), "rviz", "view_robot.rviz"]
-    )
 
     joint_state_publisher_node = Node(
         package="joint_state_publisher_gui",
