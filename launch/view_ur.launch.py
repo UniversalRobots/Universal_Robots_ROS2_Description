@@ -72,7 +72,7 @@ def generate_launch_description():
             default_value=PathJoinSubstitution(
                 [FindPackageShare("ur_description"), "urdf", "ur.urdf.xacro"]
             ),
-            description="URDF/XACRO description file with the robot.",
+            description="URDF/XACRO description file (absolute path) with the robot.",
         )
     )
     declared_arguments.append(
