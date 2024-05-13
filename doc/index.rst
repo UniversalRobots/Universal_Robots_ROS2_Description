@@ -8,7 +8,7 @@ Structure of the repository
 ---------------------------
 
 As the kinematics of all models is roughly the same and varies only in the meshes, the DH
-parameters and the physical parameters the description uses xacro macros in order to make it reuse
+parameters and the physical parameters, the description uses xacro macros in order to make it reuse
 as much as possible. This way it is less likely that errors are introduced in one of the models.
 
 Therefore, the description is split up into multiple URDF/XACRO files:
@@ -35,8 +35,8 @@ Basically, the description can be modified using configuration values stored in 
    the cap on the wrist_3_link. This config file specifies which meshes (both, visual and collision)
    should be used.
 
-The four configuration files have to be passed to ``ur_macro.urdf`` (more specific to the macro
-defined in that file) which is done inside the ``ur.urdf.macro``. Contents of the files are parsed
+The four configuration files have to be passed to ``ur_macro.xacro`` (more specific to the macro
+defined in that file) which is done inside the ``ur.urdf.xacro``. Contents of the files are parsed
 inside ``inc/ur_common.xacro``.
 
 Arguments that have to be passed to the main ``ur.urdf.xacro`` file are:
