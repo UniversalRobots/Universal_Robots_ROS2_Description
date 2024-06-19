@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.4.1 (2024-06-19)
+------------------
 * Add migration notes for jazzy (`#169 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/169>`_)
 * Remove limits definitions from ros2_control command interfaces (`#166 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/166>`_)
 * Sphinx doc (`#161 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/161>`_)
