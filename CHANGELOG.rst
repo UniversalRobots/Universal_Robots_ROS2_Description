@@ -2,6 +2,16 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add migration notes for jazzy (`#169 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/169>`_)
+* Remove limits definitions from ros2_control command interfaces (`#166 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/166>`_)
+* Sphinx doc (`#161 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/161>`_)
+* Use absolute paths for configurable files (`#160 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/160>`_)
+* [CI] Fix ref for scheduled jazzy testing binary build (`#162 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/162>`_)
+* Add Jazzy to the README (`#158 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/158>`_)
+* Contributors: Felix Exner, Vincenzo Di Pentima
+
 2.4.0 (2024-04-25)
 ------------------
 * Fix multi-line strings in DeclareLaunchArgument (`#140 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/140>`_)
