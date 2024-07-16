@@ -78,8 +78,10 @@
     <xacro:property name="wrist_2_upper_limit" value="${sec_limits['wrist_2_joint']['max_position']}" scope="parent"/>
     <xacro:property name="wrist_2_velocity_limit" value="${sec_limits['wrist_2_joint']['max_velocity']}" scope="parent"/>
     <xacro:property name="wrist_2_effort_limit" value="${sec_limits['wrist_2_joint']['max_effort']}" scope="parent"/>
-    <xacro:property name="wrist_3_lower_limit" value="${sec_limits['wrist_3_joint']['min_position']}" scope="parent"/>
-    <xacro:property name="wrist_3_upper_limit" value="${sec_limits['wrist_3_joint']['max_position']}" scope="parent"/>
+    <xacro:if value="${sec_limits['wrist_3_joint']['has_position_limits']}">
+      <xacro:property name="wrist_3_lower_limit" value="${sec_limits['wrist_3_joint']['min_position']}" scope="parent"/>
+      <xacro:property name="wrist_3_upper_limit" value="${sec_limits['wrist_3_joint']['max_position']}" scope="parent"/>
+    </xacro:if>
     <xacro:property name="wrist_3_velocity_limit" value="${sec_limits['wrist_3_joint']['max_velocity']}" scope="parent"/>
     <xacro:property name="wrist_3_effort_limit" value="${sec_limits['wrist_3_joint']['max_effort']}" scope="parent"/>
 
