@@ -33,7 +33,8 @@
         </xacro:if>
         <xacro:if value="${use_fake_hardware}">
           <plugin>mock_components/GenericSystem</plugin>
-          <param name="fake_sensor_commands">${fake_sensor_commands}</param>
+	  <param name="calculate_dynamics">true</param>
+	  <param name="fake_sensor_commands">${fake_sensor_commands}</param>
           <param name="state_following_offset">0.0</param>
         </xacro:if>
         <xacro:unless value="${use_fake_hardware or sim_gazebo or sim_ignition}">
