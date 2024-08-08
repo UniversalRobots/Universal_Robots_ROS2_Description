@@ -16,6 +16,7 @@
         <plugin>mock_components/GenericSystem</plugin>
         <param name="mock_sensor_commands">${mock_sensor_commands}</param>
         <param name="state_following_offset">0.0</param>
+        <param name="calculate_dynamics">true</param>
       </hardware>
       <xacro:ur_joint_control_description
         tf_prefix="${tf_prefix}"
