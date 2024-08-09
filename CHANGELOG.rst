@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.1 (2024-08-09)
+------------------
 * Added dynamics tag when using mock_components/GenericSystem (`#175 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/175>`_)
 * Remove ros2_control limit params (`#167 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/167>`_)
 * Add Jazzy to the README (`#164 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/164>`_)
