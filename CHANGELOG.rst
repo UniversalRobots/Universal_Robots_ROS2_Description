@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added dynamics tag when using mock_components/GenericSystem (`#181 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/181>`_)
+* Contributors: Felix Exner (fexner)
+
 2.4.1 (2024-06-19)
 ------------------
 * Add migration notes for jazzy (`#169 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/169>`_)
