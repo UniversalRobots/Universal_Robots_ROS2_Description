@@ -59,7 +59,7 @@ Basically, the description can be modified using configuration values stored in 
    should be used.
 
 The four configuration files have to be passed to `ur_macro.urdf` (more specific to the macro
-defined in that file) which is done inside the `ur.urdf.macro`. Contents of the files are parsed
+defined in that file) which is done inside the `ur.urdf.xacro`. Contents of the files are parsed
 inside `ur_common.xacro`.
 
 Arguments that have to be passed to the main `ur.urdf.xacro` file are:
