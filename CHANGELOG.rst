@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.6 (2024-08-09)
+------------------
 * Fixed typo in README.md (`#176 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/176>`_)
 * Added dynamics tag when using mock_components/GenericSystem (backport of `#175 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/175>`_)
 * Auto-update pre-commit hooks (`#171 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/171>`_) (`#172 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/172>`_)
