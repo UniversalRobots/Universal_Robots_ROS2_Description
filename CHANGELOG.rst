@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added dynamics tag when using mock_components/GenericSystem (`#175 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/175>`_)
+* Remove ros2_control limit params (`#167 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/167>`_)
+* Add Jazzy to the README (`#164 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/164>`_)
+* Contributors: Felix Exner, Niccolo
+
 2.3.0 (2024-04-25)
 ------------------
 * Update CI for iron
