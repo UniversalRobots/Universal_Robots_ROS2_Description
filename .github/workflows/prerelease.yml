@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [humble, rolling]
+        ROS_DISTRO: [rolling]
         ROS_REPO: [main]
         PRERELEASE: [true]
     env:
@@ -20,19 +20,19 @@ jobs:
       BASEDIR: ${{ github.workspace }}/.work
       CACHE_PREFIX: ${{ matrix.ROS_DISTRO }}-${{ matrix.ROS_REPO }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # The target directory cache doesn't include the source directory because
       # that comes from the checkout.  See "prepare target_ws for cache" task below
       - name: cache target_ws
         if: ${{ ! matrix.CCOV }}
-        uses: pat-s/always-upload-cache@v2.1.5
+        uses: pat-s/always-upload-cache@v3.0.11
         with:
           path: ${{ env.BASEDIR }}/target_ws
           key: target_ws-${{ env.CACHE_PREFIX }}-${{ hashFiles('**/CMakeLists.txt', '**/package.xml') }}-${{ github.run_id }}
           restore-keys: |
             target_ws-${{ env.CACHE_PREFIX }}-${{ hashFiles('**/CMakeLists.txt', '**/package.xml') }}
       - name: cache ccache
-        uses: pat-s/always-upload-cache@v2.1.5
+        uses: pat-s/always-upload-cache@v3.0.11
         with:
           path: ${{ env.CCACHE_DIR }}
           key: ccache-${{ env.CACHE_PREFIX }}-${{ github.sha }}-${{ github.run_id }}

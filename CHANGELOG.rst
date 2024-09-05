@@ -2,6 +2,79 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.4.2 (2024-08-09)
+------------------
+* Added dynamics tag when using mock_components/GenericSystem (`#181 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/181>`_)
+* Contributors: Felix Exner (fexner)
+
+2.4.1 (2024-06-19)
+------------------
+* Add migration notes for jazzy (`#169 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/169>`_)
+* Remove limits definitions from ros2_control command interfaces (`#166 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/166>`_)
+* Sphinx doc (`#161 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/161>`_)
+* Use absolute paths for configurable files (`#160 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/160>`_)
+* [CI] Fix ref for scheduled jazzy testing binary build (`#162 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/162>`_)
+* Add Jazzy to the README (`#158 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/158>`_)
+* Contributors: Felix Exner, Vincenzo Di Pentima
+
+2.4.0 (2024-04-25)
+------------------
+* Fix multi-line strings in DeclareLaunchArgument (`#140 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/140>`_)
+* Add mergify rule for iron branch (`#120 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/120>`_)
+* Fix default calibration file for UR30
+* Contributors: Felix Exner, Matthijs van der Burgh, RobertWilbrandt
+
+2.2.5 (2024-04-04)
+------------------
+* Auto-update pre-commit hooks (`#130 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/130>`_)
+* Bump pre-commit/action from 3.0.0 to 3.0.1 (`#134 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/134>`_)
+* Bump peter-evans/create-pull-request from 5 to 6 (`#133 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/133>`_)
+* Update Graphical Documentation license to version 1.01
+* Make sure the UR5 models are actually standing on the ground
+* Contributors: Felix Exner, dependabot[bot], github-actions[bot]
+
+2.2.4 (2023-12-22)
+------------------
+* Add UR30 model (`#126 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/126>`_)
+* Contributors: Felix Exner (fexner)
+
+2.2.3 (2023-12-18)
+------------------
+* Auto-update pre-commit hooks (`#123 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/123>`_)
+* Bump actions/setup-python from 4 to 5 (`#122 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/122>`_)
+* Remove ros2_control tag from package (`#114 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/114>`_)
+* Contributors: Felix Exner
+
+2.2.2 (2023-11-15)
+------------------
+* Default to non_blocking_read=true (`#111 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/pull/111>`_)
+* Add license comment to package.xml (`#107 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/107>`_)
+* License update for README (`#108 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/108>`_)
+* added possibility to change reverse_port, script_sender_port and trajectory_port (`#105 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/105>`_)
+* Contributors: Felix Durchdewald, Felix Exner, Rune Søe-Knudsen, dependabot[bot], github-actions[bot]
+
+2.2.1 (2023-09-08)
+------------------
+* Update the joint limits for UR20 (`#98 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/98>`_)
+* UR20 description and meshes (`#94 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/94>`_)
+  The UR20 meshes are added under Universal Robots A/S’
+  Terms and Conditions for Use of Graphical Documentation
+* Contributors: Rune Søe-Knudsen, Felix Exner
+
+2.2.0 (2023-08-28)
+------------------
+* Auto-update pre-commit hooks
+* Do not require upstream ws in ici
+* Auto-update pre-commit hooks (`#88 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/88>`_)
+* Bump ros-tooling/setup-ros from 0.2 to 0.7 (`#83 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/83>`_)
+* Bump pat-s/always-upload-cache from 2.1.5 to 3.0.11 (`#84 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/84>`_)
+* Bump actions/checkout from 1 to 3 (`#85 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/85>`_)
+* Update README regarding distribution branches (`#80 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/80>`_)
+* Add mergify, dependabot and pre-commit update
+* Switch fake to mock for ros2_control updates (`#77 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/77>`_)
+* Add iron workflow (`#64 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/64>`_)
+* Contributors: Felix Exner, Sebastian Castro, dependabot[bot], github-actions[bot]
+
 2.1.0 (2023-06-01)
 ------------------
 * added missing handback interface - ros2control mock interface won't work otherwise (`#68 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/68>`_)

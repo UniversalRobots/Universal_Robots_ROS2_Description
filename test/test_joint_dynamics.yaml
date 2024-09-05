@@ -17,4 +17,3 @@ joint_dynamics:
   wrist_3_joint:
     damping: 0.678
     friction: 6.789
-  
