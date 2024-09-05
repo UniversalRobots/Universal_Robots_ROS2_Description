@@ -64,7 +64,7 @@
     safety_limits:=false
     safety_pos_margin:=0.15
     safety_k_position:=20
-    joint_dynamics:=${dict(shoulder_pan_joint=dict(damping=0.0, friction=0.0), shoulder_lift_joint=dict(damping=0.0, friction=0.0), elbow_joint=dict(damping=0.0, friction=0.0), wrist_1_joint=dict(damping=0.0, friction=0.0), wrist_2_joint=dict(damping=0.0, friction=0.0), wrist_3_joint=dict(damping=0.0, friction=0.0))}
+    joint_dynamics:=${dict(joint_dynamics=dict(shoulder_pan_joint=dict(damping=0.0, friction=0.0), shoulder_lift_joint=dict(damping=0.0, friction=0.0), elbow_joint=dict(damping=0.0, friction=0.0), wrist_1_joint=dict(damping=0.0, friction=0.0), wrist_2_joint=dict(damping=0.0, friction=0.0), wrist_3_joint=dict(damping=0.0, friction=0.0)))}
     force_abs_paths:=false
     ">
 
