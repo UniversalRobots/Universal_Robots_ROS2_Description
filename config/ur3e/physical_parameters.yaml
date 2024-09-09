@@ -14,13 +14,13 @@ offsets:
 
 inertia_parameters:
   base_mass: 2.0  # This mass might be incorrect
-  shoulder_mass: 2.0
-  upper_arm_mass: 3.42
+  shoulder_mass: 1.98
+  upper_arm_mass: 3.4445
   upper_arm_inertia_offset: 0.12 # measured from model
-  forearm_mass: 1.26
-  wrist_1_mass: 0.8
-  wrist_2_mass: 0.8
-  wrist_3_mass: 0.35
+  forearm_mass: 1.437
+  wrist_1_mass: 0.871
+  wrist_2_mass: 0.805
+  wrist_3_mass: 0.261
 
   shoulder_radius: 0.060   # manually measured
   upper_arm_radius: 0.054  # manually measured
