@@ -1,13 +1,5 @@
 # Physical parameters
 
-dh_parameters:
-  d1: 0.1273
-  a2: -0.612
-  a3: -0.5723
-  d4: 0.163941
-  d5: 0.1157
-  d6: 0.0922
-
 offsets:
   shoulder_offset: 0.220941 # measured from model
   elbow_offset: 0.049042 # measured from model

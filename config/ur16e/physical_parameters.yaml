@@ -1,14 +1,5 @@
 # Physical parameters
 
-# from https://www.universal-robots.com/how-tos-and-faqs/faq/ur-faq/parameters-for-calculations-of-kinematics-and-dynamics-45257/
-dh_parameters:
-  d1: 0.1807
-  a2: -0.4784
-  a3: -0.36
-  d4: 0.17415
-  d5: 0.11985
-  d6: 0.11655
-
 offsets:
   shoulder_offset: 0.176 # measured from model
   elbow_offset: 0.040 # measured from model

@@ -52,7 +52,6 @@
 
     <!-- Extract subsections from yaml dictionaries -->
     <xacro:property name="sec_limits" value="${config_joint_limit_parameters['joint_limits']}"/>
-    <xacro:property name="sec_dh_parameters" value="${config_physical_parameters['dh_parameters']}"/>
     <xacro:property name="sec_offsets" value="${config_physical_parameters['offsets']}"/>
     <xacro:property name="sec_inertia_parameters" value="${config_physical_parameters['inertia_parameters']}" />
     <xacro:property name="sec_mesh_files" value="${config_visual_parameters['mesh_files']}" scope="parent"/>
@@ -83,14 +82,6 @@
     <xacro:property name="wrist_3_upper_limit" value="${sec_limits['wrist_3_joint']['max_position']}" scope="parent"/>
     <xacro:property name="wrist_3_velocity_limit" value="${sec_limits['wrist_3_joint']['max_velocity']}" scope="parent"/>
     <xacro:property name="wrist_3_effort_limit" value="${sec_limits['wrist_3_joint']['max_effort']}" scope="parent"/>
-
-    <!-- DH PARAMETERS -->
-    <xacro:property name="d1" value="${sec_dh_parameters['d1']}" scope="parent"/>
-    <xacro:property name="a2" value="${sec_dh_parameters['a2']}" scope="parent"/>
-    <xacro:property name="a3" value="${sec_dh_parameters['a3']}" scope="parent"/>
-    <xacro:property name="d4" value="${sec_dh_parameters['d4']}" scope="parent"/>
-    <xacro:property name="d5" value="${sec_dh_parameters['d5']}" scope="parent"/>
-    <xacro:property name="d6" value="${sec_dh_parameters['d6']}" scope="parent"/>
 
     <!-- kinematics -->
     <xacro:property name="shoulder_x" value="${sec_kinematics['shoulder']['x']}" scope="parent"/>
