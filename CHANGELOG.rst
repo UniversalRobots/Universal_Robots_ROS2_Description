@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix masses of robot links (backport of `#187 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/187>`_)
+* Contributors: Felix Exner
+
 2.1.6 (2024-08-09)
 ------------------
 * Fixed typo in README.md (`#176 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/176>`_)
