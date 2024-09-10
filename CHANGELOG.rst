@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.4.3 (2024-09-10)
+------------------
 * Fix masses of robot links (`#187 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/187>`_)
 * Contributors: Felix Exner (fexner)
 
