@@ -1,0 +1,19 @@
+joint_dynamics:
+  shoulder_pan_joint:
+    damping: 0.0
+    friction: 0.0
+  shoulder_lift_joint:
+    damping: 0.0
+    friction: 0.0
+  elbow_joint:
+    damping: 0.0
+    friction: 0.0
+  wrist_1_joint:
+    damping: 0.0
+    friction: 0.0
+  wrist_2_joint:
+    damping: 0.0
+    friction: 0.0
+  wrist_3_joint:
+    damping: 0.0
+    friction: 0.0

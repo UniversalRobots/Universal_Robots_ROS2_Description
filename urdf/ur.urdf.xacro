@@ -23,6 +23,11 @@
    <!--When using gazebo simulations absolute paths are necessary.-->
    <xacro:arg name="force_abs_paths" default="false" />
 
+   <!-- Default joint dynamics has friction and damping equal to 0, but useful to specialize for simulations -->
+   <xacro:arg name="joint_dynamics_file" default="$(find ur_description)/config/joint_dynamics.yaml"/>
+
+   <xacro:property name="joint_dynamics_file" default="$(arg joint_dynamics_file)"/>
+
    <!-- create link fixed to the "world" -->
    <link name="world" />
 
@@ -38,6 +43,7 @@
      safety_limits="$(arg safety_limits)"
      safety_pos_margin="$(arg safety_pos_margin)"
      safety_k_position="$(arg safety_k_position)"
+     joint_dynamics="${xacro.load_yaml(joint_dynamics_file)}"
      force_abs_paths="$(arg force_abs_paths)"
      >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
