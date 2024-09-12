@@ -45,7 +45,7 @@ inertia_parameters:
       length: 0.05
 
   # model referring to https://www.universal-robots.com/articles/ur/application-installation/dh-parameters-for-calculations-of-kinematics-and-dynamics/
-  center_of_mass: 
+  center_of_mass:
     shoulder_cog:
       x: 0.0        # model.x
       y: -0.030     # -model.z

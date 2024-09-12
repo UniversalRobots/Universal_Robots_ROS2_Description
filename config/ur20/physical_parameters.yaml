@@ -44,7 +44,7 @@ inertia_parameters:
       radius: 0.045
       length: 0.05
 
-  center_of_mass: 
+  center_of_mass:
     shoulder_cog:
       x: 0.0 # model.x
       y: -0.0062 # -model.z
