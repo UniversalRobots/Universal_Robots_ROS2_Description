@@ -8,7 +8,6 @@ inertia_parameters:
   base_mass: 2.0  # This mass might be incorrect
   shoulder_mass: 1.98
   upper_arm_mass: 3.4445
-  upper_arm_inertia_offset: 0.12 # measured from model
   forearm_mass: 1.437
   wrist_1_mass: 0.871
   wrist_2_mass: 0.805
@@ -24,24 +23,6 @@ inertia_parameters:
     base:
       radius: 0.075
       length: 0.038
-    shoulder:
-      radius: 0.075
-      length: 0.178
-    upperarm:
-      radius: 0.075
-      length: 0.24365
-    forearm:
-      radius: 0.075
-      length: 0.2132
-    wrist_1:
-      radius: 0.075
-      length: 0.12
-    wrist_2:
-      radius: 0.075
-      length: 0.12
-    wrist_3:
-      radius: 0.032
-      length: 0.04
 
   # model referring to https://www.universal-robots.com/articles/ur/application-installation/dh-parameters-for-calculations-of-kinematics-and-dynamics/
   center_of_mass:

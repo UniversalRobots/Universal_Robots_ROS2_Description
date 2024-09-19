@@ -135,7 +135,6 @@
     <xacro:property name="base_mass" value="${sec_inertia_parameters['base_mass']}" scope="parent"/>
     <xacro:property name="shoulder_mass" value="${sec_inertia_parameters['shoulder_mass']}" scope="parent"/>
     <xacro:property name="upper_arm_mass" value="${sec_inertia_parameters['upper_arm_mass']}" scope="parent"/>
-    <xacro:property name="upper_arm_inertia_offset" value="${sec_inertia_parameters['upper_arm_inertia_offset']}" scope="parent"/>
     <xacro:property name="forearm_mass" value="${sec_inertia_parameters['forearm_mass']}" scope="parent"/>
     <xacro:property name="wrist_1_mass" value="${sec_inertia_parameters['wrist_1_mass']}" scope="parent"/>
     <xacro:property name="wrist_2_mass" value="${sec_inertia_parameters['wrist_2_mass']}" scope="parent"/>
@@ -144,18 +143,6 @@
     <xacro:property name="intertia_links" value="${sec_inertia_parameters['links']}" scope="parent"/>
     <xacro:property name="base_inertia_radius" value="${intertia_links['base']['radius']}" scope="parent"/>
     <xacro:property name="base_inertia_length" value="${intertia_links['base']['length']}" scope="parent"/>
-    <xacro:property name="shoulder_inertia_radius" value="${intertia_links['shoulder']['radius']}" scope="parent"/>
-    <xacro:property name="shoulder_inertia_length" value="${intertia_links['shoulder']['length']}" scope="parent"/>
-    <xacro:property name="upperarm_inertia_radius" value="${intertia_links['upperarm']['radius']}" scope="parent"/>
-    <xacro:property name="upperarm_inertia_length" value="${intertia_links['upperarm']['length']}" scope="parent"/>
-    <xacro:property name="forearm_inertia_radius" value="${intertia_links['forearm']['radius']}" scope="parent"/>
-    <xacro:property name="forearm_inertia_length" value="${intertia_links['forearm']['length']}" scope="parent"/>
-    <xacro:property name="wrist_1_inertia_radius" value="${intertia_links['wrist_1']['radius']}" scope="parent"/>
-    <xacro:property name="wrist_1_inertia_length" value="${intertia_links['wrist_1']['length']}" scope="parent"/>
-    <xacro:property name="wrist_2_inertia_radius" value="${intertia_links['wrist_2']['radius']}" scope="parent"/>
-    <xacro:property name="wrist_2_inertia_length" value="${intertia_links['wrist_2']['length']}" scope="parent"/>
-    <xacro:property name="wrist_3_inertia_radius" value="${intertia_links['wrist_3']['radius']}" scope="parent"/>
-    <xacro:property name="wrist_3_inertia_length" value="${intertia_links['wrist_3']['length']}" scope="parent"/>
 
     <!-- center of mass -->
     <xacro:property name="prop_shoulder_cog" value="${sec_inertia_parameters['center_of_mass']['shoulder_cog']}" scope="parent"/>

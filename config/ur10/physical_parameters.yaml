@@ -8,7 +8,6 @@ inertia_parameters:
   base_mass: 4.0  # This mass might be incorrect
   shoulder_mass: 7.1
   upper_arm_mass: 12.7
-  upper_arm_inertia_offset: 0.175
   forearm_mass: 4.27
   wrist_1_mass: 2.0
   wrist_2_mass: 2.0
@@ -24,24 +23,6 @@ inertia_parameters:
     base:
       radius: 0.075
       length: 0.038
-    shoulder:
-      radius: 0.075
-      length: 0.178
-    upperarm:
-      radius: 0.075
-      length: 0.612
-    forearm:
-      radius: 0.075
-      length: 0.5723
-    wrist_1:
-      radius: 0.075
-      length: 0.12
-    wrist_2:
-      radius: 0.075
-      length: 0.09
-    wrist_3:
-      radius: 0.045
-      length: 0.0305
 
   center_of_mass:
     shoulder_cog:
