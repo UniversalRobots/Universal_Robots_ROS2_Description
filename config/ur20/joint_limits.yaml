@@ -11,7 +11,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 730.0
+    max_effort: 738.0
     max_position: !degrees  360.0
     max_velocity: !degrees  120.0
     min_position: !degrees -360.0
@@ -21,7 +21,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 730.0
+    max_effort: 738.0
     max_position: !degrees  360.0
     max_velocity: !degrees  120.0
     min_position: !degrees -360.0
@@ -31,7 +31,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 430.0
+    max_effort: 433.0
     # we artificially limit this joint to half its actual joint position limit
     # to avoid (MoveIt/OMPL) planning problems, as due to the physical
     # construction of the robot, it's impossible to rotate the 'elbow_joint'
@@ -51,7 +51,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 100.0
+    max_effort: 107.0
     max_position: !degrees  360.0
     max_velocity: !degrees  210.0
     min_position: !degrees -360.0
@@ -61,7 +61,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 100.0
+    max_effort: 107.0
     max_position: !degrees  360.0
     max_velocity: !degrees  210.0
     min_position: !degrees -360.0
@@ -71,7 +71,7 @@ joint_limits:
     has_effort_limits: true
     has_position_limits: true
     has_velocity_limits: true
-    max_effort: 100.0
+    max_effort: 107.0
     max_position: !degrees  360.0
     max_velocity: !degrees  210.0
     min_position: !degrees -360.0
