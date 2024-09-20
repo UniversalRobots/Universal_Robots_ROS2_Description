@@ -1,13 +1,5 @@
 # Physical parameters
 
-dh_parameters:
-  d1: 0.152
-  a2: -0.244
-  a3: -0.213
-  d4: 0.131  # wrist1_length = d4 - elbow_offset - shoulder_offset
-  d5: 0.085
-  d6: 0.092
-
 offsets:
   shoulder_offset: 0.120 # measured from model
   elbow_offset: 0.027 # measured from model
@@ -16,7 +8,6 @@ inertia_parameters:
   base_mass: 2.0  # This mass might be incorrect
   shoulder_mass: 1.98
   upper_arm_mass: 3.4445
-  upper_arm_inertia_offset: 0.12 # measured from model
   forearm_mass: 1.437
   wrist_1_mass: 0.871
   wrist_2_mass: 0.805
@@ -32,47 +23,102 @@ inertia_parameters:
     base:
       radius: 0.075
       length: 0.038
-    shoulder:
-      radius: 0.075
-      length: 0.178
-    upperarm:
-      radius: 0.075
-      length: 0.24365
-    forearm:
-      radius: 0.075
-      length: 0.2132
-    wrist_1:
-      radius: 0.075
-      length: 0.12
-    wrist_2:
-      radius: 0.075
-      length: 0.12
-    wrist_3:
-      radius: 0.032
-      length: 0.04
 
+  # model referring to https://www.universal-robots.com/articles/ur/application-installation/dh-parameters-for-calculations-of-kinematics-and-dynamics/
   center_of_mass:
     shoulder_cog:
-      x: 0.0
-      y: -0.02
-      z: 0.0
+      x: 0.0        # model.x
+      y: 0.0        # -model.z
+      z: -0.02      # model.y
     upper_arm_cog:
-      x: 0.13
-      y: 0.0
-      z: 0.1157
+      x: -0.11355   # model.x - upper_arm_length
+      y: 0.0        # model.y
+      z: 0.1157     # model.z
     forearm_cog:
-      x: 0.05
-      y: 0.0
-      z: 0.0238
+      x: -0.1632    # model.x - forearm_length
+      y: 0.0        # model.y
+      z: 0.0238     # model.z
     wrist_1_cog:
-      x: 0.0
-      y: 0.0
-      z: 0.01
+      x: 0.0        # model.x
+      y: -0.01      # -model.z
+      z: 0.0        # model.y
     wrist_2_cog:
-      x: 0.0
-      y: 0.0
-      z: 0.01
+      x: 0.0        # model.x
+      y: 0.01       # model.z
+      z: 0.0        # -model.y
     wrist_3_cog:
-      x: 0.0
-      y: 0.0
-      z: -0.02
+      x: 0.0        # model.x
+      y: 0.0        # model.y
+      z: -0.02      # model.z
+
+  # compatible with cylinder approximation
+  rotation:
+    shoulder:
+      roll: 0
+      pitch: 0
+      yaw: 0
+    upper_arm:
+      roll: 0
+      pitch: 1.570796326794897
+      yaw: 0
+    forearm:
+      roll: 0
+      pitch: 1.570796326794897
+      yaw: 0
+    wrist_1:
+      roll: 0
+      pitch: 0
+      yaw: 0
+    wrist_2:
+      roll: 0
+      pitch: 0
+      yaw: 0
+    wrist_3:
+      roll: 0
+      pitch: 0
+      yaw: 0
+
+  # generated using cylinder approximation
+  tensor:
+    shoulder:
+      ixx: 0.008093166666666665
+      ixy: 0
+      ixz: 0
+      iyy: 0.008093166666666665
+      iyz: 0
+      izz: 0.005625
+    upper_arm:
+      ixx: 0.021728491912499998
+      ixy: 0
+      ixz: 0
+      iyy: 0.021728491912499998
+      iyz: 0
+      izz: 0.00961875
+    forearm:
+      ixx: 0.006544570199999999
+      ixy: 0
+      ixz: 0
+      iyy: 0.006544570199999999
+      iyz: 0
+      izz: 0.00354375
+    wrist_1:
+      ixx: 0.0020849999999999996
+      ixy: 0
+      ixz: 0
+      iyy: 0.0020849999999999996
+      iyz: 0
+      izz: 0.00225
+    wrist_2:
+      ixx: 0.0020849999999999996
+      ixy: 0
+      ixz: 0
+      iyy: 0.0020849999999999996
+      iyz: 0
+      izz: 0.00225
+    wrist_3:
+      ixx: 0.00013626666666666665
+      ixy: 0
+      ixz: 0
+      iyy: 0.00013626666666666665
+      iyz: 0
+      izz: 0.0001792
