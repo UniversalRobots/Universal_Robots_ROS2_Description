@@ -13,9 +13,10 @@
       <state_interface name="position.x"/>
       <state_interface name="position.y"/>
       <state_interface name="position.z"/>
-      <state_interface name="orientation.r"/>
-      <state_interface name="orientation.p"/>
+      <state_interface name="orientation.x"/>
       <state_interface name="orientation.y"/>
+      <state_interface name="orientation.z"/>
+      <state_interface name="orientation.w"/>
     </sensor>
   </xacro:macro>
 </robot>
