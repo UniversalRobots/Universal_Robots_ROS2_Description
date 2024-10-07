@@ -17,7 +17,7 @@
 repos:
   # Standard hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
         args: ['--maxkb=1500']
@@ -75,7 +75,7 @@ repos:
       - id: ament_lint_cmake
         name: ament_lint_cmake
         description: Check format of CMakeLists.txt files.
-        stages: [commit]
+        stages: [pre-commit]
         entry: ament_lint_cmake
         language: system
         files: CMakeLists.txt$
@@ -86,7 +86,7 @@ repos:
       - id: ament_copyright
         name: ament_copyright
         description: Check if copyright notice is available in all files.
-        stages: [commit]
+        stages: [pre-commit]
         entry: ament_copyright
         language: system
 
