@@ -9,5 +9,14 @@
       <state_interface name="torque.y"/>
       <state_interface name="torque.z"/>
     </sensor>
+    <sensor name="${tf_prefix}tcp_pose">
+      <state_interface name="position.x"/>
+      <state_interface name="position.y"/>
+      <state_interface name="position.z"/>
+      <state_interface name="orientation.x"/>
+      <state_interface name="orientation.y"/>
+      <state_interface name="orientation.z"/>
+      <state_interface name="orientation.w"/>
+    </sensor>
   </xacro:macro>
 </robot>
