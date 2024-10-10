@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.4.4 (2024-10-10)
+------------------
 * Add a sensor for the TCP pose (`#197 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/197>`_)
 * Add passthrough command interfaces for joints (`#204 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/204>`_)
 * Ur3 infinite wrist (`#196 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/196>`_)
