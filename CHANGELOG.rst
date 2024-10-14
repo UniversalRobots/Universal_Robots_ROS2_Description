@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Revert "Add passthrough command interfaces for joints (`#204 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/204>`_)" (`#214 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/214>`_)
+* Auto-update pre-commit hooks (`#211 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/211>`_)
+* Contributors: Felix Exner (fexner), github-actions[bot]
+
 2.4.4 (2024-10-10)
 ------------------
 * Add a sensor for the TCP pose (`#197 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/197>`_)
