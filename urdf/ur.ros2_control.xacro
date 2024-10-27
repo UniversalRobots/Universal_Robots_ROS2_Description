@@ -137,6 +137,16 @@
           <state_interface name="torque.z"/>
         </sensor>
 
+        <sensor name="${tf_prefix}tcp_pose">
+          <state_interface name="position.x"/>
+          <state_interface name="position.y"/>
+          <state_interface name="position.z"/>
+          <state_interface name="orientation.x"/>
+          <state_interface name="orientation.y"/>
+          <state_interface name="orientation.z"/>
+          <state_interface name="orientation.w"/>
+        </sensor>
+
         <!-- NOTE The following are joints used only for testing with fake hardware and will change in the future -->
         <gpio name="${tf_prefix}speed_scaling">
           <state_interface name="speed_scaling_factor"/>
