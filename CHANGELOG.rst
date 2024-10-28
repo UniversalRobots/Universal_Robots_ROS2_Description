@@ -2,6 +2,15 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add analog_output_domain_cmd command interface (baclport of `#219 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/219>`_)
+* Add a sensor for the TCP pose (backport of `#197 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/197>`_)
+* Add missing state interfaces for get_version service (backport of `#216 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/216>`_)
+* Ur3 infinite wrist (backport of `#196 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/196>`_)
+* Update dynamic properties (backport of `#195 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/195>`_)
+* Contributors: mergify[bot], Felix Exner, Rune Søe-Knudsen
+
 2.1.7 (2024-09-10)
 ------------------
 * Fix masses of robot links (backport of `#187 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/187>`_)
