@@ -9,14 +9,3 @@ pull_request_rules:
           - humble
         labels:
           - humble
-
-  - name: Backport to iron branch
-    conditions:
-      - base=rolling
-      - label=backport-iron
-    actions:
-      backport:
-        branches:
-          - iron
-        labels:
-          - iron
