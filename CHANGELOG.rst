@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Assure the description is loaded as string (backport `#229 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/229>`_)
+* Added ground plane to URDF for simulators (`#226 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/226>`_)
+* Contributors: Vincenzo Di Pentima, Felix Exner
+
 2.1.8 (2024-10-28)
 ------------------
 * Add analog_output_domain_cmd command interface (baclport of `#219 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/219>`_)
