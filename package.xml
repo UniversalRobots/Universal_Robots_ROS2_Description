@@ -18,11 +18,14 @@
   <author>Denis Stogl</author>
   <author>Andy Zelenak</author>
   <author>Marvin Grosse Besselmann</author>
+  <author email="schnell@fzi.de">Tristan Schnell</author>
+  <author email="lovro.ivanov@gmail.com">Lovro Ivanov</author>
+  <author email="denis@stoglrobotics.de">Denis Stogl</author>
+  <author email="dipentima@fzi.de">Vincenzo Di Pentima</author>
 
-  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
-  <maintainer email="schnell@fzi.de">Tristan Schnell</maintainer>
-  <maintainer email="lovro.ivanov@gmail.com">Lovro Ivanov</maintainer>
-  <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
+  <maintainer email="feex@universal-robots.com">Felix Exner</maintainer>
+  <maintainer email="rsk@universal-robots.com">Rune Søe-Knudsen</maintainer>
+  <maintainer email="ros@universal-robots.com">Universal Robots A/S</maintainer>
 
   <license file="LICENSE">BSD-3-Clause</license>
   <!-- The UR20 and UR30 meshes constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
