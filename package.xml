@@ -24,6 +24,7 @@
   <author email="dipentima@fzi.de">Vincenzo Di Pentima</author>
 
   <maintainer email="feex@universal-robots.com">Felix Exner</maintainer>
+  <maintainer email="rsk@universal-robots.com">Rune Søe-Knudsen</maintainer>
   <maintainer email="ros@universal-robots.com">Universal Robots A/S</maintainer>
 
   <license file="LICENSE">BSD-3-Clause</license>
