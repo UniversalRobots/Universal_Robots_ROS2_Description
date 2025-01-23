@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.1 (2025-01-23)
+------------------
 * Fix ur20 upperarm texture (`#244 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/244>`_)
 * Removing Blender Lighting and Camera information from visual DAE files (`#243 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/243>`_)
 * Auto-update pre-commit hooks (`#241 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/241>`_)
