@@ -11,76 +11,6 @@
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
-  <library_lights>
-    <light id="Point-light" name="Point.000">
-      <technique_common>
-        <point>
-          <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
-      </technique_common>
-      <extra>
-        <technique profile="blender">
-          <type sid="type" type="int">0</type>
-          <flag sid="flag" type="int">0</flag>
-          <mode sid="mode" type="int">1</mode>
-          <gamma sid="blender_gamma" type="float">1</gamma>
-          <red sid="red" type="float">1</red>
-          <green sid="green" type="float">1</green>
-          <blue sid="blue" type="float">1</blue>
-          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
-          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
-          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
-          <energy sid="blender_energy" type="float">1</energy>
-          <dist sid="blender_dist" type="float">25</dist>
-          <spotsize sid="spotsize" type="float">45</spotsize>
-          <spotblend sid="spotblend" type="float">0.15</spotblend>
-          <halo_intensity sid="blnder_halo_intensity" type="float">1</halo_intensity>
-          <att1 sid="att1" type="float">0</att1>
-          <att2 sid="att2" type="float">1</att2>
-          <falloff_type sid="falloff_type" type="int">2</falloff_type>
-          <clipsta sid="clipsta" type="float">0.5</clipsta>
-          <clipend sid="clipend" type="float">40</clipend>
-          <bias sid="bias" type="float">1</bias>
-          <soft sid="soft" type="float">3</soft>
-          <compressthresh sid="compressthresh" type="float">0.04999995</compressthresh>
-          <bufsize sid="bufsize" type="int">512</bufsize>
-          <samp sid="samp" type="int">3</samp>
-          <buffers sid="buffers" type="int">1</buffers>
-          <filtertype sid="filtertype" type="int">0</filtertype>
-          <bufflag sid="bufflag" type="int">0</bufflag>
-          <buftype sid="buftype" type="int">2</buftype>
-          <ray_samp sid="ray_samp" type="int">1</ray_samp>
-          <ray_sampy sid="ray_sampy" type="int">1</ray_sampy>
-          <ray_sampz sid="ray_sampz" type="int">1</ray_sampz>
-          <ray_samp_type sid="ray_samp_type" type="int">0</ray_samp_type>
-          <area_shape sid="area_shape" type="int">0</area_shape>
-          <area_size sid="area_size" type="float">0.1</area_size>
-          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
-          <area_sizez sid="area_sizez" type="float">0.1</area_sizez>
-          <adapt_thresh sid="adapt_thresh" type="float">9.99987e-4</adapt_thresh>
-          <ray_samp_method sid="ray_samp_method" type="int">1</ray_samp_method>
-          <shadhalostep sid="shadhalostep" type="int">0</shadhalostep>
-          <sun_effect_type sid="sun_effect_type" type="int">0</sun_effect_type>
-          <skyblendtype sid="skyblendtype" type="int">1</skyblendtype>
-          <horizon_brightness sid="horizon_brightness" type="float">1</horizon_brightness>
-          <spread sid="spread" type="float">1</spread>
-          <sun_brightness sid="sun_brightness" type="float">1</sun_brightness>
-          <sun_size sid="sun_size" type="float">1</sun_size>
-          <backscattered_light sid="backscattered_light" type="float">1</backscattered_light>
-          <sun_intensity sid="sun_intensity" type="float">1</sun_intensity>
-          <atm_turbidity sid="atm_turbidity" type="float">2</atm_turbidity>
-          <atm_extinction_factor sid="atm_extinction_factor" type="float">1</atm_extinction_factor>
-          <atm_distance_factor sid="atm_distance_factor" type="float">1</atm_distance_factor>
-          <skyblendfac sid="skyblendfac" type="float">1</skyblendfac>
-          <sky_exposure sid="sky_exposure" type="float">1</sky_exposure>
-          <sky_colorspace sid="sky_colorspace" type="int">2</sky_colorspace>
-        </technique>
-      </extra>
-    </light>
-  </library_lights>
   <library_images>
     <image id="UR20_DIFF_8bit_2K_png" name="UR20_DIFF_8bit_2K_png">
       <init_from>UR20_DIFF_8bit_2K.png</init_from>
@@ -228,10 +158,6 @@
   <library_controllers/>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
-      <node id="Point" name="Point" type="NODE">
-        <matrix sid="transform">1 0 0 0.03485537 0 1 0 -0.8024882 0 0 1 1.230019 0 0 0 1</matrix>
-        <instance_light url="#Point-light"/>
-      </node>
       <node id="wrist-2-mesh_005" name="wrist-2-mesh_005" type="NODE">
         <matrix sid="transform">1 3.61596e-7 8.90118e-7 0 -3.61596e-7 0.9999999 -3.21863e-13 0 -8.90118e-7 0 0.9999999 0 0 0 0 1</matrix>
         <instance_geometry url="#Cylinder_006-mesh" name="wrist-2-mesh_005">
