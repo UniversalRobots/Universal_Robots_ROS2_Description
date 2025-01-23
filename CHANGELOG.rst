@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix ur20 upperarm texture (`#244 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/244>`_)
+* Removing Blender Lighting and Camera information from visual DAE files (`#243 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/243>`_)
+* Auto-update pre-commit hooks (`#241 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/241>`_)
+* Update package maintainers (`#238 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/238>`_)
+* Contributors: Felix Exner, Shaurya Kumar
+
 3.0.0 (2024-12-11)
 ------------------
 * Remove Iron workflows and from README (`#230 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/230>`_)
