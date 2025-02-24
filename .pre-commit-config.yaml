@@ -55,7 +55,11 @@ repos:
 
 
   - repo: https://github.com/pycqa/flake8
+<<<<<<< HEAD
     rev: 7.1.0
+=======
+    rev: 7.1.2
+>>>>>>> 2985b6a (Auto-update pre-commit hooks (#254))
     hooks:
       - id: flake8
         args: ["--ignore=E501"]
