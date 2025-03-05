@@ -22,7 +22,12 @@
   </xacro:macro>
 
   <xacro:macro name="get_visual_params" params="name:=^ type:=^" >
-    <xacro:property name="visual_params" value="${sec_mesh_files[name][type]}" scope="parent"/>
+    <xacro:if value="${type in sec_mesh_files[name]}">
+      <xacro:property name="visual_params" value="${sec_mesh_files[name][type]}" scope="parent"/>
+    </xacro:if>
+    <xacro:unless value="${type in sec_mesh_files[name]}">
+      <xacro:property name="visual_params" value="" scope="parent"/>
+    </xacro:unless>
   </xacro:macro>
 
   <!-- Simplification of getting meshes. Available types can be seen in the visual_parameters.yaml (At the time of writing: visual, collision) -->

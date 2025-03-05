@@ -199,7 +199,7 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_2_link">
-	  <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
+          <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
       <visual>
         <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
         <geometry>
@@ -226,15 +226,22 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_3_link">
-	  <xacro:get_visual_params name="wrist_3" type="visual_offset"/>
+      <!-- TODO: remove this once all wrist_3 meshes have the visual_offset_xyz tag -->
+      <xacro:get_visual_params name="wrist_3" type="visual_offset_xyz"/>
+      <xacro:property name="mesh_offset" value="${visual_params}" scope="parent"/>
+
+      <xacro:if value="${visual_params == ''}">
+        <xacro:get_visual_params name="wrist_3" type="visual_offset"/>
+        <xacro:property name="mesh_offset" value="0 0 ${visual_params}" scope="parent"/>
+      </xacro:if>
       <visual>
-        <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="collision"/>
         </geometry>
