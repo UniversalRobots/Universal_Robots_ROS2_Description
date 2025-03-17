@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.2 (2025-03-17)
+------------------
 * Fix UR3 mesh positioning (`#258 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/258>`_)
 * Auto-update pre-commit hooks (`#254 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/254>`_)
 * Auto-update pre-commit hooks (`#252 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/252>`_)
