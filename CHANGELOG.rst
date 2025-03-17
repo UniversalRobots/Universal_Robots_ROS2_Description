@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix UR3 mesh positioning (`#258 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/258>`_)
+* Auto-update pre-commit hooks (`#254 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/254>`_)
+* Auto-update pre-commit hooks (`#252 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/252>`_)
+* Auto-update pre-commit hooks (`#249 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/249>`_)
+* Contributors: Felix Exner, github-actions[bot]
+
 3.0.1 (2025-01-23)
 ------------------
 * Fix ur20 upperarm texture (`#244 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/244>`_)
