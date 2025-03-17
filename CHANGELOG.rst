@@ -2,6 +2,15 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix UR3 mesh positioning (backport of `#258 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/258>`_) (`#259 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/259>`_)
+* Auto-update pre-commit hooks (backport of `#254 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/254>`_) (`#255 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/255>`_)
+* Auto-update pre-commit hooks (backport `#252 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/252>`_) (`#253 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/253>`_)
+* Add missing gpio interfaces for force_mode and freedrive_mode (`#251 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/251>`_)
+* Auto-update pre-commit hooks (`#250 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/250>`_)
+* Contributors: Felix Exner
+
 2.1.10 (2025-01-23)
 -------------------
 * Fix ur20 upperarm texture (backport `#244 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/244>`_) (`#246 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/246>`_)
@@ -179,7 +188,7 @@ Changelog for package ur_description
 
 1.1.7 (2016-12-29)
 ------------------
-* Fix xacro warnings in Jade (`#251 <https://github.com/ros-industrial/universal_robot/issues/251>`_)
+* Fix xacro warnings in Jade (`ros1#251 <https://github.com/ros-industrial/universal_robot/issues/251>`_)
 * added default values to xacro macro
 * tested joint limits modification
 * Contributors: Dave Coleman, G.A. vd. Hoorn, philip 14.04
