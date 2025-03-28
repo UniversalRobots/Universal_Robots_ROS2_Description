@@ -29,6 +29,7 @@
 # Author: Lukas Sackewitz
 
 import os
+import pytest
 import shutil
 import subprocess
 import tempfile
@@ -36,7 +37,13 @@ import tempfile
 from ament_index_python.packages import get_package_share_directory
 
 
-def test_ur_urdf_xacro():
+@pytest.mark.parametrize(
+    "ur_type",
+    ["ur3", "ur3e", "ur5", "ur5e", "ur7e", "ur10", "ur10e", "ur12e", "ur16e", "ur20", "ur30"],
+)
+@pytest.mark.parametrize("description_file", ["ur.urdf.xacro", "ur_mocked.urdf.xacro"])
+@pytest.mark.parametrize("prefix", ["", "my_ur_"])
+def test_ur_urdf_xacro(ur_type, description_file, prefix):
     # Initialize Arguments
     ur_type = "ur3"
     safety_limits = "true"
