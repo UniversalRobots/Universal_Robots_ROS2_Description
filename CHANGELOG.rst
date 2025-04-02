@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update inertia matrix for UR3e and UR5e from measurements (backport of `#256 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/256>`_) (`#274 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/274>`_)
+* Auto-update pre-commit hooks (backport `#268 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/268>`_) (`#269 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/269>`_)
+* Add support for UR7e and UR12e (backport of `#266 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/266>`_) (`#267 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/267>`_)
+* Update README.md (`#264 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/264>`_) (`#265 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/265>`_)
+* Contributors: mergify[bot]
+
 2.1.11 (2025-03-17)
 -------------------
 * Fix UR3 mesh positioning (backport of `#258 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/258>`_) (`#259 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/259>`_)
@@ -168,7 +176,7 @@ Changelog for package ur_description
   Joint limits for the limited version could be set using arguments for the UR10
   but not for the UR3 and UR5. Same lower and upper limit arguments are added to
   the UR3 and UR5 xacro macros.
-* Fix elbow joint limits (`#268 <https://github.com//ros-industrial/universal_robot/issues/268>`_)
+* Fix elbow joint limits (`ros1#268 <https://github.com//ros-industrial/universal_robot/issues/268>`_)
 * Remove warning 'redefining global property: pi' (Jade+) (`#315 <https://github.com//ros-industrial/universal_robot/issues/315>`_)
 * Contributors: Beatriz Leon, Dave Coleman, Felix Messmer, Miguel Prada
 
