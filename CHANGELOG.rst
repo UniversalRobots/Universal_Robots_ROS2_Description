@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.5.0 (2025-04-02)
+------------------
 * Update inertia matrix for UR3e and UR5e from measurements (backport of `#256 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/256>`_) (`#274 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/274>`_)
 * Auto-update pre-commit hooks (backport `#268 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/268>`_) (`#269 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/269>`_)
 * Add support for UR7e and UR12e (backport of `#266 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/266>`_) (`#267 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/267>`_)
