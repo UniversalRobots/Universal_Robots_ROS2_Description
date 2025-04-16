@@ -1,3 +1,7 @@
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/blob/rolling/doc/index.rst
+
+.. _ur_description:
+
 ur_description
 ==============
 
