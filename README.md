@@ -2,7 +2,7 @@
 
 This repository contains description files and meshes for *Universal Robots* manipulators.
 
-### Build status
+## Build status
 
 ROS2 Distro | Branch | Build status | Released packages
 :---------: | :----: | :----------: | :---------------:
