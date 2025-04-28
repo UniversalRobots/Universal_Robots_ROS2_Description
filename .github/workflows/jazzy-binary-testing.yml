@@ -1,8 +1,6 @@
 name: Jazzy Binary Build Testing
 on:
   workflow_dispatch:
-    branches:
-      - rolling
   pull_request:
     branches:
       - rolling
@@ -14,9 +12,9 @@ on:
     - cron: '53 5 * * *'
 
 jobs:
-  binary:
+  jazzy_binary_testing:
     uses: ./.github/workflows/reusable_ici.yml
     with:
-      ros_distro: rolling
+      ros_distro: jazzy
       ros_repo: testing
       ref_for_scheduled_build: rolling
