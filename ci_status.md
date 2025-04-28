@@ -8,6 +8,7 @@ upstream changes some pipelines might turn red temporarily which can be expected
     <th></th>
     <th>Humble</th>
     <th>Jazzy</th>
+    <th>Kilted</th>
     <th>Rolling</th>
   </tr>
   <tr>
@@ -38,6 +39,16 @@ upstream changes some pipelines might turn red temporarily which can be expected
               alt="Jazzy Binary Testing"/>
       </a> <br />
     </td>
+    <td> <!-- Kilted -->
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/kilted-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/kilted-binary-main.yml/badge.svg?event=schedule"
+              alt="Kilted Binary Main"/>
+      </a> <br />
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/kilted-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/kilted-binary-testing.yml/badge.svg?event=schedule"
+              alt="Kilted Binary Testing"/>
+      </a> <br />
+    </td>
     <td>
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/actions/workflows/rolling-binary-main.yml/badge.svg?event=schedule"
@@ -56,6 +67,9 @@ upstream changes some pipelines might turn red temporarily which can be expected
     </td>
     <td>
       <a href='https://build.ros2.org/job/Jbin_uN64__ur_description__ubuntu_noble_amd64__binary/'><img src='https://build.ros2.org/job/Jbin_uN64__ur_description__ubuntu_noble_amd64__binary/badge/icon?subject=uN64_ur_description'></a>
+    </td>
+    <td>
+      <a href='https://build.ros2.org/job/Kbin_uN64__ur_description__ubuntu_noble_amd64__binary/'><img src='https://build.ros2.org/job/Kbin_uN64__ur_description__ubuntu_noble_amd64__binary/badge/icon?subject=uN64_ur_description'></a>
     </td>
     <td>
       <a href='https://build.ros2.org/job/Rbin_uN64__ur_description__ubuntu_noble_amd64__binary/'><img src='https://build.ros2.org/job/Rbin_uN64__ur_description__ubuntu_noble_amd64__binary/badge/icon?subject=uN64_ur_description'></a>
