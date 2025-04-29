@@ -230,13 +230,6 @@
     <xacro:property name="wrist_3_inertia_iyz" value="${prop_wrist_3_inertia['iyz']}" scope="parent"/>
     <xacro:property name="wrist_3_inertia_izz" value="${prop_wrist_3_inertia['izz']}" scope="parent"/>
 
-    <!-- cylinder radius -->
-    <xacro:property name="shoulder_radius" value="${sec_inertia_parameters['shoulder_radius']}" scope="parent"/>
-    <xacro:property name="upper_arm_radius" value="${sec_inertia_parameters['upper_arm_radius']}" scope="parent"/>
-    <xacro:property name="elbow_radius" value="${sec_inertia_parameters['elbow_radius']}" scope="parent"/>
-    <xacro:property name="forearm_radius" value="${sec_inertia_parameters['forearm_radius']}" scope="parent"/>
-    <xacro:property name="wrist_radius" value="${sec_inertia_parameters['wrist_radius']}" scope="parent"/>
-
     <!--KINEMATICS HASH-->
     <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
   </xacro:macro>

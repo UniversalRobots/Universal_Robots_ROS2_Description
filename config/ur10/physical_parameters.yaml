@@ -13,12 +13,6 @@ inertia_parameters:
   wrist_2_mass: 2.0
   wrist_3_mass: 0.365
 
-  shoulder_radius: x0.060   # FROM UR5 DON'T USE
-  upper_arm_radius: x0.054  # FROM UR5 DON'T USE
-  elbow_radius: x0.060      # FROM UR5 DON'T USE
-  forearm_radius: x0.040    # FROM UR5 DON'T USE
-  wrist_radius: x0.045      # FROM UR5 DON'T USE
-
   links:
     base:
       radius: 0.075
