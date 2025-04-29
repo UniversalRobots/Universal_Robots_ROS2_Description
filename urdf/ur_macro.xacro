@@ -78,14 +78,19 @@
     <!-- links -  main serial chain -->
     <link name="${tf_prefix}base_link"/>
     <link name="${tf_prefix}base_link_inertia">
+      <xacro:get_visual_params name="base" type="mesh_offset"/>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="base" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="base" type="collision"/>
         </geometry>
@@ -95,14 +100,19 @@
       </xacro:cylinder_inertial>
     </link>
     <link name="${tf_prefix}shoulder_link">
+      <xacro:get_visual_params name="shoulder" type="mesh_offset"/>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="shoulder" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="shoulder" type="collision"/>
         </geometry>
@@ -120,14 +130,19 @@
         />
       </inertial>    </link>
     <link name="${tf_prefix}upper_arm_link">
+      <xacro:get_visual_params name="upper_arm" type="mesh_offset"/>
       <visual>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="upper_arm" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="upper_arm" type="collision"/>
         </geometry>
@@ -146,14 +161,19 @@
       </inertial>
     </link>
     <link name="${tf_prefix}forearm_link">
+      <xacro:get_visual_params name="forearm" type="mesh_offset"/>
       <visual>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="forearm" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="forearm" type="collision"/>
         </geometry>
@@ -172,15 +192,19 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_1_link">
-	  <xacro:get_visual_params name="wrist_1" type="visual_offset"/>
+      <xacro:get_visual_params name="wrist_1" type="mesh_offset"/>
       <visual>
-      	<origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_1" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_1" type="collision"/>
         </geometry>
@@ -199,15 +223,19 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_2_link">
-          <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
+      <xacro:get_visual_params name="wrist_2" type="mesh_offset"/>
       <visual>
-        <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_2" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_2" type="collision"/>
         </geometry>
@@ -226,22 +254,19 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_3_link">
-      <!-- TODO: remove this once all wrist_3 meshes have the visual_offset_xyz tag -->
-      <xacro:get_visual_params name="wrist_3" type="visual_offset_xyz"/>
-      <xacro:property name="mesh_offset" value="${visual_params}" scope="parent"/>
-
-      <xacro:if value="${visual_params == ''}">
-        <xacro:get_visual_params name="wrist_3" type="visual_offset"/>
-        <xacro:property name="mesh_offset" value="0 0 ${visual_params}" scope="parent"/>
-      </xacro:if>
+      <xacro:get_visual_params name="wrist_3" type="mesh_offset"/>
       <visual>
-        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
+        <origin
+         xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+         rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="collision"/>
         </geometry>

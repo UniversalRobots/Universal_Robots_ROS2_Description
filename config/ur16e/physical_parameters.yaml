@@ -1,8 +1,5 @@
 # Physical parameters
 
-offsets:
-  shoulder_offset: 0.176 # measured from model
-  elbow_offset: 0.040 # measured from model
 
 inertia_parameters:
   # taken from https://www.universal-robots.com/how-tos-and-faqs/faq/ur-faq/parameters-for-calculations-of-kinematics-and-dynamics-45257/

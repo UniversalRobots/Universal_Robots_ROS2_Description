@@ -1,3 +1,5 @@
+# Visualisation
+
 mesh_files:
   base:
     visual:
@@ -11,6 +13,13 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/base.stl
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      roll: 0.0
+      pitch: 0.0
+      yaw: !degrees 180
 
   shoulder:
     visual:
@@ -24,6 +33,13 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/shoulder.stl
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      roll: 0.0
+      pitch: 0.0
+      yaw: !degrees 180
 
   upper_arm:
     visual:
@@ -38,6 +54,13 @@ mesh_files:
         package: ur_description
         path: meshes/ur3e/collision/upperarm.stl
       mesh_files:
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: 0.120
+      roll: !degrees 90
+      pitch: 0.0
+      yaw: !degrees -90
 
   forearm:
     visual:
@@ -51,6 +74,13 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/forearm.stl
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: 0.027
+      roll: !degrees 90
+      pitch: 0.0
+      yaw: !degrees -90
 
   wrist_1:
     visual:
@@ -64,7 +94,13 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/wrist1.stl
-    visual_offset: -0.104
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: -0.104
+      roll: !degrees 90
+      pitch: 0.0
+      yaw: 0.0
 
   wrist_2:
     visual:
@@ -78,7 +114,13 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/wrist2.stl
-    visual_offset: -0.08535
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: -0.08535
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0
 
   wrist_3:
     visual:
@@ -92,4 +134,10 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3e/collision/wrist3.stl
-    visual_offset: -0.0921
+    mesh_offset:
+      x: 0.0
+      y: 0.0
+      z: -0.0921
+      roll: !degrees 90
+      pitch: 0.0
+      yaw: 0.0
