@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add kilted (`#279 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/279>`_)
+* Update ur3e's inertia values (`#276 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/276>`_)
+* Update documentation (`#277 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/277>`_)
+* Contributors: Felix Exner
+
 3.1.0 (2025-04-02)
 ------------------
 * Update inertia matrix for UR3e and UR5e from measurements (`#256 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/256>`_)
