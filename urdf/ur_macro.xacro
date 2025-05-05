@@ -76,16 +76,15 @@
       force_abs_paths="${force_abs_paths}"/>
 
     <!-- links -  main serial chain -->
-    <link name="${tf_prefix}base_link"/>
-    <link name="${tf_prefix}base_link_inertia">
+    <link name="${tf_prefix}base_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <xacro:get_mesh name="base" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <xacro:get_mesh name="base" type="collision"/>
         </geometry>
@@ -268,20 +267,10 @@
     </joint>
 
     <!-- joints - main serial chain -->
-    <joint name="${tf_prefix}base_link-base_link_inertia" type="fixed">
-      <parent link="${tf_prefix}base_link" />
-      <child link="${tf_prefix}base_link_inertia" />
-      <!-- 'base_link' is REP-103 aligned (so X+ forward), while the internal
-           frames of the robot/controller have X+ pointing backwards.
-           Use the joint between 'base_link' and 'base_link_inertia' (a dummy
-           link/frame) to introduce the necessary rotation over Z (of pi rad).
-      -->
-      <origin xyz="0 0 0" rpy="0 0 ${pi}" />
-    </joint>
     <joint name="${tf_prefix}shoulder_pan_joint" type="revolute">
-      <parent link="${tf_prefix}base_link_inertia" />
+      <parent link="${tf_prefix}base_link" />
       <child link="${tf_prefix}shoulder_link" />
-      <origin xyz="${shoulder_x} ${shoulder_y} ${shoulder_z}" rpy="${shoulder_roll} ${shoulder_pitch} ${shoulder_yaw}" />
+      <origin xyz="${shoulder_x} ${shoulder_y} ${shoulder_z}" rpy="${shoulder_roll} ${shoulder_pitch} ${shoulder_yaw + pi}" />
       <axis xyz="0 0 1" />
       <limit lower="${shoulder_pan_lower_limit}" upper="${shoulder_pan_upper_limit}"
         effort="${shoulder_pan_effort_limit}" velocity="${shoulder_pan_velocity_limit}"/>
