@@ -9,3 +9,13 @@ pull_request_rules:
           - humble
         labels:
           - humble
+  - name: Backport to jazzy branch
+    conditions:
+      - base=rolling
+      - label=backport-jazzy
+    actions:
+      backport:
+        branches:
+          - jazzy
+        labels:
+          - jazzy
