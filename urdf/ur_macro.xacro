@@ -76,6 +76,13 @@
       force_abs_paths="${force_abs_paths}"/>
 
     <!-- links -  main serial chain -->
+
+    <!-- base_link serves as the root of the robot's kinematic tree. It follows REP-103
+        conventions (i.e., X+ forward, Y+ left, Z+ up).
+        Since some kinematic solvers forbid having inertia values attached to a root link, we've
+        added the base_link_inertia link that carries the visual, collision and inertia
+        information.
+    -->
     <link name="${tf_prefix}base_link"/>
     <link name="${tf_prefix}base_link_inertia">
       <visual>
