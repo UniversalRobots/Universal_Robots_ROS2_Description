@@ -3,11 +3,10 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - rolling
-      - ros2
+      - jazzy
   push:
     branches:
-      - rolling
+      - jazzy
   schedule:
     - cron: '53 5 * * *'
 
@@ -17,4 +16,4 @@ jobs:
     with:
       ros_distro: jazzy
       ros_repo: main
-      ref_for_scheduled_build: rolling
+      ref_for_scheduled_build: jazzy
