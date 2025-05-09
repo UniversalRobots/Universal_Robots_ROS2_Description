@@ -2,7 +2,7 @@ Robot Frames
 ============
 
 The URDF model uses multiple frames in the robot's base. This page describes why that is and what
-the purpose of each of that frames is. In particular, there are three frames representing the
+the purpose of each of those frames is. In particular, there are three frames representing the
 robot's base:
 
 - ``base_link`` - This serves as the root link if the kinematic chain. It follows `REP-103
