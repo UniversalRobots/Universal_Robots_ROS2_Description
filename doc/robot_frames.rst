@@ -2,19 +2,19 @@ Robot Frames
 ============
 
 The URDF model uses multiple frames in the robot's base. This page describes why that is and what
-the purpose of each of those frames is. In particular, there are three frames representing the
-robot's base:
+the purpose of each of those frames is. In particular, there are three frames in the robot's base:
 
 - ``base_link`` - This serves as the root link of the kinematic chain. It follows `REP-103
   <https://ros.org/reps/rep-0103.html>`_ , where *forward* for the ``base_link`` is defined as the
-  direction of the arm pointing to for an all-zero joint configuration.
+  direction where the arm is pointing to for an all-zero joint configuration.
 
   .. figure:: frames/base_link.png
      :alt: The robot with an all-zeros joint configuration showing its base_link frame
 
-     The robot with an all-zeros joint configuration showing its base_link frame
+     The robot with an all-zeros joint configuration showing its ``base_link`` frame
 
-- ``base`` - This is the frame that is used by the robot controller to represent the robot's base.
+- ``base`` - This is the frame that is used by the robot controller to represent the robot's *Base*
+  feature (Polyscope 5) / *base* frame (PolyScope X).
   It has the same position as ``base_link`` but is rotated by 180 degrees around the Z-axis.
   This follows the `REP proposal 199 <https://gavanderhoorn.github.io/rep/rep-0199.html>`_ with
   respect to the frame ``base`` and ``tool0``.
@@ -29,9 +29,9 @@ robot's base:
      The robot with an all-zeros joint configuration showing its ``base`` frame
 
 - ``base_link_inertia`` - Since some libraries such as KDL don't support inertia for the root link
-  of a kinematic chain (see `ros/kdl_parser#27 <https://github.com/ros/kdl_parser/issues/27>`_), the ``base_link`` doesn't contain any meshes or inertia
-  attached to it. Instead, those are attached to the ``base_link_inertia`` frame. This frame is in
-  fact rotated the same way as ``base``, which is for no particular reason.
+  of a kinematic chain (see `ros/kdl_parser#27 <https://github.com/ros/kdl_parser/issues/27>`_),
+  the ``base_link`` doesn't contain any meshes or inertia attached to it. Instead, those are
+  attached to the ``base_link_inertia`` frame. This frame is in rotated the same way as ``base``.
 
 
 This leads to the following kinematic chain:
@@ -52,6 +52,10 @@ This leads to the following kinematic chain:
 
 The frame ``tool0`` is the tool frame as calculated using forward kinematics. If the robot has an
 all-zero tool configured, this should be equivalent to the tool frame on the control box / teach pendant.
+
+The frame ``flange`` is supposed to be used to attach custom tool frame or end-effectors to the
+robot. For instance, with a gripper's ``xacro:macro`` available, it is often possible to specify a
+parent frame, for which ``flange`` should be used.
 
 .. note::
 
