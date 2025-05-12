@@ -5,8 +5,8 @@ The URDF model uses multiple frames in the robot's base. This page describes why
 the purpose of each of those frames is. In particular, there are three frames representing the
 robot's base:
 
-- ``base_link`` - This serves as the root link if the kinematic chain. It follows `REP-103
-  <https://ros.org/reps/rep-0103.html>`_ , where "forward" for the ``base_link`` is defined as the
+- ``base_link`` - This serves as the root link of the kinematic chain. It follows `REP-103
+  <https://ros.org/reps/rep-0103.html>`_ , where *forward* for the ``base_link`` is defined as the
   direction of the arm pointing to for an all-zero joint configuration.
 
   .. figure:: frames/base_link.png
@@ -26,7 +26,7 @@ robot's base:
   .. figure:: frames/base.png
      :alt: The robot with an all-zeros joint configuration showing its base frame
 
-     The robot with an all-zeros joint configuration showing its base frame
+     The robot with an all-zeros joint configuration showing its ``base`` frame
 
 - ``base_link_inertia`` - Since some libraries such as KDL don't support inertia for the root link
   of a kinematic chain (see `ros/kdl_parser#27 <https://github.com/ros/kdl_parser/issues/27>`_), the ``base_link`` doesn't contain any meshes or inertia
@@ -51,7 +51,7 @@ This leads to the following kinematic chain:
                  └ tool0
 
 The frame ``tool0`` is the tool frame as calculated using forward kinematics. If the robot has an
-all-zero tool configured, that is equivalent to the tool frame on the control box / teach pendant.
+all-zero tool configured, this should be equivalent to the tool frame on the control box / teach pendant.
 
 .. note::
 
