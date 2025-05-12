@@ -31,7 +31,7 @@ the purpose of each of those frames is. In particular, there are three frames in
 - ``base_link_inertia`` - Since some libraries such as KDL don't support inertia for the root link
   of a kinematic chain (see `ros/kdl_parser#27 <https://github.com/ros/kdl_parser/issues/27>`_),
   the ``base_link`` doesn't contain any meshes or inertia attached to it. Instead, those are
-  attached to the ``base_link_inertia`` frame. This frame is in rotated the same way as ``base``.
+  attached to the ``base_link_inertia`` frame. This frame is rotated in the same way as ``base``.
 
 
 This leads to the following kinematic chain:
