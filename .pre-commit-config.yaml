@@ -36,6 +36,7 @@ repos:
         # This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
         exclude: |
           (?x)^(
+            meshes/ur15/LICENSE.txt|
             meshes/ur20/LICENSE.txt|
             meshes/ur30/LICENSE.txt
           )$
