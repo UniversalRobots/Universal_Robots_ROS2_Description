@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.0 (2025-05-14)
+------------------
 * Add support for UR15 (`#290 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/290>`_)
 * Add documentation about the different base and base_link frames (`#286 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/286>`_)
 * [BREAKING] changes for Kilted (`#280 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/280>`_)
