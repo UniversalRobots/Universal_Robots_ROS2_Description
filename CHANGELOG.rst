@@ -2,6 +2,16 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR15 (`#287 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/287>`_)
+* Add documentation about the different base and base_link frames (backport of `#286 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/286>`_) (`#289 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/289>`_)
+* Updated doc github_url entries for jazzy branch
+* Delete dependabot and mergify configs
+* Update branch for jazzy
+* Remove unused workflow files
+* Contributors: Felix Exner, mergify[bot]
+
 3.1.1 (2025-05-05)
 ------------------
 * Add kilted (`#279 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/279>`_)
