@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.6.0 (2025-05-15)
+------------------
 * Add support for UR15 (`#288 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/288>`_)
 * Humble update distro branches (`#285 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/285>`_)
 * Update ur3e's inertia values (backport `#276 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/276>`_) (`#278 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/278>`_)
