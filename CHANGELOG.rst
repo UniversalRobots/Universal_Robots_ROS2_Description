@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR15 (`#288 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/288>`_)
+* Humble update distro branches (`#285 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/285>`_)
+* Update ur3e's inertia values (backport `#276 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/276>`_) (`#278 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/278>`_)
+* Add ros2_control interfaces for tool_contact (`#275 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/275>`_)
+* Contributors: Felix Exner, mergify[bot]
+
 2.5.0 (2025-04-02)
 ------------------
 * Update inertia matrix for UR3e and UR5e from measurements (backport of `#256 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/256>`_) (`#274 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/274>`_)
