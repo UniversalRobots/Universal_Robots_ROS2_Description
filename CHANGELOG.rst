@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.2.0 (2025-05-15)
+------------------
 * Add support for UR15 (`#287 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/287>`_)
 * Add documentation about the different base and base_link frames (backport of `#286 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/286>`_) (`#289 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/289>`_)
 * Updated doc github_url entries for jazzy branch
