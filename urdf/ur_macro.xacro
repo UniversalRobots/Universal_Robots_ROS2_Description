@@ -52,6 +52,7 @@
 
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_transmissions.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/inc/ur_common.xacro" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
 
   <xacro:macro name="ur_robot" params="
     name
@@ -331,6 +332,77 @@
       </inertial>
     </link>
 
+    <link name="endeffector_type5">
+      <visual>
+        <geometry>
+          <mesh filename="package://harvesting_endeffector/type5/ee_type5.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://harvesting_endeffector/type5/ee_type5.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1"/>
+        <!-- tekitou na atai -->
+        <inertia ixx="0.00042" iyy="0.00042" izz="0.00042" ixy="0" ixz="0" iyz="0" />
+      </inertial>
+    </link>
+
+    <link name="endeffector_base">
+      <visual>
+        <geometry>
+          <mesh filename="package://harvesting_endeffector/type5/ee_base.stl"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://harvesting_endeffector/type5/ee_base.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1"/>
+        <!-- tekitou na atai -->
+        <inertia ixx="0.00042" iyy="0.00042" izz="0.00042" ixy="0" ixz="0" iyz="0" />
+      </inertial>
+    </link>
+
+    <link name="endeffector_cutter">
+      <visual>
+        <geometry>
+          <box size="0.01 0.01 0.01"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="red">
+          <color rgba="1.0 0.0 0.0 2.0"/>
+        </material>
+      </visual>
+    </link>
+
+    <link name="realsense_cable">
+      <visual>
+        <geometry>
+          <box size="0.03 0.04 0.02"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <material name="red">
+          <color rgba="1.0 0.0 0.0 2.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.01 0.05 0.02"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.01"/>
+        <!-- tekitou na atai -->
+        <inertia ixx="0.00042" iyy="0.00042" izz="0.00042" ixy="0" ixz="0" iyz="0" />
+      </inertial>
+    </link>
+
+
     <!-- base_joint fixes base_link to the environment -->
     <joint name="${tf_prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
@@ -462,10 +534,43 @@
     <link name="${tf_prefix}tool0"/>
     <joint name="${tf_prefix}flange-tool0" type="fixed">
       <!-- default toolframe - X+ left, Y+ up, Z+ front -->
-      <origin xyz="0 0 0" rpy="${pi/2.0} 0 ${pi/2.0}"/>
+      <origin xyz="0 0 0" rpy="${pi/2.0} ${pi} ${pi/2.0}"/>
       <parent link="${tf_prefix}flange"/>
       <child link="${tf_prefix}tool0"/>
     </joint>
+
+    <joint name="tool0_to_ee_base" type="fixed">
+      <origin xyz="0 0 0.001" rpy="0.0 0.0 ${pi}"/>
+      <parent link="${tf_prefix}tool0"/>
+      <child link="endeffector_base"/>
+    </joint>
+
+    <xacro:sensor_d435 parent="endeffector_base" name="head_camera">
+      <origin xyz="0 0.074 0.06" rpy="-1.5708 -1.5708 0"/>
+      <xacro:arg name="use_nominal_extrinsics" default="false" />
+      <xacro:if value="$(arg use_nominal_extrinsics)">
+        <arg name="use_nominal_extrinsics" value="true" />
+      </xacro:if>
+    </xacro:sensor_d435>
+    
+    <joint name="camera_to_camera_cable" type="fixed">
+      <origin xyz="-0.02 -0.08 0" rpy="0 0 0"/>
+      <parent link="head_camera_link"/>
+      <child link="realsense_cable"/>
+    </joint>
+
+    <joint name="eebase_to_ee" type="fixed">
+      <origin xyz="0 0 0.05" rpy="-${pi/2.0} -${pi/2.0} 0"/>
+      <parent link="endeffector_base"/>
+      <child link="endeffector_type5"/>
+    </joint>
+
+    <joint name="ee_to_cutter" type="fixed">
+      <origin xyz="0.32 -0.01 -0.028" rpy="${pi/2.0} 0 ${pi/2.0}"/>
+      <parent link="endeffector_type5"/>
+      <child link="endeffector_cutter"/>
+    </joint>
+
 
   </xacro:macro>
 </robot>
