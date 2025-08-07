@@ -15,7 +15,7 @@ joint_limits:
     has_position_limits: true
     has_velocity_limits: true
     max_effort: 150.0
-    max_position: !degrees  180.0
+    max_position: !degrees  110.0
     max_velocity: !degrees  180.0
     min_position: !degrees  -20.0
   shoulder_lift_joint:
@@ -65,9 +65,9 @@ joint_limits:
     has_position_limits: true
     has_velocity_limits: true
     max_effort: 28.0
-    max_position: !degrees  50.0
+    max_position: !degrees  80.0
     max_velocity: !degrees  180.0
-    min_position: !degrees -200.0
+    min_position: !degrees -150.0
   wrist_3_joint:
     # acceleration limits are not publicly available
     has_acceleration_limits: false
