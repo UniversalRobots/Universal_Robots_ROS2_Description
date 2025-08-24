@@ -403,11 +403,54 @@
     </link>
 
 
+    <link name="cart_collider">
+      <visual>
+        <geometry>
+          <box size="0.8 0.6 0.3"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.8 0.6 0.3"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <link name="arm_collider">
+      <visual>
+        <geometry>
+          <box size="0.3 0.5 0.5"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.3 0.5 0.5"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+
     <!-- base_joint fixes base_link to the environment -->
     <joint name="${tf_prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
       <child link="${tf_prefix}base_link" />
+    </joint>
+
+    <joint name="base_link_to_cart_collider" type="fixed">
+      <origin xyz="-0.25 0 -0.151" rpy="0 0 0"/>
+      <parent link="${tf_prefix}base_link"/>
+      <child link="cart_collider"/>
+    </joint>
+
+    <joint name="base_link_to_arm_collider" type="fixed">
+      <origin xyz="-0.4 0 0.251" rpy="0 0 0"/>
+      <parent link="${tf_prefix}base_link"/>
+      <child link="arm_collider"/>
     </joint>
 
     <!-- joints - main serial chain -->
@@ -546,9 +589,8 @@
     </joint>
 
     <xacro:sensor_d435 parent="endeffector_base" name="head_camera">
-      <!-- <origin xyz="0 0.074 0.06" rpy="-1.5708 -1.5708 0"/> -->
-      <origin xyz="0 0.074 0.06" rpy="0.0 -1.4835298641315662 -1.5708346385162237"/>
-      <!-- <origin xyz="0 0.074 0.06" rpy="-1.570834 -1.483529 3.14155050"/> -->
+      <origin xyz="0 0.074 0.06" rpy="-1.5708 -1.5708 0"/>
+      <!-- <origin xyz="0 0.074 0.06" rpy="0.0 -1.4835298641315662 -1.5708346385162237"/> -->
        <xacro:arg name="use_nominal_extrinsics" default="false" />
       <xacro:if value="$(arg use_nominal_extrinsics)">
         <arg name="use_nominal_extrinsics" value="true" />
@@ -569,7 +611,7 @@
     </joint>
 
     <joint name="ee_to_cutter" type="fixed">
-      <origin xyz="0.315 -0.01 -0.024" rpy="${pi/2.0} 0 ${pi/2.0}"/>
+      <origin xyz="0.325 -0.01 -0.024" rpy="${pi/2.0} 0 ${pi/2.0}"/>
       <!-- -0.028 -->
       <!-- 0.025 -->
       <parent link="endeffector_type5"/>
