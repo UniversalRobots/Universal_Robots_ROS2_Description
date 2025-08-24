@@ -405,11 +405,54 @@
     </link>
 
 
+    <link name="cart_collider">
+      <visual>
+        <geometry>
+          <box size="0.8 0.6 0.3"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.8 0.6 0.3"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+    <link name="arm_collider">
+      <visual>
+        <geometry>
+          <box size="0.3 0.5 0.5"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.3 0.5 0.5"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </collision>
+    </link>
+
+
     <!-- base_joint fixes base_link to the environment -->
     <joint name="${tf_prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
       <child link="${tf_prefix}base_link" />
+    </joint>
+
+    <joint name="base_link_to_cart_collider" type="fixed">
+      <origin xyz="-0.25 0 -0.151" rpy="0 0 0"/>
+      <parent link="${tf_prefix}base_link"/>
+      <child link="cart_collider"/>
+    </joint>
+
+    <joint name="base_link_to_arm_collider" type="fixed">
+      <origin xyz="-0.4 0 0.251" rpy="0 0 0"/>
+      <parent link="${tf_prefix}base_link"/>
+      <child link="arm_collider"/>
     </joint>
 
     <!-- joints - main serial chain -->
