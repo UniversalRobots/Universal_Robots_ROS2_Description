@@ -31,17 +31,17 @@ on:
 
 jobs:
   reusable_ici:
-    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }} ${{ inputs.os_code_name }}
+    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }}
     runs-on: ubuntu-latest
     env:
       DOCKER_RUN_OPTS: '-v /var/run/docker.sock:/var/run/docker.sock --network ursim_net'
     steps:
-      - name: Checkout ${{ inputs.ref }} when build is not scheduled
+      - name: Checkout ${{ inputs.ref_for_scheduled_build }} when build is not scheduled
         if: ${{ github.event_name != 'schedule' }}
-        uses: actions/checkout@v3
-      - name: Checkout ${{ inputs.ref }} on scheduled build
+        uses: actions/checkout@v5
+      - name: Checkout ${{ inputs.ref_for_scheduled_build }} on scheduled build
         if: ${{ github.event_name == 'schedule' }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           ref: ${{ inputs.ref_for_scheduled_build }}
       - run: docker network create --subnet=192.168.56.0/24 ursim_net
