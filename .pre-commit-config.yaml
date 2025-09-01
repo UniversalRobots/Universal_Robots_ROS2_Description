@@ -17,7 +17,7 @@
 repos:
   # Standard hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
         args: ['--maxkb=1500']
@@ -31,7 +31,7 @@ repos:
       - id: debug-statements
       - id: end-of-file-fixer
       - id: mixed-line-ending
-      - id: check-byte-order-marker  # Forbid UTF-8 byte-order markers
+      - id: fix-byte-order-marker
       - id: trailing-whitespace
         # This need to be a one to one copy from the Universal Robots legal no matter trailing spaces or not
         exclude: |
