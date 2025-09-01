@@ -18,7 +18,7 @@ jobs:
     env:
       BASEDIR: ${{ github.workspace }}/.work
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: 'ros-industrial/industrial_ci@master'
         env:
           ROS_DISTRO: ${{ matrix.ROS_DISTRO }}
