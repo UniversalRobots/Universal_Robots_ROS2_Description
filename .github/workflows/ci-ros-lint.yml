@@ -16,6 +16,6 @@ jobs:
       - uses: ros-tooling/action-ros-lint@v0.1
         with:
           distribution: rolling
-          linter: ${{ matrix.env.linter }}
+          linter: ${{ matrix.linter }}
           package-name:
             ur_description
