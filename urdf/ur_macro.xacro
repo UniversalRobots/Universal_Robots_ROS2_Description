@@ -356,13 +356,13 @@
       <visual>
         <geometry>
           <!-- mesh filename="package://harvesting_endeffector/type5/ee_base.stl"/ -->
-          <mesh filename="package://harvesting_endeffector/type6/EndEffector_Jig.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://harvesting_endeffector/type6/Final.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
           <!-- mesh filename="package://harvesting_endeffector/type5/ee_base.stl"/ -->
-          <mesh filename="package://harvesting_endeffector/type6/EndEffector_Jig.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://harvesting_endeffector/type6/Final.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
       <inertial>
@@ -387,7 +387,7 @@
     <link name="realsense_cable">
       <visual>
         <geometry>
-          <box size="0.03 0.04 0.02"/>
+          <box size="0 0 0"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <material name="red">
@@ -396,7 +396,7 @@
       </visual>
       <collision>
         <geometry>
-          <box size="0.01 0.05 0.02"/>
+          <box size="0 0 0"/>
         </geometry>
       </collision>
       <inertial>
@@ -593,7 +593,7 @@
     </joint>
 
     <xacro:sensor_d435 parent="endeffector_base" name="head_camera">
-      <origin xyz="0 0.074 0.06" rpy="-1.5708 -1.5708 0"/>       
+      <origin xyz="0 0.0805 0.018" rpy="-1.5708 -1.5708 0"/>       
       <!-- origin xyz="0 0.074 0.06" rpy="0.0 -1.5271630953540196 -1.570876783818119"/ -->
       <!-- <origin xyz="0 0.074 0.06" rpy="-1.570834 -1.483529 3.14155050"/> -->
        <xacro:arg name="use_nominal_extrinsics" default="false" />
@@ -610,7 +610,7 @@
 
 
     <joint name="eebase_to_ee" type="fixed">
-      <origin xyz="0 0 0.105" rpy="-${pi/2.0} -${pi/2.0} 0"/>
+      <origin xyz="0.01 0.0025 0.107" rpy="-${pi/2.0} -${pi/2.0} 0"/>
       <parent link="endeffector_base"/>
       <!-- child link="endeffector_type5"/ -->
       <child link="endeffector_type6"/>
