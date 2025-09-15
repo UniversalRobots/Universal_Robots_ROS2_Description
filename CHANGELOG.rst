@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.7.0 (2025-09-15)
+------------------
 * Add support for UR8 Long (`#321 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/321>`_)
   * Add support for UR8 Long
   * Reorder model listings by generation, payload
