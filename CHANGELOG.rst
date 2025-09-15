@@ -2,6 +2,17 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR8LONG (`#319 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/319>`_)
+* Bump actions/setup-python from 5 to 6 (`#315 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/315>`_)
+* Bump actions/checkout from 4 to 5 (`#310 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/310>`_)
+* Auto-update pre-commit hooks (`#307 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/307>`_)
+* Auto-update pre-commit hooks (`#303 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/303>`_)
+* Auto-update pre-commit hooks (`#299 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/299>`_)
+* Auto-update pre-commit hooks (`#295 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/295>`_)
+* Contributors: Felix Exner, dependabot[bot], github-actions[bot]
+
 4.0.0 (2025-05-14)
 ------------------
 * Add support for UR15 (`#290 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/290>`_)
@@ -221,7 +232,7 @@ Changelog for package ur_description
   but not for the UR3 and UR5. Same lower and upper limit arguments are added to
   the UR3 and UR5 xacro macros.
 * Fix elbow joint limits (`ros1#268 <https://github.com//ros-industrial/universal_robot/issues/268>`_)
-* Remove warning 'redefining global property: pi' (Jade+) (`#315 <https://github.com//ros-industrial/universal_robot/issues/315>`_)
+* Remove warning 'redefining global property: pi' (Jade+) (`ros1#315 <https://github.com//ros-industrial/universal_robot/issues/315>`_)
 * Contributors: Beatriz Leon, Dave Coleman, Felix Messmer, Miguel Prada
 
 1.2.0 (2017-08-04)
