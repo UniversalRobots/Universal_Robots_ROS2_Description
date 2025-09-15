@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.0 (2025-09-15)
+------------------
 * Add support for UR8LONG (`#319 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/319>`_)
 * Bump actions/setup-python from 5 to 6 (`#315 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/315>`_)
 * Bump actions/checkout from 4 to 5 (`#310 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/310>`_)
