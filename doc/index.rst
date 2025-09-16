@@ -9,10 +9,11 @@ This package contains the kinematic and visual description of Universal Robots m
 2.
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
    :caption: Contents:
 
    robot_frames
+   migration_notes
 
 .. contents::
    :depth: 2
