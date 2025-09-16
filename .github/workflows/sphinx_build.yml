@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches:
-      - ros2
+      - rolling
   schedule:
     - cron: '38 2 * * *'
 
