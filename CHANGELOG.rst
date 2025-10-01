@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.1 (2025-10-01)
+------------------
 * Update ur7e physical parameters to match ur5e (`#333 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/333>`_)
 * Auto-update pre-commit hooks (`#329 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/329>`_)
 * Adding migration notes to package docs (`#325 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/325>`_)
