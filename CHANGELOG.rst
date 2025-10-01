@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update ur7e physical parameters to match ur5e (backport `#333 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/333>`_) (`#335 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/335>`_)
+* Auto-update pre-commit hooks (backport `#329 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/329>`_) (`#331 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/331>`_)
+* Adding migration notes to package docs (backport `#325 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/325>`_) (`#326 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/326>`_)
+* Contributors: mergify[bot]
+
 3.3.0 (2025-09-15)
 ------------------
 * Add support for UR8LONG (`#320 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/320>`_)
@@ -223,7 +230,7 @@ Changelog for package ur_description
 
 1.2.1 (2018-01-06)
 ------------------
-* Merge pull request `#329 <https://github.com//ros-industrial/universal_robot/issues/329>`_ from tecnalia-medical-robotics/joint_limits
+* Merge pull request `ros1#329 <https://github.com//ros-industrial/universal_robot/issues/329>`_ from tecnalia-medical-robotics/joint_limits
   Homogenize xacro macro arguments.
 * Merge pull request `#332 <https://github.com//ros-industrial/universal_robot/issues/332>`_ from davetcoleman/kinetic_hw_iface_warning
   Remove UR3 ROS Control Hardware Interface warning
