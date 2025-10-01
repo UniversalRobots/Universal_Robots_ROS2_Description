@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.7.1 (2025-10-01)
+------------------
 * Update ur7e physical parameters to match ur5e (backport `#333 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/333>`_) (`#334 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/334>`_)
 * Auto-update pre-commit hooks (backport `#329 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/329>`_) (`#330 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/330>`_)
 * Contributors: mergify[bot]
