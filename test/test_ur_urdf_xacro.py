@@ -51,6 +51,7 @@ from ament_index_python.packages import get_package_share_directory
         "ur16e",
         "ur8long",
         "ur15",
+        "ur18",
         "ur20",
         "ur30",
     ],
