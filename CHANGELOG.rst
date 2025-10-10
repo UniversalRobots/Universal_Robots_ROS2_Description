@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.2.0 (2025-10-10)
+------------------
 * Add support for UR18 (`#340 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/340>`_)
 * Contributors: Felix Exner
 
