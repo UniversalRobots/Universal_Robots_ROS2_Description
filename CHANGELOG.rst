@@ -2,6 +2,13 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add an initial value for the major_version state interface (`#343 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/343>`_)
+  This can be used in mock hardware tests
+* Add support for UR18 (`#342 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/342>`_)
+* Contributors: Felix Exner
+
 2.7.1 (2025-10-01)
 ------------------
 * Update ur7e physical parameters to match ur5e (backport `#333 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/333>`_) (`#334 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/334>`_)
