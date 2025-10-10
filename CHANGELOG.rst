@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR18 (`#340 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/340>`_)
+* Contributors: Felix Exner
+
 4.1.1 (2025-10-01)
 ------------------
 * Update ur7e physical parameters to match ur5e (`#333 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/333>`_)
