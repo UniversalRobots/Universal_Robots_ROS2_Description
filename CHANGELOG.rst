@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.8.0 (2025-10-10)
+------------------
 * Add an initial value for the major_version state interface (`#343 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/343>`_)
   This can be used in mock hardware tests
 * Add support for UR18 (`#342 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/342>`_)
