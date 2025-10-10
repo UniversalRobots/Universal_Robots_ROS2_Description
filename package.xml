@@ -28,10 +28,11 @@
   <maintainer email="ros@universal-robots.com">Universal Robots A/S</maintainer>
 
   <license file="LICENSE">BSD-3-Clause</license>
-  <!-- The UR8LONG, UR15, UR20 and UR30 meshes constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
+  <!-- The UR8LONG, UR15, UR18, UR20 and UR30 meshes constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
   <license file="meshes/ur20/LICENSE.txt">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>
   <!--<license file="meshes/ur8long/LICENSE.txt" source-files="meshes/ur8long/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
   <!--<license file="meshes/ur15/LICENSE.txt" source-files="meshes/ur15/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
+  <!--<license file="meshes/ur18/LICENSE.txt" source-files="meshes/ur18/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
   <!--<license file="meshes/ur20/LICENSE.txt" source-files="meshes/ur20/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
   <!--<license file="meshes/ur30/LICENSE.txt" source-files="meshes/ur30/*" type="freeform">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>-->
 
