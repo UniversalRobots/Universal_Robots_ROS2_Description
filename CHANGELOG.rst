@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.5.0 (2025-10-23)
+------------------
 * Add effort command interface to all joints (backport of `#302 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/302>`_) (`#351 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/351>`_)
 * Auto-update pre-commit hooks (backport of `#347 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/347>`_) (`#349 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/349>`_)
 * Contributors: mergify[bot]
