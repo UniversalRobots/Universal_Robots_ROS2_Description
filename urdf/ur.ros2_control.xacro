@@ -69,7 +69,7 @@
       <joint name="${tf_prefix}shoulder_pan_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
@@ -82,7 +82,7 @@
       <joint name="${tf_prefix}shoulder_lift_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
@@ -95,7 +95,7 @@
       <joint name="${tf_prefix}elbow_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
@@ -108,7 +108,7 @@
       <joint name="${tf_prefix}wrist_1_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
@@ -121,7 +121,7 @@
       <joint name="${tf_prefix}wrist_2_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
@@ -134,7 +134,7 @@
       <joint name="${tf_prefix}wrist_3_joint">
         <command_interface name="position"/>
         <command_interface name="velocity"/>
-        <xacro:unless value="$(arg sim_ignition)">
+        <xacro:unless value="${sim_ignition}">
           <command_interface name="effort"/>
         </xacro:unless>
         <state_interface name="position">
