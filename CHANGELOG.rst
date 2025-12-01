@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.9.0 (2025-12-01)
+------------------
 * Replace argument replacements with properties (`#368 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/368>`_)
 * Do not add effort command interface for GZ sim (`#355 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/355>`_)
 * Add effort command interface to all joints (`#350 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/350>`_)
