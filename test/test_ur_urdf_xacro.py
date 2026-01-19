@@ -95,7 +95,7 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
         get_package_share_directory(description_package), "urdf", description_file
     )
 
-    (_, tmp_urdf_output_file) = tempfile.mkstemp(suffix=".urdf")
+    _, tmp_urdf_output_file = tempfile.mkstemp(suffix=".urdf")
 
     # Compose `xacro` and `check_urdf` command
     xacro_command = (
