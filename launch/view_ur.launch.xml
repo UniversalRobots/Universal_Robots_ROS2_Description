@@ -25,10 +25,19 @@
   <arg name="tf_prefix"
        default=""
        description="Prefix of the joint names, useful for multi-robot setup. If changed than also joint names in the controllers' configuration have to be updated." />
+  <arg name="safety_limits"
+       default="true"
+       description="Enables the safety limits controller if true." />
+  <arg name="safety_pos_margin"
+       default="0.15"
+       description="The margin to lower and upper limits in the safety controller." />
+  <arg name="safety_k_position"
+        default="20"
+        description="The gain for the position controller in the safety controller." />
 
   <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
   <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" />
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
-    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur')"/>
+    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position)')"/>
   </node>
 </launch>
