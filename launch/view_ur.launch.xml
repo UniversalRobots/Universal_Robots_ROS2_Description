@@ -38,6 +38,6 @@
   <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
   <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" />
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
-    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position)')"/>
+    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix)')"/>
   </node>
 </launch>

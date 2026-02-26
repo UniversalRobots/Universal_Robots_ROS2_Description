@@ -54,12 +54,6 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                     "ur_type": LaunchConfiguration("ur_type"),
-                    "rviz_config_file": LaunchConfiguration("rviz_config_file"),
-                    "description_file": LaunchConfiguration("description_file"),
-                    "tf_prefix": LaunchConfiguration("tf_prefix"),
-                    "safety_limits": LaunchConfiguration("safety_limits"),
-                    "safety_pos_margin": LaunchConfiguration("safety_pos_margin"),
-                    "safety_k_position": LaunchConfiguration("safety_k_position"),
                 }.items(),
             )
         ]
