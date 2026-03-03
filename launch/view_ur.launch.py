@@ -29,14 +29,15 @@
 # Author: Denis Stogl
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
-from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch_ros.parameter_descriptions import ParameterValue
+
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import FrontendLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 
 
 def generate_launch_description():
+<<<<<<< HEAD
     declared_arguments = []
     # UR specific arguments
     declared_arguments.append(
@@ -176,3 +177,26 @@ def generate_launch_description():
     ]
 
     return LaunchDescription(declared_arguments + nodes_to_start)
+=======
+
+    return LaunchDescription(
+        [
+            IncludeLaunchDescription(
+                FrontendLaunchDescriptionSource(
+                    [
+                        PathJoinSubstitution(
+                            [
+                                FindPackageShare("ur_description"),
+                                "launch",
+                                "view_ur.launch.xml",
+                            ]
+                        )
+                    ]
+                ),
+                launch_arguments={
+                    "ur_type": LaunchConfiguration("ur_type"),
+                }.items(),
+            )
+        ]
+    )
+>>>>>>> 7754677 (Use XML launchfile instead of Python (#382))

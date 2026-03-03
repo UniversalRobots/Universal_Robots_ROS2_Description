@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="rviz_config_file"
+       default="$(find-pkg-share ur_description)/rviz/view_robot.rviz"
+       description="RViz config file (absolute path) to use when launching rviz." />
+  <arg name="description_file"
+       default="$(find-pkg-share ur_description)/urdf/ur.urdf.xacro"
+       description="URDF/XACRO description file (absolute path) with the robot." />
+  <arg name="ur_type" description="Type/series of used UR robot.">
+     <choice value="ur3"/>
+     <choice value="ur5"/>
+     <choice value="ur10"/>
+     <choice value="ur3e"/>
+     <choice value="ur5e"/>
+     <choice value="ur7e"/>
+     <choice value="ur10e"/>
+     <choice value="ur12e"/>
+     <choice value="ur16e"/>
+     <choice value="ur8long"/>
+     <choice value="ur15"/>
+     <choice value="ur18"/>
+     <choice value="ur20"/>
+     <choice value="ur30"/>
+  </arg>
+  <arg name="tf_prefix"
+       default=""
+       description="Prefix of the joint names, useful for multi-robot setup. If changed than also joint names in the controllers' configuration have to be updated." />
+  <arg name="safety_limits"
+       default="true"
+       description="Enables the safety limits controller if true." />
+  <arg name="safety_pos_margin"
+       default="0.15"
+       description="The margin to lower and upper limits in the safety controller." />
+  <arg name="safety_k_position"
+        default="20"
+        description="The gain for the position controller in the safety controller." />
+
+  <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
+  <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" />
+  <node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix)')"/>
+  </node>
+</launch>
