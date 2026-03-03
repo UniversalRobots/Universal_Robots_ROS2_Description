@@ -60,7 +60,7 @@ Arguments that have to be passed to the main ``ur.urdf.xacro`` file are:
  - physical_params - Filename to the ``physical_parameters.yaml`` file
  - visual_params - Filename to the ``visual_params.yaml`` file
 
-The launchfile ``launch/view_ur.launch.py`` abstracts these four parameters to one ``ur_type`` argument
+The launchfile ``launch/view_ur.launch.xml`` abstracts these four parameters to one ``ur_type`` argument
 which will basically replace the ``urXX`` part of the paths as shown in the picture above.
 
 ros2_control integration
