@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="rviz_config_file"
-       default="$(find-pkg-share ur_description)/rviz/view_robot.rviz"
-       description="RViz config file (absolute path) to use when launching rviz." />
+  <arg name="description_package"
+       default="ur_description"
+       description="Description package with robot URDF/XACRO files. Usually the argument is not set, it enables use of a custom description." />
   <arg name="description_file"
-       default="$(find-pkg-share ur_description)/urdf/ur.urdf.xacro"
-       description="URDF/XACRO description file (absolute path) with the robot." />
+       default="ur.urdf.xacro"
+       description="URDF/XACRO description file with the robot." />
   <arg name="ur_type" description="Type/series of used UR robot.">
      <choice value="ur3"/>
      <choice value="ur5"/>
@@ -36,8 +36,14 @@
         description="The gain for the position controller in the safety controller." />
 
   <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
-  <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" />
+  <node pkg="rviz2" exec="rviz2" args="-d $(find-pkg-share $(var description_package))/rviz/view_robot.rviz" />
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
-    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix)')"/>
+    <param name="robot_description" value="$(command '$(find-exec xacro) $(find-pkg-share $(var description_package))/urdf/$(var description_file)
+      ur_type:=$(var ur_type)
+      name:=ur
+      safety_limits:=$(var safety_limits)
+      safety_pos_margin:=$(var safety_pos_margin)
+      safety_k_position:=$(var safety_k_position)
+      tf_prefix:=$(var tf_prefix)')"/>
   </node>
 </launch>
