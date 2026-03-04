@@ -29,7 +29,7 @@ All other content is licensed under the BSD-3-Clause license
 To visualize the robot install this repository to you workspace and execute the following:
 
 ``` bash
-ros2 launch ur_description view_ur.launch.py ur_type:=ur5e
+ros2 launch ur_description view_ur.launch.xml ur_type:=ur5e
 ```
 
 To test other descriptions change the `ur_type` argument.
