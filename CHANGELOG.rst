@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add GPIO entry for friction model (`#391 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/391>`_)
+* Add XML launchfile (backport `#382 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/382>`_) (`#383 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/383>`_)
+* Contributors: Felix Exner, mergify[bot]
+
 2.9.0 (2025-12-01)
 ------------------
 * Replace argument replacements with properties (`#368 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/368>`_)
