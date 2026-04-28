@@ -92,5 +92,15 @@ mesh_files:
       mesh:
         package: ur_description
         path: meshes/ur3/collision/wrist3.stl
+<<<<<<< HEAD
     visual_offset: -0.082
     visual_offset_xyz: "0 -0.00255 -0.082"
+=======
+    mesh_offset:
+      x: 0.0
+      y: -0.002
+      z: -0.082
+      roll: !degrees 90
+      pitch: 0.0
+      yaw: 0.0
+>>>>>>> b8614c0 (Correct offsets of wrist3 meshes (#393))
