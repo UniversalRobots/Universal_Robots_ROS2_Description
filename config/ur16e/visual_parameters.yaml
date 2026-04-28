@@ -96,3 +96,4 @@ mesh_files:
         package: ur_description
         path: meshes/ur10e/collision/wrist3.stl
     visual_offset: -0.1168
+    visual_offset_xyz: "0 -0.0005 -0.1168"
