@@ -114,7 +114,7 @@ mesh_files:
         path: meshes/ur10/collision/wrist3.stl
     mesh_offset:
       x: 0.0
-      y: 0.0
+      y: 0.001
       z: -0.0922
       roll: !degrees 90
       pitch: 0.0
