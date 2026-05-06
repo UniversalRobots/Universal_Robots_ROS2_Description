@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.5.1 (2026-05-06)
+------------------
 * Correct offsets of wrist3 meshes (backport `#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_) (`#395 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/395>`_)
 * Add XML launchfiles (backport `#382 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/382>`_) (`#384 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/384>`_)
 * Contributors: mergify[bot]
