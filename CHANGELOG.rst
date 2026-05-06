@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Correct offsets of wrist3 meshes (backport `#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_) (`#394 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/394>`_)
+* Contributors: mergify[bot]
+
 2.10.0 (2026-04-08)
 -------------------
 * Add GPIO entry for friction model (`#391 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/391>`_)
