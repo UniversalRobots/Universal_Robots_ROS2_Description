@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Correct offsets of wrist3 meshes (`#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_)
+* Use XML launchfile instead of Python (`#382 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/382>`_)
+* Contributors: Felix Exner
+
 4.3.0 (2025-10-14)
 ------------------
 * Add effort command interface to all joints (`#302 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/302>`_)
