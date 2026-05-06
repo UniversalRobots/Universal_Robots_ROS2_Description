@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Correct offsets of wrist3 meshes (backport `#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_) (`#395 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/395>`_)
+* Add XML launchfiles (backport `#382 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/382>`_) (`#384 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/384>`_)
+* Contributors: mergify[bot]
+
 3.5.0 (2025-10-23)
 ------------------
 * Add effort command interface to all joints (backport of `#302 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/302>`_) (`#351 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/351>`_)
