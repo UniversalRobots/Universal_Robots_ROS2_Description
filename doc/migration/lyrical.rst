@@ -1,4 +1,4 @@
-:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/blob/rolling/doc/migration/kilted.rst
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/blob/rolling/doc/migration/lyrical.rst
 
 ur_description
 ^^^^^^^^^^^^^^
