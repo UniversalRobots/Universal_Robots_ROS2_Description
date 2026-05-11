@@ -30,7 +30,7 @@ on:
 
 jobs:
   reusable_ici:
-    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }} ${{ inputs.os_code_name }}
+    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout ${{ inputs.ref }} when build is not scheduled
@@ -46,3 +46,4 @@ jobs:
           UPSTREAM_WORKSPACE: ${{ inputs.upstream_workspace }}
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
+          OS_CODE_NAME: ${{ inputs.ros_distro == 'rolling' && 'resolute' || '' }}

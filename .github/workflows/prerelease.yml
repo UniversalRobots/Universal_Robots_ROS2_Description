@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ROS_DISTRO: [jazzy, kilted, rolling]
+        ROS_DISTRO: [jazzy, kilted, lyrical, rolling]
         ROS_REPO: [main]
         PRERELEASE: [true]
     env:
