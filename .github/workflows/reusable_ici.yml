@@ -38,13 +38,8 @@ jobs:
     steps:
       - name: Checkout ${{ inputs.ref_for_scheduled_build }} when build is not scheduled
         if: ${{ github.event_name != 'schedule' }}
-<<<<<<< HEAD
-        uses: actions/checkout@v5
-      - name: Checkout ${{ inputs.ref_for_scheduled_build }} on scheduled build
-=======
         uses: actions/checkout@v7
-      - name: Checkout ${{ inputs.ref }} on scheduled build
->>>>>>> db618f2 (Bump actions/checkout from 6 to 7 (#407))
+      - name: Checkout ${{ inputs.ref_for_scheduled_build }} on scheduled build
         if: ${{ github.event_name == 'schedule' }}
         uses: actions/checkout@v7
         with:
