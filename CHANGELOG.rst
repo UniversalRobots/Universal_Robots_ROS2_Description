@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add ros2_control param for model verification (`#410 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/410>`_)
+* Contributors: Felix Exner, mergify[bot]
+
 2.11.0 (2026-05-13)
 -------------------
 * Add Lyrical to README and ci_builds page (backport `#401 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/401>`_) (`#402 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/402>`_)
@@ -217,7 +222,7 @@ Changelog for package ur_description
 1.2.5 (2019-04-05)
 ------------------
 * Add transmission_hw_interface to UR xacro and expose everywhere (`#392 <https://github.com/ros-industrial/universal_robot/issues/392>`_)
-* Update maintainer listing: add Miguel (`#410 <https://github.com/ros-industrial/universal_robot/issues/410>`_)
+* Update maintainer listing: add Miguel (`ros1#410 <https://github.com/ros-industrial/universal_robot/issues/410>`_)
 * Updated xacro namespace.
 * Update maintainer and author information.
 * Updated mesh ambience so the model isn't so dark in Gazebo
