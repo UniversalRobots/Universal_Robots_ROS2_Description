@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.13.0 (2026-07-21)
+-------------------
 * Add interfaces for payload inertia (`#419 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/419>`_)
 * Contributors: Felix Exner, mergify[bot]
 
