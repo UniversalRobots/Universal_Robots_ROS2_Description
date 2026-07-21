@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add interfaces for payload inertia (`#419 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/419>`_)
+* Contributors: Felix Exner, mergify[bot]
+
 2.12.0 (2026-07-06)
 -------------------
 * Add ros2_control param for model verification (`#410 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/410>`_)
