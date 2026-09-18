@@ -23,6 +23,7 @@
     keep_alive_count:=2
     ur_type:=unknown
     verify_robot_model:=false
+    use_currents_as_efforts:=true
     ">
 
     <ros2_control name="${name}" type="system">
@@ -68,6 +69,7 @@
           <param name="tool_tcp_port">${tool_tcp_port}</param>
           <param name="keep_alive_count">${keep_alive_count}</param>
           <param name="verify_robot_model">${verify_robot_model}</param>
+          <param name="use_currents_as_efforts">${use_currents_as_efforts}</param>
         </xacro:unless>
       </hardware>
       <joint name="${tf_prefix}shoulder_pan_joint">
