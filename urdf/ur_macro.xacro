@@ -94,7 +94,8 @@
     trajectory_port:=50003
     non_blocking_read:=true
     keep_alive_count:=2
-    verify_robot_model:=false"
+    verify_robot_model:=false
+    use_currents_as_efforts:=true"
 
     >
 
@@ -143,6 +144,7 @@
         keep_alive_count="${keep_alive_count}"
         ur_type="${ur_type}"
         verify_robot_model="${verify_robot_model}"
+        use_currents_as_efforts="${use_currents_as_efforts}"
         />
     </xacro:if>
 

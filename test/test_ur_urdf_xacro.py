@@ -33,6 +33,7 @@ import pytest
 import shutil
 import subprocess
 import tempfile
+import xml.etree.ElementTree as ET
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -132,6 +133,35 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
 
     finally:
         os.remove(tmp_urdf_output_file)
+
+
+@pytest.mark.parametrize(
+    ("argument", "expected"),
+    [
+        (None, "True"),
+        ("true", "True"),
+        ("false", "False"),
+    ],
+)
+def test_use_currents_as_efforts_hardware_parameter(argument, expected):
+    description_file_path = os.path.join(
+        get_package_share_directory("ur_description"), "urdf", "ur.urdf.xacro"
+    )
+    command = [
+        shutil.which("xacro"),
+        description_file_path,
+        "name:=ur5e",
+        "ur_type:=ur5e",
+    ]
+    if argument is not None:
+        command.append(f"use_currents_as_efforts:={argument}")
+
+    result = subprocess.run(command, capture_output=True, check=True, text=True)
+    robot = ET.fromstring(result.stdout)
+    parameter = robot.find(".//ros2_control/hardware/param[@name='use_currents_as_efforts']")
+
+    assert parameter is not None
+    assert parameter.text == expected
 
 
 if __name__ == "__main__":
