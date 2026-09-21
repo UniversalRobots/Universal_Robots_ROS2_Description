@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.14.0 (2026-09-21)
+-------------------
 * Add use_currents_as_efforts parameter for hardware_interface (`#421 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/421>`_)
 * Contributors: Felix Exner
 
