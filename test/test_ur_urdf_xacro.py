@@ -138,9 +138,9 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
 @pytest.mark.parametrize(
     ("argument", "expected"),
     [
-        (None, "true"),
-        ("true", "true"),
-        ("false", "false"),
+        (None, "True"),
+        ("true", "True"),
+        ("false", "False"),
     ],
 )
 def test_use_currents_as_efforts_hardware_parameter(argument, expected):
