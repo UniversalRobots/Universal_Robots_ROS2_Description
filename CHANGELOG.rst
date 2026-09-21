@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add use_currents_as_efforts parameter for hardware_interface (`#421 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/421>`_)
+* Contributors: Felix Exner
+
 2.13.0 (2026-07-21)
 -------------------
 * Add interfaces for payload inertia (`#419 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/419>`_)
