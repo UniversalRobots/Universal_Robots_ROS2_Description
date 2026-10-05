@@ -6,7 +6,7 @@
   <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
   <xacro:include filename="$(find ur_description)/urdf/ros2_control_mock_hardware.xacro" />
 
-  <!-- possible 'ur_type' values: ur3, ur5, ur10, ur3e, ur5e, ur7e, ur10e, ur12e, ur16e, ur8long, ur15, ur18, ur20, ur30 -->
+  <!-- possible 'ur_type' values: ur3, ur5, ur10, ur3e, ur5e, ur7e, ur10e, ur12e, ur16e, ur8long, ur15, ur18, ur20, ur30, ur10g-1750, ur17g-1300, ur18g-950 -->
   <!-- the default value should raise an error in case this was called without defining the type -->
   <xacro:arg name="ur_type" default="ur5x"/>
 
@@ -24,6 +24,8 @@
 
   <!--When using gazebo simulations absolute paths are necessary.-->
   <xacro:arg name="force_abs_paths" default="false" />
+  <!-- Empty default uses the value from visual_parameters.yaml (false if omitted). -->
+  <xacro:arg name="smart_panel" default="" />
 
   <!-- initial position for simulations (Mock Hardware, Gazebo, Ignition) -->
   <xacro:arg name="initial_positions_file" default="$(find ur_description)/config/initial_positions.yaml"/>
@@ -47,6 +49,7 @@
     safety_pos_margin="$(arg safety_pos_margin)"
     safety_k_position="$(arg safety_k_position)"
     force_abs_paths="$(arg force_abs_paths)"
+    smart_panel="$(arg smart_panel)"
     >
     <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
   </xacro:ur_robot>

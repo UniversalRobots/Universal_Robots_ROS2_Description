@@ -54,6 +54,9 @@ from ament_index_python.packages import get_package_share_directory
         "ur18",
         "ur20",
         "ur30",
+        "ur10g-1750",
+        "ur17g-1300",
+        "ur18g-950",
     ],
 )
 @pytest.mark.parametrize("description_file", ["ur.urdf.xacro", "ur_mocked.urdf.xacro"])
@@ -129,6 +132,62 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
 
     finally:
         os.remove(tmp_urdf_output_file)
+
+
+def _generate_urdf(ur_type, extra_args=""):
+    description_package = "ur_description"
+    description_file_path = os.path.join(
+        get_package_share_directory(description_package), "urdf", "ur.urdf.xacro"
+    )
+    _, tmp_urdf_output_file = tempfile.mkstemp(suffix=".urdf")
+
+    xacro_command = (
+        f"{shutil.which('xacro')}"
+        f" {description_file_path}"
+        f" ur_type:={ur_type}"
+        f" name:={ur_type}"
+        f" {extra_args}"
+        f" > {tmp_urdf_output_file}"
+    )
+    check_urdf_command = f"{shutil.which('check_urdf')} {tmp_urdf_output_file}"
+
+    try:
+        xacro_process = subprocess.run(
+            xacro_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True
+        )
+        assert xacro_process.returncode == 0, " --- XACRO command failed ---"
+
+        check_urdf_process = subprocess.run(
+            check_urdf_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True
+        )
+        assert (
+            check_urdf_process.returncode == 0
+        ), "\n --- URDF check failed! --- \nYour xacro does not unfold into a proper urdf robot description. Please check your xacro file."
+
+        with open(tmp_urdf_output_file, encoding="utf-8") as urdf_file:
+            return urdf_file.read()
+    finally:
+        os.remove(tmp_urdf_output_file)
+
+
+@pytest.mark.parametrize("ur_type", ["ur10g-1750", "ur17g-1300", "ur18g-950"])
+def test_smart_panel_default_enabled_for_new_models(ur_type):
+    urdf_content = _generate_urdf(ur_type)
+    assert '<link name="smart_panel">' in urdf_content
+    assert '<joint name="wrist_3_link-smart_panel"' in urdf_content
+
+
+def test_smart_panel_default_disabled_for_existing_models():
+    urdf_content = _generate_urdf("ur15")
+    assert '<link name="smart_panel">' not in urdf_content
+
+
+def test_smart_panel_argument_overrides_visual_parameters():
+    disabled = _generate_urdf("ur17g-1300", "smart_panel:=false")
+    assert '<link name="smart_panel">' not in disabled
+
+    enabled = _generate_urdf("ur15", "smart_panel:=true")
+    assert '<link name="smart_panel">' in enabled
 
 
 if __name__ == "__main__":

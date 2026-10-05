@@ -21,7 +21,13 @@
      <choice value="ur18"/>
      <choice value="ur20"/>
      <choice value="ur30"/>
+     <choice value="ur10g-1750"/>
+     <choice value="ur17g-1300"/>
+     <choice value="ur18g-950"/>
   </arg>
+  <arg name="smart_panel"
+       default=""
+       description="Attach the optional Smart Panel accessory to wrist_3_link. Leave empty to use the model's visual_parameters.yaml default." />
   <arg name="tf_prefix"
        default=""
        description="Prefix of the joint names, useful for multi-robot setup. If changed than also joint names in the controllers' configuration have to be updated." />
@@ -38,6 +44,6 @@
   <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
   <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_file)" />
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
-    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix)')"/>
+    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix) smart_panel:=$(var smart_panel)')"/>
   </node>
 </launch>

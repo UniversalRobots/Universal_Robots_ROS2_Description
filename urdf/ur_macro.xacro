@@ -65,6 +65,7 @@
     safety_pos_margin:=0.15
     safety_k_position:=20
     force_abs_paths:=false
+    smart_panel:=''
     ">
 
     <!-- Load configuration data from the provided .yaml files -->
@@ -74,6 +75,9 @@
       physical_parameters_file="${physical_parameters_file}"
       visual_parameters_file="${visual_parameters_file}"
       force_abs_paths="${force_abs_paths}"/>
+
+    <!-- Empty smart_panel argument means "use visual_parameters.yaml". -->
+    <xacro:property name="smart_panel_enabled" value="${smart_panel if smart_panel != '' else smart_panel_from_visual}"/>
 
     <!-- links -  main serial chain -->
 
@@ -418,6 +422,46 @@
       <child link="${tf_prefix}flange" />
       <origin xyz="0 0 0" rpy="0 ${-pi/2.0} ${-pi/2.0}" />
     </joint>
+
+    <!-- Optional Smart Panel accessory attached to wrist_3_link.
+         Geometry lives in meshes/common/smart_panel so it can be reused
+         across robot models. Joint origin is a placeholder until the
+         real attachment pose is finalized. -->
+    <xacro:if value="${smart_panel_enabled}">
+      <xacro:if value="${force_abs_paths}">
+        <xacro:property name="smart_panel_visual_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/visual/smart_panel.glb"/>
+        <xacro:property name="smart_panel_collision_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/collision/smart_panel.stl"/>
+      </xacro:if>
+      <xacro:unless value="${force_abs_paths}">
+        <xacro:property name="smart_panel_visual_mesh" value="package://ur_description/meshes/common/smart_panel/visual/smart_panel.glb"/>
+        <xacro:property name="smart_panel_collision_mesh" value="package://ur_description/meshes/common/smart_panel/collision/smart_panel.stl"/>
+      </xacro:unless>
+      <link name="${tf_prefix}smart_panel">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="${smart_panel_visual_mesh}"/>
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="${smart_panel_collision_mesh}"/>
+          </geometry>
+        </collision>
+        <inertial>
+          <!-- Placeholder inertia until measured Smart Panel properties are available. -->
+          <mass value="0.1"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+        </inertial>
+      </link>
+      <joint name="${tf_prefix}wrist_3_link-smart_panel" type="fixed">
+        <parent link="${tf_prefix}wrist_3_link"/>
+        <child link="${tf_prefix}smart_panel"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      </joint>
+    </xacro:if>
 
     <!-- ROS-Industrial 'tool0' frame - all-zeros tool frame -->
     <link name="${tf_prefix}tool0"/>
