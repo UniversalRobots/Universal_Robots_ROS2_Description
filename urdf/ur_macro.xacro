@@ -429,11 +429,11 @@
          real attachment pose is finalized. -->
     <xacro:if value="${smart_panel_enabled}">
       <xacro:if value="${force_abs_paths}">
-        <xacro:property name="smart_panel_visual_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/visual/smart_panel.glb"/>
+        <xacro:property name="smart_panel_visual_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/visual/smart_panel.dae"/>
         <xacro:property name="smart_panel_collision_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/collision/smart_panel.stl"/>
       </xacro:if>
       <xacro:unless value="${force_abs_paths}">
-        <xacro:property name="smart_panel_visual_mesh" value="package://ur_description/meshes/common/smart_panel/visual/smart_panel.glb"/>
+        <xacro:property name="smart_panel_visual_mesh" value="package://ur_description/meshes/common/smart_panel/visual/smart_panel.dae"/>
         <xacro:property name="smart_panel_collision_mesh" value="package://ur_description/meshes/common/smart_panel/collision/smart_panel.stl"/>
       </xacro:unless>
       <link name="${tf_prefix}smart_panel">

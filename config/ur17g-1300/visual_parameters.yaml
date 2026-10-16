@@ -9,7 +9,7 @@ mesh_files:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/base.dae
+        path: meshes/ur17g-1300/visual/base.dae
     collision:
       mesh:
         package: ur_description
@@ -26,7 +26,7 @@ mesh_files:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/shoulder.dae
+        path: meshes/ur17g-1300/visual/shoulder.dae
     collision:
       mesh:
         package: ur_description
@@ -34,16 +34,16 @@ mesh_files:
     mesh_offset:
       x: 0.0
       y: 0.0
-      z: 0.0
+      z: -0.111854
       roll: 0.0
       pitch: 0.0
-      yaw: !degrees 180
+      yaw: 0.0
 
   upper_arm:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/upperarm.dae
+        path: meshes/ur17g-1300/visual/upperarm.dae
     collision:
       mesh:
         package: ur_description
@@ -51,16 +51,16 @@ mesh_files:
     mesh_offset:
       x: 0.0
       y: 0.0
-      z: 0.100
-      roll: !degrees 90
+      z: 0.109004
+      roll: !degrees -90
       pitch: 0.0
-      yaw: !degrees -90
+      yaw: 0.0
 
   forearm:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/forearm.dae
+        path: meshes/ur17g-1300/visual/forearm.dae
     collision:
       mesh:
         package: ur_description
@@ -68,16 +68,16 @@ mesh_files:
     mesh_offset:
       x: 0.0
       y: 0.0
-      z: 0.125
-      roll: !degrees 90
+      z: 0.13425
+      roll: !degrees -90
       pitch: 0.0
-      yaw: !degrees -90
+      yaw: 0.0
 
   wrist_1:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/wrist1.dae
+        path: meshes/ur17g-1300/visual/wrist1.dae
     collision:
       mesh:
         package: ur_description
@@ -86,7 +86,7 @@ mesh_files:
       x: 0.0
       y: 0.0
       z: -0.0502
-      roll: !degrees 90
+      roll: !degrees -90
       pitch: 0.0
       yaw: 0.0
 
@@ -94,7 +94,7 @@ mesh_files:
     visual:
       mesh:
         package: ur_description
-        path: meshes/ur15/visual/wrist2.dae
+        path: meshes/ur17g-1300/visual/wrist2.dae
     collision:
       mesh:
         package: ur_description
@@ -105,7 +105,7 @@ mesh_files:
       z: -0.064
       roll: 0.0
       pitch: 0.0
-      yaw: 0.0
+      yaw: !degrees 180
 
   wrist_3:
     visual:
@@ -115,11 +115,11 @@ mesh_files:
     collision:
       mesh:
         package: ur_description
-        path: meshes/ur17g-1300/collision/wrist3.stl
+        path: meshes/ur15/collision/wrist3.stl
     mesh_offset:
       x: 0.0
       y: 0.0
-      z: -0.0715
-      roll: !degrees 90
+      z: 0.0
+      roll: 0.0
       pitch: 0.0
       yaw: 0.0
