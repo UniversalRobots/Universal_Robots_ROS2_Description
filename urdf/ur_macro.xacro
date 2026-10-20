@@ -425,8 +425,7 @@
 
     <!-- Optional Smart Panel accessory attached to wrist_3_link.
          Geometry lives in meshes/common/smart_panel so it can be reused
-         across robot models. Joint origin is a placeholder until the
-         real attachment pose is finalized. -->
+         across robot models. -->
     <xacro:if value="${smart_panel_enabled}">
       <xacro:if value="${force_abs_paths}">
         <xacro:property name="smart_panel_visual_mesh" value="file://$(find ur_description)/meshes/common/smart_panel/visual/smart_panel.dae"/>
@@ -450,15 +449,18 @@
           </geometry>
         </collision>
         <inertial>
-          <!-- Placeholder inertia until measured Smart Panel properties are available. -->
-          <mass value="0.1"/>
-          <origin xyz="0 0 0" rpy="0 0 0"/>
-          <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+          <!-- Inertia estimated for homogeneous weight distribution and the measured mass of the smart panel. -->
+          <mass value="0.0167"/>
+          <origin xyz="0.045 0 -0.030" rpy="0 0 0"/>
+          <inertia ixx="4.866178e-06" ixy="3.996e-10" ixz="1.595575e-07"
+                   iyy="2.852570e-06" iyz="-1.854789e-09"
+                   izz="2.789305e-06"/>
         </inertial>
       </link>
       <joint name="${tf_prefix}wrist_3_link-smart_panel" type="fixed">
         <parent link="${tf_prefix}wrist_3_link"/>
         <child link="${tf_prefix}smart_panel"/>
+        <!-- the mesh is in the correct position relative to wrist_3_link -->
         <origin xyz="0 0 0" rpy="0 0 0"/>
       </joint>
     </xacro:if>
