@@ -450,11 +450,11 @@
         </collision>
         <inertial>
           <!-- Inertia estimated for homogeneous weight distribution and the measured mass of the smart panel. -->
-          <mass value="0.0167"/>
           <origin xyz="0.045 0 -0.030" rpy="0 0 0"/>
-          <inertia ixx="4.866178e-06" ixy="3.996e-10" ixz="1.595575e-07"
-                   iyy="2.852570e-06" iyz="-1.854789e-09"
-                   izz="2.789305e-06"/>
+          <mass value="0.0195"/>
+          <inertia ixx="5.682064e-06" ixy="4.66603e-10" ixz="1.863097e-07"
+                   iyy="3.330845e-06" iyz="-2.165772e-09"
+                   izz="3.256972e-06"/>
         </inertial>
       </link>
       <joint name="${tf_prefix}wrist_3_link-smart_panel" type="fixed">
