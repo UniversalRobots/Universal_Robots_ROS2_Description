@@ -5,7 +5,7 @@
    <!-- import main macro -->
    <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
 
-   <!-- possible 'ur_type' values: ur3, ur5, ur10, ur3e, ur5e, ur7e, ur10e, ur12e, ur16e, ur8long, ur15, ur18, ur20, ur30 -->
+   <!-- possible 'ur_type' values: ur3, ur5, ur10, ur3e, ur5e, ur7e, ur10e, ur12e, ur16e, ur8long, ur15, ur18, ur20, ur30, ur10g-1750, ur17g-1300, ur18g-950 -->
    <!-- the default value should raise an error in case this was called without defining the type -->
    <xacro:arg name="ur_type" default="ur5x"/>
 
@@ -43,7 +43,7 @@
    <xacro:arg name="tool_device_name" default="/tmp/ttyUR" />
    <xacro:arg name="tool_tcp_port" default="54321" />
 
-     <!-- Simulation parameters -->
+   <!-- Simulation parameters -->
    <xacro:arg name="use_fake_hardware" default="false" />
    <xacro:arg name="fake_sensor_commands" default="false" />
    <xacro:arg name="sim_gazebo" default="false" />
@@ -57,6 +57,9 @@
    <xacro:property name="initial_positions_file" default="$(arg initial_positions_file)"/>
    <xacro:property name="is_sim_gazebo" value="$(arg sim_gazebo)"/>
    <xacro:property name="is_sim_ignition" value="$(arg sim_ignition)"/>
+
+   <!-- Empty default uses the value from visual_parameters.yaml (false if omitted). -->
+   <xacro:arg name="smart_panel" default="" />
 
    <!-- create link fixed to the "world" -->
    <link name="world" />
@@ -127,6 +130,7 @@
      ur_type="$(arg ur_type)"
      verify_robot_model="$(arg verify_robot_model)"
      use_currents_as_efforts="$(arg use_currents_as_efforts)"
+     smart_panel="$(arg smart_panel)"
      >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>

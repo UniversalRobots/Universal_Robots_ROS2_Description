@@ -55,6 +55,9 @@ from ament_index_python.packages import get_package_share_directory
         "ur18",
         "ur20",
         "ur30",
+        "ur10g-1750",
+        "ur17g-1300",
+        "ur18g-950",
     ],
 )
 @pytest.mark.parametrize("description_file", ["ur.urdf.xacro", "ur_mocked.urdf.xacro"])
@@ -164,7 +167,7 @@ def test_use_currents_as_efforts_hardware_parameter(argument, expected):
     assert parameter.text == expected
 
 
-def _generate_urdf(ur_type, physical_params=None, visual_params=None):
+def _generate_urdf(ur_type, physical_params=None, visual_params=None, extra_args=""):
     description_package = "ur_description"
     package_path = get_package_share_directory(description_package)
     description_file_path = os.path.join(package_path, "urdf", "ur.urdf.xacro")
@@ -183,6 +186,7 @@ def _generate_urdf(ur_type, physical_params=None, visual_params=None):
         f" name:={ur_type}"
         f" physical_params:={physical_params}"
         f" visual_params:={visual_params}"
+        f" {extra_args}"
         f" > {tmp_urdf_output_file}"
     )
     check_urdf_command = f"{shutil.which('check_urdf')} {tmp_urdf_output_file}"
@@ -204,6 +208,26 @@ def _generate_urdf(ur_type, physical_params=None, visual_params=None):
             return urdf_file.read()
     finally:
         os.remove(tmp_urdf_output_file)
+
+
+@pytest.mark.parametrize("ur_type", ["ur10g-1750", "ur17g-1300", "ur18g-950"])
+def test_smart_panel_default_enabled_for_new_models(ur_type):
+    urdf_content = _generate_urdf(ur_type)
+    assert '<link name="smart_panel">' in urdf_content
+    assert '<joint name="wrist_3_link-smart_panel"' in urdf_content
+
+
+def test_smart_panel_default_disabled_for_existing_models():
+    urdf_content = _generate_urdf("ur15")
+    assert '<link name="smart_panel">' not in urdf_content
+
+
+def test_smart_panel_argument_overrides_visual_parameters():
+    disabled = _generate_urdf("ur17g-1300", extra_args="smart_panel:=false")
+    assert '<link name="smart_panel">' not in disabled
+
+    enabled = _generate_urdf("ur15", extra_args="smart_panel:=true")
+    assert '<link name="smart_panel">' in enabled
 
 
 def _upper_arm_visual_origin(urdf_content):
