@@ -2,6 +2,19 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for g-series robots (`#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_)
+* Auto-update pre-commit hooks (`#427 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/427>`_)
+* Auto-update pre-commit hooks (`#423 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/423>`_)
+* Auto-update pre-commit hooks (`#413 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/413>`_)
+* [CI] Bump actions/setup-python from 6 to 7 (`#414 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/414>`_)
+* Increase minimum CMake version (`#412 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/412>`_)
+* [CI] Bump actions/checkout from 6 to 7 (`#407 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/407>`_)
+* Auto-update pre-commit hooks (`#404 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/404>`_)
+* [Docs] Add Lyrical to README and builds (`#400 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/400>`_)
+* Contributors: Felix Exner, dependabot[bot], github-actions[bot]
+
 4.3.1 (2026-05-06)
 ------------------
 * Correct offsets of wrist3 meshes (`#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_)
@@ -225,7 +238,7 @@ Changelog for package ur_description
 ------------------
 * Add optional safety_controller tags to all joints in xacro macros (`#437 <https://github.com/ros-industrial/universal_robot/issues/437>`_)
 * Migrated all package.xml files to format=2 (`#439 <https://github.com/ros-industrial/universal_robot/issues/439>`_)
-* Corrected dimensions and positions of inertias (`#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
+* Corrected dimensions and positions of inertias (`ros1#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
 * Add description view launch files for all descriptions to easily check them (`#435 <https://github.com/ros-industrial/universal_robot/issues/435>`_)
 * Contributors: Felix Mauch, JeremyZoss, Miguel Prada, Qiang Qiu, gavanderhoorn
 
