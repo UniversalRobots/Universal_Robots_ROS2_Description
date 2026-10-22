@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.4.0 (2026-10-22)
+------------------
 * Add support for g-series robots (`#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_)
 * Auto-update pre-commit hooks (`#427 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/427>`_)
 * Auto-update pre-commit hooks (`#423 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/423>`_)
