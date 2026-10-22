@@ -60,6 +60,8 @@
     <xacro:property name="sec_inertia_parameters" value="${config_physical_parameters['inertia_parameters']}" />
     <xacro:property name="sec_mesh_files" value="${config_visual_parameters['mesh_files']}" scope="parent"/>
     <xacro:property name="sec_kinematics" value="${config_kinematics_parameters['kinematics']}" />
+    <!-- Models that omit this key default to no Smart Panel. -->
+    <xacro:property name="smart_panel_from_visual" value="${config_visual_parameters['smart_panel'] if 'smart_panel' in config_visual_parameters else False}" scope="parent"/>
 
     <!-- JOINTS LIMIT PARAMETERS -->
     <xacro:property name="shoulder_pan_lower_limit" value="${sec_limits['shoulder_pan_joint']['min_position']}" scope="parent"/>
