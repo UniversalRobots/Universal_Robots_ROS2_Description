@@ -167,10 +167,15 @@ def test_use_currents_as_efforts_hardware_parameter(argument, expected):
     assert parameter.text == expected
 
 
-def _generate_urdf(ur_type, extra_args=""):
+def _generate_urdf(ur_type, physical_params=None, visual_params=None, extra_args=""):
     description_package = "ur_description"
-    description_file_path = os.path.join(
-        get_package_share_directory(description_package), "urdf", "ur.urdf.xacro"
+    package_path = get_package_share_directory(description_package)
+    description_file_path = os.path.join(package_path, "urdf", "ur.urdf.xacro")
+    physical_params = physical_params or os.path.join(
+        package_path, "config", ur_type, "physical_parameters.yaml"
+    )
+    visual_params = visual_params or os.path.join(
+        package_path, "config", ur_type, "visual_parameters.yaml"
     )
     _, tmp_urdf_output_file = tempfile.mkstemp(suffix=".urdf")
 
@@ -179,6 +184,8 @@ def _generate_urdf(ur_type, extra_args=""):
         f" {description_file_path}"
         f" ur_type:={ur_type}"
         f" name:={ur_type}"
+        f" physical_params:={physical_params}"
+        f" visual_params:={visual_params}"
         f" {extra_args}"
         f" > {tmp_urdf_output_file}"
     )
@@ -216,11 +223,76 @@ def test_smart_panel_default_disabled_for_existing_models():
 
 
 def test_smart_panel_argument_overrides_visual_parameters():
-    disabled = _generate_urdf("ur17g-1300", "smart_panel:=false")
+    disabled = _generate_urdf("ur17g-1300", extra_args="smart_panel:=false")
     assert '<link name="smart_panel">' not in disabled
 
-    enabled = _generate_urdf("ur15", "smart_panel:=true")
+    enabled = _generate_urdf("ur15", extra_args="smart_panel:=true")
     assert '<link name="smart_panel">' in enabled
+
+
+def _upper_arm_visual_origin(urdf_content):
+    robot = ET.fromstring(urdf_content)
+    return robot.find("./link[@name='upper_arm_link']/visual/origin")
+
+
+def test_legacy_mesh_offset_format():
+    origin = _upper_arm_visual_origin(_generate_urdf("ur10"))
+
+    assert origin is not None
+    assert [float(value) for value in origin.get("xyz").split()] == pytest.approx(
+        [0.0, 0.0, 0.220941]
+    )
+    assert [float(value) for value in origin.get("rpy").split()] == pytest.approx(
+        [1.5707963267948966, 0.0, -1.5707963267948966]
+    )
+
+
+def test_new_mesh_offset_format(tmp_path):
+    package_path = get_package_share_directory("ur_description")
+    config_path = os.path.join(package_path, "config", "ur10")
+
+    with open(os.path.join(config_path, "physical_parameters.yaml"), encoding="utf-8") as source:
+        physical_lines = source.readlines()
+
+    filtered_physical_lines = []
+    skipping_offsets = False
+    for line in physical_lines:
+        if line.startswith("offsets:"):
+            skipping_offsets = True
+            continue
+        if skipping_offsets and line.startswith("  "):
+            continue
+        skipping_offsets = False
+        if "_radius:" not in line:
+            filtered_physical_lines.append(line)
+
+    physical_params = tmp_path / "physical_parameters.yaml"
+    physical_params.write_text("".join(filtered_physical_lines), encoding="utf-8")
+
+    with open(os.path.join(config_path, "visual_parameters.yaml"), encoding="utf-8") as source:
+        visual_content = source.read()
+
+    mesh_offset = """\
+    mesh_offset:
+      x: 0.1
+      y: 0.2
+      z: 0.3
+      roll: 0.4
+      pitch: 0.5
+      yaw: 0.6
+
+"""
+    visual_content = visual_content.replace("\n  forearm:\n", f"\n{mesh_offset}  forearm:\n")
+    visual_params = tmp_path / "visual_parameters.yaml"
+    visual_params.write_text(visual_content, encoding="utf-8")
+
+    origin = _upper_arm_visual_origin(
+        _generate_urdf("ur10", str(physical_params), str(visual_params))
+    )
+
+    assert origin is not None
+    assert [float(value) for value in origin.get("xyz").split()] == pytest.approx([0.1, 0.2, 0.3])
+    assert [float(value) for value in origin.get("rpy").split()] == pytest.approx([0.4, 0.5, 0.6])
 
 
 if __name__ == "__main__":
