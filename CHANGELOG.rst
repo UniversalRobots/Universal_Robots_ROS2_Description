@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.6.0 (2026-10-22)
+------------------
 * Add support for g-series robots (backport `#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_) (`#431 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/431>`_)
 * Allow parsing new kilted config format (`#432 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/432>`_)
 * Auto-update pre-commit hooks (backport `#427 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/427>`_) (`#429 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/429>`_)
