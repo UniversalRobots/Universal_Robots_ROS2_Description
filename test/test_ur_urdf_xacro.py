@@ -34,10 +34,6 @@ import shutil
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
-<<<<<<< HEAD
-=======
-import pytest
->>>>>>> 2ca3999 (Allow parsing new kilted config format (#432))
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -139,7 +135,6 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
         os.remove(tmp_urdf_output_file)
 
 
-<<<<<<< HEAD
 @pytest.mark.parametrize(
     ("argument", "expected"),
     [
@@ -167,7 +162,8 @@ def test_use_currents_as_efforts_hardware_parameter(argument, expected):
 
     assert parameter is not None
     assert parameter.text == expected
-=======
+
+
 def _generate_urdf(ur_type, physical_params=None, visual_params=None):
     description_package = "ur_description"
     package_path = get_package_share_directory(description_package)
@@ -273,7 +269,6 @@ def test_new_mesh_offset_format(tmp_path):
     assert origin is not None
     assert [float(value) for value in origin.get("xyz").split()] == pytest.approx([0.1, 0.2, 0.3])
     assert [float(value) for value in origin.get("rpy").split()] == pytest.approx([0.4, 0.5, 0.6])
->>>>>>> 2ca3999 (Allow parsing new kilted config format (#432))
 
 
 if __name__ == "__main__":
