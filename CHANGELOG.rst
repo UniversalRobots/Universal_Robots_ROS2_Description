@@ -2,6 +2,14 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for g-series robots (backport `#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_) (`#430 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/430>`_)
+* Allow parsing new kilted config format (backport `#432 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/432>`_) (`#434 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/434>`_)
+* Auto-update pre-commit hooks (backport `#427 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/427>`_) (`#428 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/428>`_)
+* Auto-update pre-commit hooks (backport `#423 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/423>`_) (`#424 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/424>`_)
+* Contributors: mergify[bot]
+
 2.14.0 (2026-09-21)
 -------------------
 * Add use_currents_as_efforts parameter for hardware_interface (`#421 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/421>`_)
@@ -225,7 +233,7 @@ Changelog for package ur_description
 ------------------
 * Add optional safety_controller tags to all joints in xacro macros (`#437 <https://github.com/ros-industrial/universal_robot/issues/437>`_)
 * Migrated all package.xml files to format=2 (`#439 <https://github.com/ros-industrial/universal_robot/issues/439>`_)
-* Corrected dimensions and positions of inertias (`#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
+* Corrected dimensions and positions of inertias (`ros1#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
 * Add description view launch files for all descriptions to easily check them (`#435 <https://github.com/ros-industrial/universal_robot/issues/435>`_)
 * Contributors: Felix Mauch, JeremyZoss, Miguel Prada, Qiang Qiu, gavanderhoorn
 
