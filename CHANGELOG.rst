@@ -2,6 +2,19 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for g-series robots (backport `#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_) (`#431 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/431>`_)
+* Allow parsing new kilted config format (`#432 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/432>`_)
+* Auto-update pre-commit hooks (backport `#427 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/427>`_) (`#429 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/429>`_)
+* Auto-update pre-commit hooks (backport `#423 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/423>`_) (`#425 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/425>`_)
+* Auto-update pre-commit hooks (backport `#413 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/413>`_) (`#418 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/418>`_)
+* Bump actions/setup-python from 6 to 7 (backport `#414 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/414>`_) (`#416 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/416>`_)
+* Bump actions/checkout from 6 to 7 (`#409 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/409>`_)
+* Auto-update pre-commit hooks (`#406 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/406>`_)
+* Add Lyrical to README and ci_builds page (`#401 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/401>`_)
+* Contributors: Felix Exner, mergify[bot]
+
 3.5.1 (2026-05-06)
 ------------------
 * Correct offsets of wrist3 meshes (backport `#393 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/393>`_) (`#395 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/395>`_)
@@ -227,7 +240,7 @@ Changelog for package ur_description
 ------------------
 * Add optional safety_controller tags to all joints in xacro macros (`#437 <https://github.com/ros-industrial/universal_robot/issues/437>`_)
 * Migrated all package.xml files to format=2 (`#439 <https://github.com/ros-industrial/universal_robot/issues/439>`_)
-* Corrected dimensions and positions of inertias (`#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
+* Corrected dimensions and positions of inertias (`ros1#426 <https://github.com/ros-industrial/universal_robot/issues/426>`_)
 * Add description view launch files for all descriptions to easily check them (`#435 <https://github.com/ros-industrial/universal_robot/issues/435>`_)
 * Contributors: Felix Mauch, JeremyZoss, Miguel Prada, Qiang Qiu, gavanderhoorn
 
