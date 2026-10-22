@@ -156,13 +156,13 @@
     <link name="${tf_prefix}base_link"/>
     <link name="${tf_prefix}base_link_inertia">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <xacro:mesh_origin name="base" legacy_xyz="0 0 0" legacy_rpy="0 0 ${pi}"/>
         <geometry>
           <xacro:get_mesh name="base" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <xacro:mesh_origin name="base" legacy_xyz="0 0 0" legacy_rpy="0 0 ${pi}"/>
         <geometry>
           <xacro:get_mesh name="base" type="collision"/>
         </geometry>
@@ -173,13 +173,13 @@
     </link>
     <link name="${tf_prefix}shoulder_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <xacro:mesh_origin name="shoulder" legacy_xyz="0 0 0" legacy_rpy="0 0 ${pi}"/>
         <geometry>
           <xacro:get_mesh name="shoulder" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
+        <xacro:mesh_origin name="shoulder" legacy_xyz="0 0 0" legacy_rpy="0 0 ${pi}"/>
         <geometry>
           <xacro:get_mesh name="shoulder" type="collision"/>
         </geometry>
@@ -198,13 +198,13 @@
       </inertial>    </link>
     <link name="${tf_prefix}upper_arm_link">
       <visual>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <xacro:mesh_origin name="upper_arm" legacy_xyz="0 0 ${shoulder_offset}" legacy_rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <xacro:get_mesh name="upper_arm" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <xacro:mesh_origin name="upper_arm" legacy_xyz="0 0 ${shoulder_offset}" legacy_rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <xacro:get_mesh name="upper_arm" type="collision"/>
         </geometry>
@@ -224,13 +224,13 @@
     </link>
     <link name="${tf_prefix}forearm_link">
       <visual>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <xacro:mesh_origin name="forearm" legacy_xyz="0 0 ${elbow_offset}" legacy_rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <xacro:get_mesh name="forearm" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <xacro:mesh_origin name="forearm" legacy_xyz="0 0 ${elbow_offset}" legacy_rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <xacro:get_mesh name="forearm" type="collision"/>
         </geometry>
@@ -249,15 +249,16 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_1_link">
-	  <xacro:get_visual_params name="wrist_1" type="visual_offset"/>
+      <xacro:get_visual_params name="wrist_1" type="visual_offset"/>
+      <xacro:property name="wrist_1_legacy_offset" value="${visual_params}"/>
       <visual>
-      	<origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <xacro:mesh_origin name="wrist_1" legacy_xyz="0 0 ${wrist_1_legacy_offset}" legacy_rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_1" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${visual_params}" rpy="${pi/2} 0 0"/>
+        <xacro:mesh_origin name="wrist_1" legacy_xyz="0 0 ${wrist_1_legacy_offset}" legacy_rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_1" type="collision"/>
         </geometry>
@@ -276,15 +277,16 @@
       </inertial>
     </link>
     <link name="${tf_prefix}wrist_2_link">
-          <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
+      <xacro:get_visual_params name="wrist_2" type="visual_offset"/>
+      <xacro:property name="wrist_2_legacy_offset" value="${visual_params}"/>
       <visual>
-        <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
+        <xacro:mesh_origin name="wrist_2" legacy_xyz="0 0 ${wrist_2_legacy_offset}" legacy_rpy="0 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_2" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 ${visual_params}" rpy="0 0 0"/>
+        <xacro:mesh_origin name="wrist_2" legacy_xyz="0 0 ${wrist_2_legacy_offset}" legacy_rpy="0 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_2" type="collision"/>
         </geometry>
@@ -312,13 +314,13 @@
         <xacro:property name="mesh_offset" value="0 0 ${visual_params}" scope="parent"/>
       </xacro:if>
       <visual>
-        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
+        <xacro:mesh_origin name="wrist_3" legacy_xyz="${mesh_offset}" legacy_rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="visual"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="${mesh_offset}" rpy="${pi/2} 0 0"/>
+        <xacro:mesh_origin name="wrist_3" legacy_xyz="${mesh_offset}" legacy_rpy="${pi/2} 0 0"/>
         <geometry>
           <xacro:get_mesh name="wrist_3" type="collision"/>
         </geometry>
