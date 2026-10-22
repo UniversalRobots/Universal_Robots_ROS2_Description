@@ -44,16 +44,13 @@
   <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
   <node pkg="rviz2" exec="rviz2" args="-d $(find-pkg-share $(var description_package))/rviz/view_robot.rviz" />
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
-<<<<<<< HEAD
     <param name="robot_description" value="$(command '$(find-exec xacro) $(find-pkg-share $(var description_package))/urdf/$(var description_file)
       ur_type:=$(var ur_type)
       name:=ur
       safety_limits:=$(var safety_limits)
       safety_pos_margin:=$(var safety_pos_margin)
       safety_k_position:=$(var safety_k_position)
-      tf_prefix:=$(var tf_prefix)')"/>
-=======
-    <param name="robot_description" value="$(command '$(find-exec xacro) $(var description_file) ur_type:=$(var ur_type) name:=ur safety_limits:=$(var safety_limits) safety_pos_margin:=$(var safety_pos_margin) safety_k_position:=$(var safety_k_position) tf_prefix:=$(var tf_prefix) smart_panel:=$(var smart_panel)')"/>
->>>>>>> 970bf8a (Add support for g-series robots (#426))
+      tf_prefix:=$(var tf_prefix)
+      smart_panel:=$(var smart_panel)')"/>
   </node>
 </launch>

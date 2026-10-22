@@ -43,8 +43,7 @@
    <xacro:arg name="tool_device_name" default="/tmp/ttyUR" />
    <xacro:arg name="tool_tcp_port" default="54321" />
 
-<<<<<<< HEAD
-     <!-- Simulation parameters -->
+   <!-- Simulation parameters -->
    <xacro:arg name="use_fake_hardware" default="false" />
    <xacro:arg name="fake_sensor_commands" default="false" />
    <xacro:arg name="sim_gazebo" default="false" />
@@ -58,12 +57,9 @@
    <xacro:property name="initial_positions_file" default="$(arg initial_positions_file)"/>
    <xacro:property name="is_sim_gazebo" value="$(arg sim_gazebo)"/>
    <xacro:property name="is_sim_ignition" value="$(arg sim_ignition)"/>
-=======
-   <!--When using gazebo simulations absolute paths are necessary.-->
-   <xacro:arg name="force_abs_paths" default="false" />
+
    <!-- Empty default uses the value from visual_parameters.yaml (false if omitted). -->
    <xacro:arg name="smart_panel" default="" />
->>>>>>> 970bf8a (Add support for g-series robots (#426))
 
    <!-- create link fixed to the "world" -->
    <link name="world" />
@@ -107,7 +103,6 @@
      safety_limits="$(arg safety_limits)"
      safety_pos_margin="$(arg safety_pos_margin)"
      safety_k_position="$(arg safety_k_position)"
-<<<<<<< HEAD
      use_fake_hardware="$(arg use_fake_hardware)"
      fake_sensor_commands="$(arg fake_sensor_commands)"
      sim_gazebo="$(arg sim_gazebo)"
@@ -135,10 +130,7 @@
      ur_type="$(arg ur_type)"
      verify_robot_model="$(arg verify_robot_model)"
      use_currents_as_efforts="$(arg use_currents_as_efforts)"
-=======
-     force_abs_paths="$(arg force_abs_paths)"
      smart_panel="$(arg smart_panel)"
->>>>>>> 970bf8a (Add support for g-series robots (#426))
      >
      <origin xyz="0 0 0" rpy="0 0 0" />          <!-- position robot in the world -->
    </xacro:ur_robot>

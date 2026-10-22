@@ -138,7 +138,6 @@ def test_ur_urdf_xacro(ur_type, description_file, prefix):
         os.remove(tmp_urdf_output_file)
 
 
-<<<<<<< HEAD
 @pytest.mark.parametrize(
     ("argument", "expected"),
     [
@@ -166,7 +165,8 @@ def test_use_currents_as_efforts_hardware_parameter(argument, expected):
 
     assert parameter is not None
     assert parameter.text == expected
-=======
+
+
 def _generate_urdf(ur_type, extra_args=""):
     description_package = "ur_description"
     description_file_path = os.path.join(
@@ -221,7 +221,6 @@ def test_smart_panel_argument_overrides_visual_parameters():
 
     enabled = _generate_urdf("ur15", "smart_panel:=true")
     assert '<link name="smart_panel">' in enabled
->>>>>>> 970bf8a (Add support for g-series robots (#426))
 
 
 if __name__ == "__main__":

@@ -68,7 +68,6 @@
     safety_limits:=false
     safety_pos_margin:=0.15
     safety_k_position:=20
-<<<<<<< HEAD
     use_fake_hardware:=false
     fake_sensor_commands:=false
     sim_gazebo:=false
@@ -96,14 +95,10 @@
     non_blocking_read:=true
     keep_alive_count:=2
     verify_robot_model:=false
-    use_currents_as_efforts:=true"
+    use_currents_as_efforts:=true
+    smart_panel:=''"
 
     >
-=======
-    force_abs_paths:=false
-    smart_panel:=''
-    ">
->>>>>>> 970bf8a (Add support for g-series robots (#426))
 
     <!-- Load configuration data from the provided .yaml files -->
     <xacro:read_model_data
