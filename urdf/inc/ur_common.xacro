@@ -46,6 +46,20 @@
     <mesh filename="${mesh}"/>
   </xacro:macro>
 
+  <!-- Use the per-link offset from the new visual config format when available,
+       otherwise retain the placement used by the old config format. -->
+  <xacro:macro name="mesh_origin" params="name legacy_xyz legacy_rpy">
+    <xacro:get_visual_params name="${name}" type="mesh_offset"/>
+    <xacro:if value="${visual_params != ''}">
+      <origin
+        xyz="${visual_params['x']} ${visual_params['y']} ${visual_params['z']}"
+        rpy="${visual_params['roll']} ${visual_params['pitch']} ${visual_params['yaw']}"/>
+    </xacro:if>
+    <xacro:unless value="${visual_params != ''}">
+      <origin xyz="${legacy_xyz}" rpy="${legacy_rpy}"/>
+    </xacro:unless>
+  </xacro:macro>
+
   <xacro:macro name="read_model_data" params="joint_limits_parameters_file kinematics_parameters_file physical_parameters_file visual_parameters_file force_abs_paths">
 
     <xacro:property name="force_abs_paths" value="${force_abs_paths}" scope="parent"/>
@@ -57,7 +71,6 @@
 
     <!-- Extract subsections from yaml dictionaries -->
     <xacro:property name="sec_limits" value="${config_joint_limit_parameters['joint_limits']}"/>
-    <xacro:property name="sec_offsets" value="${config_physical_parameters['offsets']}"/>
     <xacro:property name="sec_inertia_parameters" value="${config_physical_parameters['inertia_parameters']}" />
     <xacro:property name="sec_mesh_files" value="${config_visual_parameters['mesh_files']}" scope="parent"/>
     <xacro:property name="sec_kinematics" value="${config_kinematics_parameters['kinematics']}" />
@@ -138,8 +151,8 @@
     <xacro:property name="wrist_3_yaw" value="${sec_kinematics['wrist_3']['yaw']}" scope="parent"/>
 
     <!-- OFFSETS -->
-    <xacro:property name="shoulder_offset" value="${sec_offsets['shoulder_offset']}" scope="parent"/>
-    <xacro:property name="elbow_offset" value="${sec_offsets['elbow_offset']}" scope="parent"/>
+    <xacro:property name="shoulder_offset" value="${config_physical_parameters['offsets']['shoulder_offset'] if 'offsets' in config_physical_parameters and 'shoulder_offset' in config_physical_parameters['offsets'] else 0.0}" scope="parent"/>
+    <xacro:property name="elbow_offset" value="${config_physical_parameters['offsets']['elbow_offset'] if 'offsets' in config_physical_parameters and 'elbow_offset' in config_physical_parameters['offsets'] else 0.0}" scope="parent"/>
 
     <!-- INERTIA PARAMETERS -->
     <!-- mass -->
@@ -229,13 +242,6 @@
     <xacro:property name="wrist_3_inertia_iyy" value="${prop_wrist_3_inertia['iyy']}" scope="parent"/>
     <xacro:property name="wrist_3_inertia_iyz" value="${prop_wrist_3_inertia['iyz']}" scope="parent"/>
     <xacro:property name="wrist_3_inertia_izz" value="${prop_wrist_3_inertia['izz']}" scope="parent"/>
-
-    <!-- cylinder radius -->
-    <xacro:property name="shoulder_radius" value="${sec_inertia_parameters['shoulder_radius']}" scope="parent"/>
-    <xacro:property name="upper_arm_radius" value="${sec_inertia_parameters['upper_arm_radius']}" scope="parent"/>
-    <xacro:property name="elbow_radius" value="${sec_inertia_parameters['elbow_radius']}" scope="parent"/>
-    <xacro:property name="forearm_radius" value="${sec_inertia_parameters['forearm_radius']}" scope="parent"/>
-    <xacro:property name="wrist_radius" value="${sec_inertia_parameters['wrist_radius']}" scope="parent"/>
 
     <!--KINEMATICS HASH-->
     <xacro:property name="kinematics_hash" value="${sec_kinematics['hash']}" scope="parent"/>
