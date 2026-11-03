@@ -2,6 +2,11 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix normal directions on UR17g cap (`#440 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/440>`_)
+* Contributors: Felix Exner
+
 4.4.0 (2026-10-22)
 ------------------
 * Add support for g-series robots (`#426 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/426>`_)
