@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.15.1 (2026-11-03)
+-------------------
 * Fix normal directions on UR17g cap (backport `#440 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/440>`_) (`#441 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/441>`_)
 * Contributors: mergify[bot]
 
