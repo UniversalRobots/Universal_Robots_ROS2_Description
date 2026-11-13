@@ -2,6 +2,12 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add Support of the 48v T2 power connector on g-Series robots (`#448 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/448>`_)
+* Add tool T1 connector interfaces (`#446 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/446>`_)
+* Contributors: Felix Exner, Rune Søe-Knudsen
+
 2.15.1 (2026-11-03)
 -------------------
 * Fix normal directions on UR17g cap (backport `#440 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/440>`_) (`#441 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/441>`_)
