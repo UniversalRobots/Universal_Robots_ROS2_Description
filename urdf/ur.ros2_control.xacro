@@ -12,7 +12,7 @@
     script_filename output_recipe_filename
     input_recipe_filename tf_prefix
     hash_kinematics robot_ip
-    tool_voltage:=0 tool_parity:=0 tool_baud_rate:=115200 tool_stop_bits:=1
+    tool_voltage:=0 tool_voltage_t2:='' tool_parity:=0 tool_baud_rate:=115200 tool_stop_bits:=1
     tool_rx_idle_chars:=1.5 tool_tx_idle_chars:=3.5 tool_device_name:=/tmp/ttyUR tool_tcp_port:=54321
     reverse_port:=50001
     script_sender_port:=50002
@@ -60,6 +60,8 @@
           <param name="use_tool_communication">${use_tool_communication}</param>
           <param name="kinematics/hash">${hash_kinematics}</param>
           <param name="tool_voltage">${tool_voltage}</param>
+          <!-- Empty means do not set a startup voltage. Connector T2 needs Tool Flange V2 on PolyScope X 10.15 or later. -->
+          <param name="tool_voltage_t2">${tool_voltage_t2}</param>
           <param name="tool_parity">${tool_parity}</param>
           <param name="tool_baud_rate">${tool_baud_rate}</param>
           <param name="tool_stop_bits">${tool_stop_bits}</param>
@@ -209,6 +211,8 @@
           <command_interface name="analog_output_domain_cmd"/>
 
           <command_interface name="tool_voltage_cmd"/>
+          <!-- Connector T2, Tool Flange V2 on PolyScope X 10.15 or later. -->
+          <command_interface name="tool_voltage_t2_cmd"/>
 
           <command_interface name="io_async_success"/>
 
@@ -276,6 +280,11 @@
           <state_interface name="tool_output_voltage"/>
           <state_interface name="tool_output_current"/>
           <state_interface name="tool_temperature"/>
+
+          <!-- Connector T2, Tool Flange V2 on PolyScope X 10.15 or later. -->
+          <state_interface name="tool_flange_type"/>
+          <state_interface name="tool_output_voltage_2"/>
+          <state_interface name="tool_output_current_2"/>
 
           <state_interface name="tool_analog_input_0"/>
           <state_interface name="tool_analog_input_1"/>
