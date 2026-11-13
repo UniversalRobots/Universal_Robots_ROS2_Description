@@ -2,8 +2,8 @@
 Changelog for package ur_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.16.0 (2026-11-13)
+-------------------
 * Add Support of the 48v T2 power connector on g-Series robots (`#448 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/448>`_)
 * Add tool T1 connector interfaces (`#446 <https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/issues/446>`_)
 * Contributors: Felix Exner, Rune Søe-Knudsen
